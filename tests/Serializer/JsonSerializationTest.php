@@ -18,9 +18,11 @@ use JMS\Serializer\Tests\Fixtures\AuthorList;
 use JMS\Serializer\Tests\Fixtures\DiscriminatedAuthor;
 use JMS\Serializer\Tests\Fixtures\DiscriminatedComment;
 use JMS\Serializer\Tests\Fixtures\FirstClassMapCollection;
+use JMS\Serializer\Tests\Fixtures\InlineChild;
 use JMS\Serializer\Tests\Fixtures\ObjectWithEmptyArrayAndHash;
 use JMS\Serializer\Tests\Fixtures\ObjectWithInlineArray;
 use JMS\Serializer\Tests\Fixtures\ObjectWithObjectProperty;
+use JMS\Serializer\Tests\Fixtures\ParentSkipWithNullChild;
 use JMS\Serializer\Tests\Fixtures\Tag;
 use JMS\Serializer\Tests\Fixtures\TypedProperties\ComplexDiscriminatedUnion;
 use JMS\Serializer\Tests\Fixtures\TypedProperties\UnionTypedProperties;
@@ -161,6 +163,8 @@ class JsonSerializationTest extends BaseSerializationTestCase
             $outputs['object_with_enums'] = '{"ordinary":"Clubs","backed_value":"C","backed_without_param":"C","ordinary_array":["Clubs","Spades"],"backed_array":["C","H"],"backed_array_without_param":["C","H"],"ordinary_auto_detect":"Clubs","backed_auto_detect":"C","backed_int_auto_detect":3,"backed_int":3,"backed_name":"C","backed_int_forced_str":3}';
             $outputs['object_with_autodetect_enums'] = '{"ordinary_array_auto_detect":["Clubs","Spades"],"backed_array_auto_detect":["C","H"],"mixed_array_auto_detect":["Clubs","H"]}';
             $outputs['object_with_enums_disabled'] = '{"ordinary_array_auto_detect":[{"name":"Clubs"},{"name":"Spades"}],"backed_array_auto_detect":[{"name":"Clubs","value":"C"},{"name":"Hearts","value":"H"}],"mixed_array_auto_detect":[{"name":"Clubs"},{"name":"Hearts","value":"H"}]}';
+            $outputs['data_skip_with_null_child_is_null'] = '{"c":"c","d":"d"}';
+            $outputs['data_skip_with_null_child_is_set'] = '{"c":"c","d":"d","child":{"a":"a","b":"b"}}';
         }
 
         if (!isset($outputs[$key])) {
@@ -549,6 +553,15 @@ class JsonSerializationTest extends BaseSerializationTestCase
     protected function getFormat()
     {
         return 'json';
+    }
+
+    public function testSerializeWhenNull()
+    {
+        $serialized = $this->serialize(new ParentSkipWithNullChild(null));
+        self::assertEquals(static::getContent('data_skip_with_null_child_is_null'), $serialized);
+
+        $serialized = $this->serialize(new ParentSkipWithNullChild(new InlineChild()));
+        self::assertEquals(static::getContent('data_skip_with_null_child_is_set'), $serialized);
     }
 }
 

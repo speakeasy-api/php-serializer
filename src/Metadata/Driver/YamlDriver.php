@@ -181,6 +181,10 @@ class YamlDriver extends AbstractFileDriver
                         $pMetadata->skipWhenEmpty = (bool) $pConfig['skip_when_empty'];
                     }
 
+                    if (isset($pConfig['skip_when_null'])) {
+                        $pMetadata->skipWhenNull = (bool) $pConfig['skip_when_null'];
+                    }
+
                     if (isset($pConfig['since_version'])) {
                         $pMetadata->sinceVersion = (string) $pConfig['since_version'];
                     }
