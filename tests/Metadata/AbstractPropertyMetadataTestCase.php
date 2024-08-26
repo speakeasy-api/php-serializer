@@ -28,6 +28,7 @@ abstract class AbstractPropertyMetadataTestCase extends TestCase
         $metadata->xmlElementCData = false;
         $metadata->inline = true;
         $metadata->skipWhenEmpty = true;
+        $metadata->skipWhenNull = false;
         $metadata->xmlAttributeMap = true;
         $metadata->maxDepth = 1;
         $metadata->excludeIf = 'expr';

@@ -23,6 +23,7 @@ use JMS\Serializer\Annotation\SerializedName;
 use JMS\Serializer\Annotation\SerializerAttribute;
 use JMS\Serializer\Annotation\Since;
 use JMS\Serializer\Annotation\SkipWhenEmpty;
+use JMS\Serializer\Annotation\SkipWhenNull;
 use JMS\Serializer\Annotation\Type;
 use JMS\Serializer\Annotation\UnionDiscriminator;
 use JMS\Serializer\Annotation\Until;
@@ -199,6 +200,8 @@ class AnnotationOrAttributeDriver implements DriverInterface
                         $propertyMetadata->serializedName = $annot->name;
                     } elseif ($annot instanceof SkipWhenEmpty) {
                         $propertyMetadata->skipWhenEmpty = true;
+                    } elseif ($annot instanceof SkipWhenNull) {
+                        $propertyMetadata->skipWhenNull = true;
                     } elseif ($annot instanceof Expose) {
                         $isExpose = true;
                         if (null !== $annot->if) {

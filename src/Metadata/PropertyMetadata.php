@@ -116,6 +116,11 @@ class PropertyMetadata extends BasePropertyMetadata
     /**
      * @var bool
      */
+    public $skipWhenNull = false;
+
+    /**
+     * @var bool
+     */
     public $readOnly = false;
 
     /**
@@ -244,6 +249,7 @@ class PropertyMetadata extends BasePropertyMetadata
             $this->xmlCollectionSkipWhenEmpty,
             $this->excludeIf,
             $this->skipWhenEmpty,
+            $this->skipWhenNull,
             $this->forceReflectionAccess,
             $this->hasDefault,
             $this->defaultValue,
@@ -278,6 +284,7 @@ class PropertyMetadata extends BasePropertyMetadata
             $this->xmlCollectionSkipWhenEmpty,
             $this->excludeIf,
             $this->skipWhenEmpty,
+            $this->skipWhenNull,
             $this->forceReflectionAccess,
             $this->hasDefault,
             $this->defaultValue,

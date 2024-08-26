@@ -151,6 +151,10 @@ final class JsonSerializationVisitor extends AbstractVisitor implements Serializ
             return;
         }
 
+        if (true === $metadata->skipWhenNull && null === $v) {
+            return;
+        }
+
         if ($metadata->inline) {
             if (\is_array($v) || ($v instanceof \ArrayObject)) {
                 // concatenate the two array-like structures

@@ -20,6 +20,7 @@ use JMS\Serializer\Tests\Fixtures\Discriminator\ObjectWithXmlNamespaceDiscrimina
 use JMS\Serializer\Tests\Fixtures\Discriminator\ObjectWithXmlNamespaceDiscriminatorParent;
 use JMS\Serializer\Tests\Fixtures\FirstClassListCollection;
 use JMS\Serializer\Tests\Fixtures\FirstClassMapCollection;
+use JMS\Serializer\Tests\Fixtures\InlineChild;
 use JMS\Serializer\Tests\Fixtures\ObjectWithExpressionVirtualPropertiesAndExcludeAll;
 use JMS\Serializer\Tests\Fixtures\ObjectWithInvalidExpression;
 use JMS\Serializer\Tests\Fixtures\ObjectWithOnlyLifecycleCallbacks;
@@ -29,6 +30,7 @@ use JMS\Serializer\Tests\Fixtures\ObjectWithVirtualPropertiesAndDuplicatePropNam
 use JMS\Serializer\Tests\Fixtures\ObjectWithVirtualPropertiesAndDuplicatePropNameExcludeAll;
 use JMS\Serializer\Tests\Fixtures\ObjectWithVirtualPropertiesAndExcludeAll;
 use JMS\Serializer\Tests\Fixtures\ParentSkipWithEmptyChild;
+use JMS\Serializer\Tests\Fixtures\ParentSkipWithNullChild;
 use JMS\Serializer\Tests\Fixtures\Person;
 use JMS\Serializer\Tests\Fixtures\TypedProperties\ComplexDiscriminatedUnion;
 use Metadata\Driver\DriverInterface;
@@ -373,6 +375,21 @@ abstract class BaseDriverTestCase extends TestCase
         self::assertFalse($m->propertyMetadata['c']->skipWhenEmpty);
         self::assertFalse($m->propertyMetadata['d']->skipWhenEmpty);
         self::assertTrue($m->propertyMetadata['child']->skipWhenEmpty);
+    }
+
+    public function testSkipWhenNullOption()
+    {
+        $m = $this->getDriver()->loadMetadataForClass(new \ReflectionClass(ParentSkipWithNullChild::class));
+        \assert($m instanceof ClassMetadata);
+
+        self::assertNotNull($m);
+
+        self::assertInstanceOf(PropertyMetadata::class, $m->propertyMetadata['c']);
+        self::assertInstanceOf(PropertyMetadata::class, $m->propertyMetadata['d']);
+        self::assertInstanceOf(PropertyMetadata::class, $m->propertyMetadata['child']);
+        self::assertFalse($m->propertyMetadata['c']->skipWhenNull);
+        self::assertFalse($m->propertyMetadata['d']->skipWhenNull);
+        self::assertTrue($m->propertyMetadata['child']->skipWhenNull);
     }
 
     public function testLoadDiscriminatorSubClass()

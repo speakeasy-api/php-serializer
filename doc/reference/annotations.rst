@@ -114,6 +114,12 @@ not be serialized if the result will be "empty".
 
 Works option works only when serializing.
 
+#[SkipWhenNull]
+~~~~~~~~~~~~~~~~
+Just like SkipWhenEmpt, but checks for null values instead.
+
+Works option works only when serializing.
+
 #[SerializedName]
 ~~~~~~~~~~~~~~~~~
 This attribute can be defined on a property to define the serialized name for a

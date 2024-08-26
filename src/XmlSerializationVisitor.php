@@ -363,6 +363,11 @@ final class XmlSerializationVisitor extends AbstractVisitor implements Serializa
         return null === $node && !$metadata->xmlCollection && $metadata->skipWhenEmpty;
     }
 
+    private function isSkippableNullObject(?\DOMElement $node, PropertyMetadata $metadata): bool
+    {
+        return null === $node && !$metadata->xmlCollection && $metadata->skipWhenNull;
+    }
+
     private function isSkippableCollection(PropertyMetadata $metadata): bool
     {
         return $metadata->xmlCollection && $metadata->xmlCollectionSkipWhenEmpty;
