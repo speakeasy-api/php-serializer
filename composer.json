@@ -1,7 +1,7 @@
 {
-    "name": "jms/serializer",
+    "name": "speakeasy/serializer",
     "type": "library",
-    "description": "Library for (de-)serializing data of any complexity; supports XML, and JSON.",
+    "description": "Temporary fork of JMS Serializer while upstream changes are being made.",
     "keywords": [
         "serialization",
         "deserialization",
@@ -9,7 +9,7 @@
         "jaxb",
         "xml"
     ],
-    "homepage": "http://jmsyst.com/libs/serializer",
+    "homepage": "https://github.com/idbentley/serializer",
     "license": "MIT",
     "authors": [
         {
@@ -19,6 +19,10 @@
         {
             "name": "Asmir Mustafic",
             "email": "goetas@gmail.com"
+        },
+        {
+            "name": "Ian Bentley",
+            "email": "ian@speakeasyapi.dev"
         }
     ],
     "require": {
