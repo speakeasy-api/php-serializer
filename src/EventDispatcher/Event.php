@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace JMS\Serializer\EventDispatcher;
+namespace Speakeasy\Serializer\EventDispatcher;
 
-use JMS\Serializer\Context;
-use JMS\Serializer\VisitorInterface;
+use Speakeasy\Serializer\Context;
+use Speakeasy\Serializer\VisitorInterface;
 
 class Event
 {

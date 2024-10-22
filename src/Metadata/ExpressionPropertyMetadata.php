@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace JMS\Serializer\Metadata;
+namespace Speakeasy\Serializer\Metadata;
 
-use JMS\Serializer\Expression\Expression;
+use Speakeasy\Serializer\Expression\Expression;
 
 /**
  * @Annotation

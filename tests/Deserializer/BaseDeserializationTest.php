@@ -2,15 +2,15 @@
 
 declare(strict_types=1);
 
-namespace JMS\Serializer\Tests\Deserializer;
+namespace Speakeasy\Serializer\Tests\Deserializer;
 
-use JMS\Serializer\DeserializationContext;
-use JMS\Serializer\Exception\NonCastableTypeException;
-use JMS\Serializer\SerializerBuilder;
-use JMS\Serializer\Tests\Fixtures\Discriminator\Car;
-use JMS\Serializer\Tests\Fixtures\GroupsObject;
-use JMS\Serializer\Tests\Fixtures\Price;
-use JMS\Serializer\Tests\Fixtures\Publisher;
+use Speakeasy\Serializer\DeserializationContext;
+use Speakeasy\Serializer\Exception\NonCastableTypeException;
+use Speakeasy\Serializer\SerializerBuilder;
+use Speakeasy\Serializer\Tests\Fixtures\Discriminator\Car;
+use Speakeasy\Serializer\Tests\Fixtures\GroupsObject;
+use Speakeasy\Serializer\Tests\Fixtures\Price;
+use Speakeasy\Serializer\Tests\Fixtures\Publisher;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
 

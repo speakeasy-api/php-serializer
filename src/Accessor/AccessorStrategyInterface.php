@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace JMS\Serializer\Accessor;
+namespace Speakeasy\Serializer\Accessor;
 
-use JMS\Serializer\DeserializationContext;
-use JMS\Serializer\Metadata\PropertyMetadata;
-use JMS\Serializer\SerializationContext;
+use Speakeasy\Serializer\DeserializationContext;
+use Speakeasy\Serializer\Metadata\PropertyMetadata;
+use Speakeasy\Serializer\SerializationContext;
 
 /**
  * @author Asmir Mustafic <goetas@gmail.com>

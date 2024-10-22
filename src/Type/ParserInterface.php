@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace JMS\Serializer\Type;
+namespace Speakeasy\Serializer\Type;
 
 interface ParserInterface
 {

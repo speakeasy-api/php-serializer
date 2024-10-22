@@ -2,52 +2,52 @@
 
 declare(strict_types=1);
 
-namespace JMS\Serializer\Tests\Serializer;
+namespace Speakeasy\Serializer\Tests\Serializer;
 
-use JMS\Serializer\Context;
-use JMS\Serializer\Exception\InvalidArgumentException;
-use JMS\Serializer\Exception\RuntimeException;
-use JMS\Serializer\Exception\XmlErrorException;
-use JMS\Serializer\GraphNavigatorInterface;
-use JMS\Serializer\Handler\DateHandler;
-use JMS\Serializer\Handler\HandlerRegistryInterface;
-use JMS\Serializer\Metadata\ClassMetadata;
-use JMS\Serializer\Metadata\Driver\TypedPropertiesDriver;
-use JMS\Serializer\Metadata\StaticPropertyMetadata;
-use JMS\Serializer\SerializationContext;
-use JMS\Serializer\SerializerBuilder;
-use JMS\Serializer\Tests\Fixtures\AccessorSetter;
-use JMS\Serializer\Tests\Fixtures\Discriminator\ObjectWithXmlAttributeDiscriminatorChild;
-use JMS\Serializer\Tests\Fixtures\Discriminator\ObjectWithXmlAttributeDiscriminatorParent;
-use JMS\Serializer\Tests\Fixtures\Discriminator\ObjectWithXmlNamespaceAttributeDiscriminatorChild;
-use JMS\Serializer\Tests\Fixtures\Discriminator\ObjectWithXmlNamespaceAttributeDiscriminatorParent;
-use JMS\Serializer\Tests\Fixtures\Discriminator\ObjectWithXmlNamespaceDiscriminatorChild;
-use JMS\Serializer\Tests\Fixtures\Discriminator\ObjectWithXmlNamespaceDiscriminatorParent;
-use JMS\Serializer\Tests\Fixtures\Discriminator\ObjectWithXmlNotCDataDiscriminatorChild;
-use JMS\Serializer\Tests\Fixtures\Discriminator\ObjectWithXmlNotCDataDiscriminatorParent;
-use JMS\Serializer\Tests\Fixtures\Input;
-use JMS\Serializer\Tests\Fixtures\InvalidUsageOfXmlValue;
-use JMS\Serializer\Tests\Fixtures\ObjectWithFloatProperty;
-use JMS\Serializer\Tests\Fixtures\ObjectWithNamespacesAndList;
-use JMS\Serializer\Tests\Fixtures\ObjectWithNamespacesAndNestedList;
-use JMS\Serializer\Tests\Fixtures\ObjectWithVirtualXmlProperties;
-use JMS\Serializer\Tests\Fixtures\ObjectWithXmlKeyValuePairs;
-use JMS\Serializer\Tests\Fixtures\ObjectWithXmlKeyValuePairsWithObjectType;
-use JMS\Serializer\Tests\Fixtures\ObjectWithXmlKeyValuePairsWithType;
-use JMS\Serializer\Tests\Fixtures\ObjectWithXmlNamespaces;
-use JMS\Serializer\Tests\Fixtures\ObjectWithXmlNamespacesAndObjectProperty;
-use JMS\Serializer\Tests\Fixtures\ObjectWithXmlNamespacesAndObjectPropertyAuthor;
-use JMS\Serializer\Tests\Fixtures\ObjectWithXmlNamespacesAndObjectPropertyVirtual;
-use JMS\Serializer\Tests\Fixtures\ObjectWithXmlRootNamespace;
-use JMS\Serializer\Tests\Fixtures\Person;
-use JMS\Serializer\Tests\Fixtures\PersonCollection;
-use JMS\Serializer\Tests\Fixtures\PersonLocation;
-use JMS\Serializer\Tests\Fixtures\SimpleClassObject;
-use JMS\Serializer\Tests\Fixtures\SimpleSubClassObject;
-use JMS\Serializer\Tests\Fixtures\TypedProperties\UnionTypedProperties;
-use JMS\Serializer\Visitor\Factory\XmlDeserializationVisitorFactory;
-use JMS\Serializer\Visitor\Factory\XmlSerializationVisitorFactory;
-use JMS\Serializer\XmlSerializationVisitor;
+use Speakeasy\Serializer\Context;
+use Speakeasy\Serializer\Exception\InvalidArgumentException;
+use Speakeasy\Serializer\Exception\RuntimeException;
+use Speakeasy\Serializer\Exception\XmlErrorException;
+use Speakeasy\Serializer\GraphNavigatorInterface;
+use Speakeasy\Serializer\Handler\DateHandler;
+use Speakeasy\Serializer\Handler\HandlerRegistryInterface;
+use Speakeasy\Serializer\Metadata\ClassMetadata;
+use Speakeasy\Serializer\Metadata\Driver\TypedPropertiesDriver;
+use Speakeasy\Serializer\Metadata\StaticPropertyMetadata;
+use Speakeasy\Serializer\SerializationContext;
+use Speakeasy\Serializer\SerializerBuilder;
+use Speakeasy\Serializer\Tests\Fixtures\AccessorSetter;
+use Speakeasy\Serializer\Tests\Fixtures\Discriminator\ObjectWithXmlAttributeDiscriminatorChild;
+use Speakeasy\Serializer\Tests\Fixtures\Discriminator\ObjectWithXmlAttributeDiscriminatorParent;
+use Speakeasy\Serializer\Tests\Fixtures\Discriminator\ObjectWithXmlNamespaceAttributeDiscriminatorChild;
+use Speakeasy\Serializer\Tests\Fixtures\Discriminator\ObjectWithXmlNamespaceAttributeDiscriminatorParent;
+use Speakeasy\Serializer\Tests\Fixtures\Discriminator\ObjectWithXmlNamespaceDiscriminatorChild;
+use Speakeasy\Serializer\Tests\Fixtures\Discriminator\ObjectWithXmlNamespaceDiscriminatorParent;
+use Speakeasy\Serializer\Tests\Fixtures\Discriminator\ObjectWithXmlNotCDataDiscriminatorChild;
+use Speakeasy\Serializer\Tests\Fixtures\Discriminator\ObjectWithXmlNotCDataDiscriminatorParent;
+use Speakeasy\Serializer\Tests\Fixtures\Input;
+use Speakeasy\Serializer\Tests\Fixtures\InvalidUsageOfXmlValue;
+use Speakeasy\Serializer\Tests\Fixtures\ObjectWithFloatProperty;
+use Speakeasy\Serializer\Tests\Fixtures\ObjectWithNamespacesAndList;
+use Speakeasy\Serializer\Tests\Fixtures\ObjectWithNamespacesAndNestedList;
+use Speakeasy\Serializer\Tests\Fixtures\ObjectWithVirtualXmlProperties;
+use Speakeasy\Serializer\Tests\Fixtures\ObjectWithXmlKeyValuePairs;
+use Speakeasy\Serializer\Tests\Fixtures\ObjectWithXmlKeyValuePairsWithObjectType;
+use Speakeasy\Serializer\Tests\Fixtures\ObjectWithXmlKeyValuePairsWithType;
+use Speakeasy\Serializer\Tests\Fixtures\ObjectWithXmlNamespaces;
+use Speakeasy\Serializer\Tests\Fixtures\ObjectWithXmlNamespacesAndObjectProperty;
+use Speakeasy\Serializer\Tests\Fixtures\ObjectWithXmlNamespacesAndObjectPropertyAuthor;
+use Speakeasy\Serializer\Tests\Fixtures\ObjectWithXmlNamespacesAndObjectPropertyVirtual;
+use Speakeasy\Serializer\Tests\Fixtures\ObjectWithXmlRootNamespace;
+use Speakeasy\Serializer\Tests\Fixtures\Person;
+use Speakeasy\Serializer\Tests\Fixtures\PersonCollection;
+use Speakeasy\Serializer\Tests\Fixtures\PersonLocation;
+use Speakeasy\Serializer\Tests\Fixtures\SimpleClassObject;
+use Speakeasy\Serializer\Tests\Fixtures\SimpleSubClassObject;
+use Speakeasy\Serializer\Tests\Fixtures\TypedProperties\UnionTypedProperties;
+use Speakeasy\Serializer\Visitor\Factory\XmlDeserializationVisitorFactory;
+use Speakeasy\Serializer\Visitor\Factory\XmlSerializationVisitorFactory;
+use Speakeasy\Serializer\XmlSerializationVisitor;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\Attributes\DoesNotPerformAssertions;
 use PHPUnit\Framework\Attributes\Group;
@@ -89,12 +89,12 @@ class XmlSerializationTest extends BaseSerializationTestCase
                     <entry>collectionEntry</entry>
                 </collection>
             </AccessorSetter>',
-            'JMS\Serializer\Tests\Fixtures\AccessorSetter',
+            'Speakeasy\Serializer\Tests\Fixtures\AccessorSetter',
         );
         \assert($object instanceof AccessorSetter);
 
         self::assertInstanceOf('stdClass', $object->getElement());
-        self::assertInstanceOf('JMS\Serializer\Tests\Fixtures\AccessorSetterElement', $object->getElement()->element);
+        self::assertInstanceOf('Speakeasy\Serializer\Tests\Fixtures\AccessorSetterElement', $object->getElement()->element);
         self::assertEquals('attribute-different', $object->getElement()->element->getAttribute());
         self::assertEquals('element-different', $object->getElement()->element->getElement());
         self::assertEquals(['collectionEntry' => 'collectionEntry'], $object->getCollection());
@@ -209,7 +209,7 @@ class XmlSerializationTest extends BaseSerializationTestCase
     public function testUnserializeMissingArray()
     {
         $xml = '<result></result>';
-        $object = $this->serializer->deserialize($xml, 'JMS\Serializer\Tests\Fixtures\ObjectWithAbsentXmlListNode', 'xml');
+        $object = $this->serializer->deserialize($xml, 'Speakeasy\Serializer\Tests\Fixtures\ObjectWithAbsentXmlListNode', 'xml');
         self::assertEquals($object->absentAndNs, []);
 
         $xml = '<result xmlns:x="http://www.example.com">
@@ -217,7 +217,7 @@ class XmlSerializationTest extends BaseSerializationTestCase
                         <x:entry>foo</x:entry>
                     </absent_and_ns>
                   </result>';
-        $object = $this->serializer->deserialize($xml, 'JMS\Serializer\Tests\Fixtures\ObjectWithAbsentXmlListNode', 'xml');
+        $object = $this->serializer->deserialize($xml, 'Speakeasy\Serializer\Tests\Fixtures\ObjectWithAbsentXmlListNode', 'xml');
         self::assertEquals($object->absentAndNs, ['foo']);
     }
 

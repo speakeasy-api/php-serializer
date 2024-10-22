@@ -1,4 +1,4 @@
-JMS\Serializer\Tests\Fixtures\ObjectWithVirtualPropertiesAndDuplicatePropName:
+Speakeasy\Serializer\Tests\Fixtures\ObjectWithVirtualPropertiesAndDuplicatePropName:
     properties:
         id: ~
         name: ~

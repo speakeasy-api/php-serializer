@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace JMS\Serializer\Tests\Fixtures\Doctrine\PersistendCollection;
+namespace Speakeasy\Serializer\Tests\Fixtures\Doctrine\PersistendCollection;
 
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
-use JMS\Serializer\Annotation as Serializer;
+use Speakeasy\Serializer\Annotation as Serializer;
 
 /** @ORM\Entity */
 #[ORM\Entity]
@@ -38,7 +38,7 @@ class App
 
     /**
      * @ORM\ManyToOne(targetEntity="SmartPhone")
-     * @Serializer\Type("JMS\Serializer\Tests\Fixtures\Doctrine\PersistendCollection\SmartPhone")
+     * @Serializer\Type("Speakeasy\Serializer\Tests\Fixtures\Doctrine\PersistendCollection\SmartPhone")
      *
      * @var SmartPhone
      */

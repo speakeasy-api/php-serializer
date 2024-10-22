@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace JMS\Serializer\Annotation;
+namespace Speakeasy\Serializer\Annotation;
 
-use JMS\Serializer\Exception\InvalidArgumentException;
+use Speakeasy\Serializer\Exception\InvalidArgumentException;
 
 trait AnnotationUtilsTrait
 {

@@ -12,7 +12,7 @@ very easily:
 
         <?php
 
-        $serializer = JMS\Serializer\SerializerBuilder::create()->build();
+        $serializer = Speakeasy\Serializer\SerializerBuilder::create()->build();
         $serializer->serialize($object, 'json');
         $serializer->serialize($object, 'xml');
 
@@ -31,6 +31,6 @@ example, when accepting data via an API.
 
     <?php
 
-    $serializer = JMS\Serializer\SerializerBuilder::create()->build();
+    $serializer = Speakeasy\Serializer\SerializerBuilder::create()->build();
     $object = $serializer->deserialize($jsonData, \MyNamespace\MyObject::class, 'json');
 

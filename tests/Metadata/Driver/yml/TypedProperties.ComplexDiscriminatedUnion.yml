@@ -1,8 +1,8 @@
-JMS\Serializer\Tests\Fixtures\TypedProperties\ComplexDiscriminatedUnion:
+Speakeasy\Serializer\Tests\Fixtures\TypedProperties\ComplexDiscriminatedUnion:
   properties:
     data:
       union_discriminator:
         field: objectType
         map:
-          author: 'JMS\Serializer\Tests\Fixtures\DiscriminatedAuthor'
-          comment: 'JMS\Serializer\Tests\Fixtures\DiscriminatedComment'
+          author: 'Speakeasy\Serializer\Tests\Fixtures\DiscriminatedAuthor'
+          comment: 'Speakeasy\Serializer\Tests\Fixtures\DiscriminatedComment'

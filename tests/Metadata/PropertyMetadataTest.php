@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace JMS\Serializer\Tests\Metadata;
+namespace Speakeasy\Serializer\Tests\Metadata;
 
-use JMS\Serializer\Metadata\PropertyMetadata;
-use JMS\Serializer\Tests\Fixtures\SimpleObject;
+use Speakeasy\Serializer\Metadata\PropertyMetadata;
+use Speakeasy\Serializer\Tests\Fixtures\SimpleObject;
 
 class PropertyMetadataTest extends AbstractPropertyMetadataTestCase
 {

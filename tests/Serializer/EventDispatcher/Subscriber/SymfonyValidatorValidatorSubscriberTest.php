@@ -2,15 +2,15 @@
 
 declare(strict_types=1);
 
-namespace JMS\Serializer\Tests\Serializer\EventDispatcher\Subscriber;
+namespace Speakeasy\Serializer\Tests\Serializer\EventDispatcher\Subscriber;
 
-use JMS\Serializer\DeserializationContext;
-use JMS\Serializer\EventDispatcher\EventDispatcher;
-use JMS\Serializer\EventDispatcher\ObjectEvent;
-use JMS\Serializer\EventDispatcher\Subscriber\SymfonyValidatorValidatorSubscriber;
-use JMS\Serializer\Exception\ValidationFailedException;
-use JMS\Serializer\SerializerBuilder;
-use JMS\Serializer\Tests\Fixtures\AuthorList;
+use Speakeasy\Serializer\DeserializationContext;
+use Speakeasy\Serializer\EventDispatcher\EventDispatcher;
+use Speakeasy\Serializer\EventDispatcher\ObjectEvent;
+use Speakeasy\Serializer\EventDispatcher\Subscriber\SymfonyValidatorValidatorSubscriber;
+use Speakeasy\Serializer\Exception\ValidationFailedException;
+use Speakeasy\Serializer\SerializerBuilder;
+use Speakeasy\Serializer\Tests\Fixtures\AuthorList;
 use PHPUnit\Framework\TestCase;
 use stdClass;
 use Symfony\Component\Validator\ConstraintViolation;

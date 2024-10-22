@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace JMS\Serializer\Tests\Fixtures;
+namespace Speakeasy\Serializer\Tests\Fixtures;
 
-use JMS\Serializer\Construction\ObjectConstructorInterface;
-use JMS\Serializer\Construction\UnserializeObjectConstructor;
-use JMS\Serializer\DeserializationContext;
-use JMS\Serializer\Metadata\ClassMetadata;
-use JMS\Serializer\Visitor\DeserializationVisitorInterface;
+use Speakeasy\Serializer\Construction\ObjectConstructorInterface;
+use Speakeasy\Serializer\Construction\UnserializeObjectConstructor;
+use Speakeasy\Serializer\DeserializationContext;
+use Speakeasy\Serializer\Metadata\ClassMetadata;
+use Speakeasy\Serializer\Visitor\DeserializationVisitorInterface;
 
 class InitializedBlogPostConstructor implements ObjectConstructorInterface
 {
@@ -21,7 +21,7 @@ class InitializedBlogPostConstructor implements ObjectConstructorInterface
 
     public function construct(DeserializationVisitorInterface $visitor, ClassMetadata $metadata, $data, array $type, DeserializationContext $context): ?object
     {
-        if ('JMS\Serializer\Tests\Fixtures\BlogPost' !== $type['name']) {
+        if ('Speakeasy\Serializer\Tests\Fixtures\BlogPost' !== $type['name']) {
             return $this->fallback->construct($visitor, $metadata, $data, $type, $context);
         }
 

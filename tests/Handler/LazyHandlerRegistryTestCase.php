@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace JMS\Serializer\Tests\Handler;
+namespace Speakeasy\Serializer\Tests\Handler;
 
-use JMS\Serializer\GraphNavigatorInterface;
-use JMS\Serializer\Handler\LazyHandlerRegistry;
+use Speakeasy\Serializer\GraphNavigatorInterface;
+use Speakeasy\Serializer\Handler\LazyHandlerRegistry;
 
 abstract class LazyHandlerRegistryTestCase extends HandlerRegistryTest
 {

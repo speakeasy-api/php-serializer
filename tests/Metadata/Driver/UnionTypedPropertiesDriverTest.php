@@ -2,15 +2,15 @@
 
 declare(strict_types=1);
 
-namespace JMS\Serializer\Tests\Metadata\Driver;
+namespace Speakeasy\Serializer\Tests\Metadata\Driver;
 
 use Doctrine\Common\Annotations\AnnotationReader;
-use JMS\Serializer\Metadata\ClassMetadata;
-use JMS\Serializer\Metadata\Driver\AnnotationDriver;
-use JMS\Serializer\Metadata\Driver\NullDriver;
-use JMS\Serializer\Metadata\Driver\TypedPropertiesDriver;
-use JMS\Serializer\Naming\IdenticalPropertyNamingStrategy;
-use JMS\Serializer\Tests\Fixtures\TypedProperties\UnionTypedProperties;
+use Speakeasy\Serializer\Metadata\ClassMetadata;
+use Speakeasy\Serializer\Metadata\Driver\AnnotationDriver;
+use Speakeasy\Serializer\Metadata\Driver\NullDriver;
+use Speakeasy\Serializer\Metadata\Driver\TypedPropertiesDriver;
+use Speakeasy\Serializer\Naming\IdenticalPropertyNamingStrategy;
+use Speakeasy\Serializer\Tests\Fixtures\TypedProperties\UnionTypedProperties;
 use Metadata\Driver\DriverChain;
 use PHPUnit\Framework\TestCase;
 use ReflectionClass;

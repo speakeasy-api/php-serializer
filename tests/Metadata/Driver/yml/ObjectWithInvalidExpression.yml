@@ -1,4 +1,4 @@
-JMS\Serializer\Tests\Fixtures\ObjectWithInvalidExpression:
+Speakeasy\Serializer\Tests\Fixtures\ObjectWithInvalidExpression:
     properties:
         prop1:
             exclude_if: invalid

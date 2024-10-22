@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace JMS\Serializer\Tests\Metadata\Driver;
+namespace Speakeasy\Serializer\Tests\Metadata\Driver;
 
-use JMS\Serializer\Exception\InvalidMetadataException;
-use JMS\Serializer\Metadata\Driver\XmlDriver;
-use JMS\Serializer\Metadata\PropertyMetadata;
-use JMS\Serializer\Naming\IdenticalPropertyNamingStrategy;
+use Speakeasy\Serializer\Exception\InvalidMetadataException;
+use Speakeasy\Serializer\Metadata\Driver\XmlDriver;
+use Speakeasy\Serializer\Metadata\PropertyMetadata;
+use Speakeasy\Serializer\Naming\IdenticalPropertyNamingStrategy;
 use Metadata\Driver\DriverInterface;
 use Metadata\Driver\FileLocator;
 
@@ -28,7 +28,7 @@ class XmlDriverTest extends BaseDriverTestCase
 
     public function testBlogPostExcludeAllStrategy()
     {
-        $m = $this->getDriver('exclude_all')->loadMetadataForClass(new \ReflectionClass('JMS\Serializer\Tests\Fixtures\BlogPost'));
+        $m = $this->getDriver('exclude_all')->loadMetadataForClass(new \ReflectionClass('Speakeasy\Serializer\Tests\Fixtures\BlogPost'));
 
         self::assertArrayHasKey('title', $m->propertyMetadata);
 
@@ -40,7 +40,7 @@ class XmlDriverTest extends BaseDriverTestCase
 
     public function testBlogPostExcludeNoneStrategy()
     {
-        $m = $this->getDriver('exclude_none')->loadMetadataForClass(new \ReflectionClass('JMS\Serializer\Tests\Fixtures\BlogPost'));
+        $m = $this->getDriver('exclude_none')->loadMetadataForClass(new \ReflectionClass('Speakeasy\Serializer\Tests\Fixtures\BlogPost'));
 
         self::assertArrayNotHasKey('title', $m->propertyMetadata);
 
@@ -52,7 +52,7 @@ class XmlDriverTest extends BaseDriverTestCase
 
     public function testBlogPostCaseInsensitive()
     {
-        $m = $this->getDriver('case')->loadMetadataForClass(new \ReflectionClass('JMS\Serializer\Tests\Fixtures\BlogPost'));
+        $m = $this->getDriver('case')->loadMetadataForClass(new \ReflectionClass('Speakeasy\Serializer\Tests\Fixtures\BlogPost'));
 
         $p = new PropertyMetadata($m->name, 'title');
         $p->serializedName = 'title';
@@ -62,7 +62,7 @@ class XmlDriverTest extends BaseDriverTestCase
 
     public function testAccessorAttributes()
     {
-        $m = $this->getDriver()->loadMetadataForClass(new \ReflectionClass('JMS\Serializer\Tests\Fixtures\GetSetObject'));
+        $m = $this->getDriver()->loadMetadataForClass(new \ReflectionClass('Speakeasy\Serializer\Tests\Fixtures\GetSetObject'));
 
         $p = new PropertyMetadata($m->name, 'name');
         $p->type = ['name' => 'string', 'params' => []];
@@ -75,7 +75,7 @@ class XmlDriverTest extends BaseDriverTestCase
 
     public function testGroupsTrim()
     {
-        $first = $this->getDriver()->loadMetadataForClass(new \ReflectionClass('JMS\Serializer\Tests\Fixtures\GroupsTrim'));
+        $first = $this->getDriver()->loadMetadataForClass(new \ReflectionClass('Speakeasy\Serializer\Tests\Fixtures\GroupsTrim'));
 
         self::assertArrayHasKey('amount', $first->propertyMetadata);
         self::assertContains('first.test.group', $first->propertyMetadata['currency']->groups);
@@ -84,7 +84,7 @@ class XmlDriverTest extends BaseDriverTestCase
 
     public function testMultilineGroups()
     {
-        $first = $this->getDriver()->loadMetadataForClass(new \ReflectionClass('JMS\Serializer\Tests\Fixtures\MultilineGroupsFormat'));
+        $first = $this->getDriver()->loadMetadataForClass(new \ReflectionClass('Speakeasy\Serializer\Tests\Fixtures\MultilineGroupsFormat'));
 
         self::assertArrayHasKey('amount', $first->propertyMetadata);
         self::assertContains('first.test.group', $first->propertyMetadata['currency']->groups);
@@ -97,7 +97,7 @@ class XmlDriverTest extends BaseDriverTestCase
     protected function getDriver(?string $subDir = null, bool $addUnderscoreDir = true): DriverInterface
     {
         $dirs = [
-            'JMS\Serializer\Tests\Fixtures' => __DIR__ . '/xml' . ($subDir ? '/' . $subDir : ''),
+            'Speakeasy\Serializer\Tests\Fixtures' => __DIR__ . '/xml' . ($subDir ? '/' . $subDir : ''),
         ];
 
         if ($addUnderscoreDir) {

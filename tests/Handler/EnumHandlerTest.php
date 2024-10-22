@@ -2,16 +2,16 @@
 
 declare(strict_types=1);
 
-namespace JMS\Serializer\Tests\Handler;
+namespace Speakeasy\Serializer\Tests\Handler;
 
-use JMS\Serializer\Exception\InvalidMetadataException;
-use JMS\Serializer\Exception\RuntimeException;
-use JMS\Serializer\Handler\EnumHandler;
-use JMS\Serializer\SerializationContext;
-use JMS\Serializer\Tests\Fixtures\Enum\BackedSuitInt;
-use JMS\Serializer\Tests\Fixtures\Enum\Suit;
-use JMS\Serializer\Visitor\DeserializationVisitorInterface;
-use JMS\Serializer\Visitor\SerializationVisitorInterface;
+use Speakeasy\Serializer\Exception\InvalidMetadataException;
+use Speakeasy\Serializer\Exception\RuntimeException;
+use Speakeasy\Serializer\Handler\EnumHandler;
+use Speakeasy\Serializer\SerializationContext;
+use Speakeasy\Serializer\Tests\Fixtures\Enum\BackedSuitInt;
+use Speakeasy\Serializer\Tests\Fixtures\Enum\Suit;
+use Speakeasy\Serializer\Visitor\DeserializationVisitorInterface;
+use Speakeasy\Serializer\Visitor\SerializationVisitorInterface;
 use PHPUnit\Framework\TestCase;
 
 final class EnumHandlerTest extends TestCase

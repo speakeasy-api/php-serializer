@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace JMS\Serializer\Tests\Fixtures\Doctrine\PersistendCollection;
+namespace Speakeasy\Serializer\Tests\Fixtures\Doctrine\PersistendCollection;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\Common\Collections\Criteria;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
-use JMS\Serializer\Annotation as Serializer;
+use Speakeasy\Serializer\Annotation as Serializer;
 
 /** @ORM\Entity */
 #[ORM\Entity]
@@ -40,14 +40,14 @@ class SmartPhone
     private $name;
 
     /**
-     * @Serializer\Type("ArrayCollection<JMS\Serializer\Tests\Fixtures\Doctrine\PersistendCollection\App>")
+     * @Serializer\Type("ArrayCollection<Speakeasy\Serializer\Tests\Fixtures\Doctrine\PersistendCollection\App>")
      * @Serializer\SerializedName("applications")
      * @ORM\OneToMany (targetEntity="App", mappedBy="smartPhone", cascade={"persist"}, orphanRemoval=true)
      *
      * @var ArrayCollection<int, App>
      */
     #[Serializer\SerializedName(name: 'applications')]
-    #[Serializer\Type(name: 'ArrayCollection<JMS\Serializer\Tests\Fixtures\Doctrine\PersistendCollection\App>')]
+    #[Serializer\Type(name: 'ArrayCollection<Speakeasy\Serializer\Tests\Fixtures\Doctrine\PersistendCollection\App>')]
     #[ORM\OneToMany(targetEntity: App::class, mappedBy: 'smartPhone', cascade: ['persist'], orphanRemoval: true)]
     private $apps;
 

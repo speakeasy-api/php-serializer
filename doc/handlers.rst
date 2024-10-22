@@ -14,7 +14,7 @@ Simple Callables
 You can register simple callables on the builder object::
 
     $builder
-        ->configureHandlers(function(JMS\Serializer\Handler\HandlerRegistry $registry) {
+        ->configureHandlers(function(Speakeasy\Serializer\Handler\HandlerRegistry $registry) {
             $registry->registerHandler('serialization', 'MyObject', 'json',
                 function($visitor, MyObject $obj, array $type) {
                     return $obj->getName();
@@ -33,11 +33,11 @@ Subscribing Handlers
 Subscribing handlers contain the configuration themselves which makes them easier to share with other users,
 and easier to set-up in general::
 
-    use JMS\Serializer\Handler\SubscribingHandlerInterface;
-    use JMS\Serializer\GraphNavigator;
-    use JMS\Serializer\JsonSerializationVisitor;
-    use JMS\Serializer\JsonDeserializationVisitor;
-    use JMS\Serializer\Context;
+    use Speakeasy\Serializer\Handler\SubscribingHandlerInterface;
+    use Speakeasy\Serializer\GraphNavigator;
+    use Speakeasy\Serializer\JsonSerializationVisitor;
+    use Speakeasy\Serializer\JsonDeserializationVisitor;
+    use Speakeasy\Serializer\Context;
 
     class MyHandler implements SubscribingHandlerInterface
     {
@@ -73,7 +73,7 @@ and easier to set-up in general::
 Also, this type of handler is registered via the builder object::
 
     $builder
-        ->configureHandlers(function(JMS\Serializer\Handler\HandlerRegistry $registry) {
+        ->configureHandlers(function(Speakeasy\Serializer\Handler\HandlerRegistry $registry) {
             $registry->registerSubscribingHandler(new MyHandler());
         })
     ;

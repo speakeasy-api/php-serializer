@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace JMS\Serializer;
+namespace Speakeasy\Serializer;
 
-use JMS\Serializer\Exception\LogicException;
+use Speakeasy\Serializer\Exception\LogicException;
 
 class DeserializationContext extends Context
 {

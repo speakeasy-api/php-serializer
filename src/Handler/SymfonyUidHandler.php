@@ -2,15 +2,15 @@
 
 declare(strict_types=1);
 
-namespace JMS\Serializer\Handler;
+namespace Speakeasy\Serializer\Handler;
 
-use JMS\Serializer\DeserializationContext;
-use JMS\Serializer\Exception\InvalidArgumentException;
-use JMS\Serializer\GraphNavigatorInterface;
-use JMS\Serializer\SerializationContext;
-use JMS\Serializer\Visitor\DeserializationVisitorInterface;
-use JMS\Serializer\Visitor\SerializationVisitorInterface;
-use JMS\Serializer\XmlSerializationVisitor;
+use Speakeasy\Serializer\DeserializationContext;
+use Speakeasy\Serializer\Exception\InvalidArgumentException;
+use Speakeasy\Serializer\GraphNavigatorInterface;
+use Speakeasy\Serializer\SerializationContext;
+use Speakeasy\Serializer\Visitor\DeserializationVisitorInterface;
+use Speakeasy\Serializer\Visitor\SerializationVisitorInterface;
+use Speakeasy\Serializer\XmlSerializationVisitor;
 use Symfony\Component\Uid\AbstractUid;
 use Symfony\Component\Uid\Ulid;
 use Symfony\Component\Uid\Uuid;

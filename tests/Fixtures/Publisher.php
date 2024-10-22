@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace JMS\Serializer\Tests\Fixtures;
+namespace Speakeasy\Serializer\Tests\Fixtures;
 
-use JMS\Serializer\Annotation\SerializedName;
-use JMS\Serializer\Annotation\Type;
-use JMS\Serializer\Annotation\XmlElement;
-use JMS\Serializer\Annotation\XmlNamespace;
-use JMS\Serializer\Annotation\XmlRoot;
+use Speakeasy\Serializer\Annotation\SerializedName;
+use Speakeasy\Serializer\Annotation\Type;
+use Speakeasy\Serializer\Annotation\XmlElement;
+use Speakeasy\Serializer\Annotation\XmlNamespace;
+use Speakeasy\Serializer\Annotation\XmlRoot;
 
 /**
  * @XmlRoot("publisher")

@@ -2,15 +2,15 @@
 
 declare(strict_types=1);
 
-namespace JMS\Serializer\Tests\Handler;
+namespace Speakeasy\Serializer\Tests\Handler;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
-use JMS\Serializer\Annotation as Serializer;
-use JMS\Serializer\Exclusion\DepthExclusionStrategy;
-use JMS\Serializer\SerializationContext;
-use JMS\Serializer\Serializer as JMSSerializer;
-use JMS\Serializer\SerializerBuilder;
+use Speakeasy\Serializer\Annotation as Serializer;
+use Speakeasy\Serializer\Exclusion\DepthExclusionStrategy;
+use Speakeasy\Serializer\SerializationContext;
+use Speakeasy\Serializer\Serializer as JMSSerializer;
+use Speakeasy\Serializer\SerializerBuilder;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
 

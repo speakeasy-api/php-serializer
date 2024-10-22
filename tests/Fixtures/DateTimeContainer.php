@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace JMS\Serializer\Tests\Fixtures;
+namespace Speakeasy\Serializer\Tests\Fixtures;
 
 use DateTimeInterface;
-use JMS\Serializer\Annotation as JMS;
+use Speakeasy\Serializer\Annotation as JMS;
 
 class DateTimeContainer
 {

@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace JMS\Serializer\Tests\Metadata;
+namespace Speakeasy\Serializer\Tests\Metadata;
 
-use JMS\Serializer\Metadata\VirtualPropertyMetadata;
-use JMS\Serializer\Tests\Fixtures\ObjectWithVirtualProperties;
+use Speakeasy\Serializer\Metadata\VirtualPropertyMetadata;
+use Speakeasy\Serializer\Tests\Fixtures\ObjectWithVirtualProperties;
 
 class VirtualPropertyMetadataTest extends AbstractPropertyMetadataTestCase
 {

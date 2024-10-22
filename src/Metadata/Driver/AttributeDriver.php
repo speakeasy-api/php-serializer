@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace JMS\Serializer\Metadata\Driver;
+namespace Speakeasy\Serializer\Metadata\Driver;
 
-use JMS\Serializer\Annotation\SerializerAttribute;
+use Speakeasy\Serializer\Annotation\SerializerAttribute;
 
 class AttributeDriver extends AnnotationOrAttributeDriver
 {

@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace JMS\Serializer\Tests\Fixtures\DocBlockType;
+namespace Speakeasy\Serializer\Tests\Fixtures\DocBlockType;
 
-use JMS\Serializer\Annotation as Serializer;
+use Speakeasy\Serializer\Annotation as Serializer;
 
 class VirtualPropertyGetter
 {

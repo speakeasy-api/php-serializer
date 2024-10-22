@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace JMS\Serializer\Tests\Serializer;
+namespace Speakeasy\Serializer\Tests\Serializer;
 
-use JMS\Serializer\SerializerBuilder;
-use JMS\Serializer\Visitor\Factory\JsonDeserializationVisitorFactory;
+use Speakeasy\Serializer\SerializerBuilder;
+use Speakeasy\Serializer\Visitor\Factory\JsonDeserializationVisitorFactory;
 use PHPUnit\Framework\Attributes\DataProvider;
 
 class JsonStrictSerializationTest extends JsonSerializationTest

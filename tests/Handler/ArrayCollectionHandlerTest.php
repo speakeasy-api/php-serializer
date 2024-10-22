@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace JMS\Serializer\Tests\Handler;
+namespace Speakeasy\Serializer\Tests\Handler;
 
 use Doctrine\Common\Collections\ArrayCollection;
-use JMS\Serializer\Handler\ArrayCollectionHandler;
-use JMS\Serializer\Metadata\ClassMetadata;
-use JMS\Serializer\SerializationContext;
-use JMS\Serializer\Tests\Fixtures\ExclusionStrategy\AlwaysExcludeExclusionStrategy;
-use JMS\Serializer\Visitor\SerializationVisitorInterface;
+use Speakeasy\Serializer\Handler\ArrayCollectionHandler;
+use Speakeasy\Serializer\Metadata\ClassMetadata;
+use Speakeasy\Serializer\SerializationContext;
+use Speakeasy\Serializer\Tests\Fixtures\ExclusionStrategy\AlwaysExcludeExclusionStrategy;
+use Speakeasy\Serializer\Visitor\SerializationVisitorInterface;
 use Metadata\MetadataFactoryInterface;
 use PHPUnit\Framework\Attributes\DoesNotPerformAssertions;
 use PHPUnit\Framework\TestCase;

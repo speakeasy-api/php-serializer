@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace JMS\Serializer\Tests\Fixtures\Doctrine\SingleTableInheritance;
+namespace Speakeasy\Serializer\Tests\Fixtures\Doctrine\SingleTableInheritance;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\DBAL\Types\Types;
@@ -24,11 +24,11 @@ class Clazz extends AbstractModel
     #[ORM\GeneratedValue(strategy: 'AUTO')]
     private $id;
 
-    /** @ORM\ManyToOne(targetEntity = "JMS\Serializer\Tests\Fixtures\Doctrine\SingleTableInheritance\Teacher") */
+    /** @ORM\ManyToOne(targetEntity = "Speakeasy\Serializer\Tests\Fixtures\Doctrine\SingleTableInheritance\Teacher") */
     #[ORM\ManyToOne(targetEntity: Teacher::class)]
     private $teacher;
 
-    /** @ORM\ManyToMany(targetEntity = "JMS\Serializer\Tests\Fixtures\Doctrine\SingleTableInheritance\Student") */
+    /** @ORM\ManyToMany(targetEntity = "Speakeasy\Serializer\Tests\Fixtures\Doctrine\SingleTableInheritance\Student") */
     #[ORM\ManyToMany(targetEntity: Student::class)]
     private $students;
 

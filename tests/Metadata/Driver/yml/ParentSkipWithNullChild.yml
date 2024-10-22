@@ -1,4 +1,4 @@
-JMS\Serializer\Tests\Fixtures\ParentSkipWithNullChild:
+Speakeasy\Serializer\Tests\Fixtures\ParentSkipWithNullChild:
     properties:
         c:
           type: string

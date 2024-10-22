@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace JMS\Serializer\Exclusion;
+namespace Speakeasy\Serializer\Exclusion;
 
-use JMS\Serializer\Context;
-use JMS\Serializer\Metadata\ClassMetadata;
-use JMS\Serializer\Metadata\PropertyMetadata;
+use Speakeasy\Serializer\Context;
+use Speakeasy\Serializer\Metadata\ClassMetadata;
+use Speakeasy\Serializer\Metadata\PropertyMetadata;
 
 /**
  * Interface for exclusion strategies.

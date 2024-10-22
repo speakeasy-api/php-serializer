@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace JMS\Serializer\ContextFactory;
+namespace Speakeasy\Serializer\ContextFactory;
 
 /**
  * @deprecated

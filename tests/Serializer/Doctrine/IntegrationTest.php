@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace JMS\Serializer\Tests\Serializer\Doctrine;
+namespace Speakeasy\Serializer\Tests\Serializer\Doctrine;
 
 use Doctrine\Common\Annotations\AnnotationReader;
 use Doctrine\Common\Annotations\Reader;
@@ -15,18 +15,18 @@ use Doctrine\ORM\Mapping\Driver\AttributeDriver;
 use Doctrine\ORM\Tools\SchemaTool;
 use Doctrine\Persistence\AbstractManagerRegistry;
 use Doctrine\Persistence\Proxy;
-use JMS\Serializer\Builder\CallbackDriverFactory;
-use JMS\Serializer\Builder\DefaultDriverFactory;
-use JMS\Serializer\Metadata\Driver\DoctrineTypeDriver;
-use JMS\Serializer\Naming\IdenticalPropertyNamingStrategy;
-use JMS\Serializer\Serializer;
-use JMS\Serializer\SerializerBuilder;
-use JMS\Serializer\Tests\Fixtures\Doctrine\SingleTableInheritance\Clazz;
-use JMS\Serializer\Tests\Fixtures\Doctrine\SingleTableInheritance\Organization;
-use JMS\Serializer\Tests\Fixtures\Doctrine\SingleTableInheritance\Person;
-use JMS\Serializer\Tests\Fixtures\Doctrine\SingleTableInheritance\School;
-use JMS\Serializer\Tests\Fixtures\Doctrine\SingleTableInheritance\Student;
-use JMS\Serializer\Tests\Fixtures\Doctrine\SingleTableInheritance\Teacher;
+use Speakeasy\Serializer\Builder\CallbackDriverFactory;
+use Speakeasy\Serializer\Builder\DefaultDriverFactory;
+use Speakeasy\Serializer\Metadata\Driver\DoctrineTypeDriver;
+use Speakeasy\Serializer\Naming\IdenticalPropertyNamingStrategy;
+use Speakeasy\Serializer\Serializer;
+use Speakeasy\Serializer\SerializerBuilder;
+use Speakeasy\Serializer\Tests\Fixtures\Doctrine\SingleTableInheritance\Clazz;
+use Speakeasy\Serializer\Tests\Fixtures\Doctrine\SingleTableInheritance\Organization;
+use Speakeasy\Serializer\Tests\Fixtures\Doctrine\SingleTableInheritance\Person;
+use Speakeasy\Serializer\Tests\Fixtures\Doctrine\SingleTableInheritance\School;
+use Speakeasy\Serializer\Tests\Fixtures\Doctrine\SingleTableInheritance\Student;
+use Speakeasy\Serializer\Tests\Fixtures\Doctrine\SingleTableInheritance\Teacher;
 use PHPUnit\Framework\TestCase;
 
 class IntegrationTest extends TestCase
@@ -149,7 +149,7 @@ class IntegrationTest extends TestCase
         }
 
         $cfg->setAutoGenerateProxyClasses(true);
-        $cfg->setProxyNamespace('JMS\Serializer\DoctrineProxy');
+        $cfg->setProxyNamespace('Speakeasy\Serializer\DoctrineProxy');
         $cfg->setProxyDir(sys_get_temp_dir() . '/serializer-test-proxies');
 
         return new EntityManager($con, $cfg);

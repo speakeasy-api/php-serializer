@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace JMS\Serializer\Tests\Fixtures;
+namespace Speakeasy\Serializer\Tests\Fixtures;
 
-use JMS\Serializer\Annotation\AccessType;
-use JMS\Serializer\Annotation\Exclude;
-use JMS\Serializer\Annotation\ReadOnlyProperty;
+use Speakeasy\Serializer\Annotation\AccessType;
+use Speakeasy\Serializer\Annotation\Exclude;
+use Speakeasy\Serializer\Annotation\ReadOnlyProperty;
 
 /**
  * @AccessType("public_method")

@@ -31,7 +31,7 @@ Usage
 -----
 For standalone projects usage of the provided builder is encouraged::
 
-    $serializer = JMS\Serializer\SerializerBuilder::create()->build();
+    $serializer = Speakeasy\Serializer\SerializerBuilder::create()->build();
     $jsonContent = $serializer->serialize($data, 'json');
     echo $jsonContent; // or return it in a Response
 

@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace JMS\Serializer\Tests\Fixtures;
+namespace Speakeasy\Serializer\Tests\Fixtures;
 
-use JMS\Serializer\Annotation\SerializedName;
-use JMS\Serializer\Annotation\Since;
-use JMS\Serializer\Annotation\Until;
+use Speakeasy\Serializer\Annotation\SerializedName;
+use Speakeasy\Serializer\Annotation\Since;
+use Speakeasy\Serializer\Annotation\Until;
 
 class VersionedObject
 {

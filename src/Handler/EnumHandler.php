@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace JMS\Serializer\Handler;
+namespace Speakeasy\Serializer\Handler;
 
-use JMS\Serializer\Exception\InvalidMetadataException;
-use JMS\Serializer\Exception\RuntimeException;
-use JMS\Serializer\GraphNavigatorInterface;
-use JMS\Serializer\SerializationContext;
-use JMS\Serializer\Visitor\DeserializationVisitorInterface;
-use JMS\Serializer\Visitor\SerializationVisitorInterface;
+use Speakeasy\Serializer\Exception\InvalidMetadataException;
+use Speakeasy\Serializer\Exception\RuntimeException;
+use Speakeasy\Serializer\GraphNavigatorInterface;
+use Speakeasy\Serializer\SerializationContext;
+use Speakeasy\Serializer\Visitor\DeserializationVisitorInterface;
+use Speakeasy\Serializer\Visitor\SerializationVisitorInterface;
 
 final class EnumHandler implements SubscribingHandlerInterface
 {

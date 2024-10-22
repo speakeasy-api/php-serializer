@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace JMS\Serializer\Ordering;
+namespace Speakeasy\Serializer\Ordering;
 
 final class CustomPropertyOrderingStrategy implements PropertyOrderingInterface
 {

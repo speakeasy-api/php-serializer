@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace JMS\Serializer\Tests\Handler;
+namespace Speakeasy\Serializer\Tests\Handler;
 
-use JMS\Serializer\GraphNavigatorInterface;
-use JMS\Serializer\Handler\HandlerRegistry;
+use Speakeasy\Serializer\GraphNavigatorInterface;
+use Speakeasy\Serializer\Handler\HandlerRegistry;
 use PHPUnit\Framework\TestCase;
 
 class HandlerRegistryTest extends TestCase

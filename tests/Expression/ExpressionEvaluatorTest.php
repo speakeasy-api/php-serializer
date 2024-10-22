@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace JMS\Serializer\Tests\Expression;
+namespace Speakeasy\Serializer\Tests\Expression;
 
-use JMS\Serializer\Expression\Expression;
-use JMS\Serializer\Expression\ExpressionEvaluator;
+use Speakeasy\Serializer\Expression\Expression;
+use Speakeasy\Serializer\Expression\ExpressionEvaluator;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\ExpressionLanguage\ExpressionLanguage;
 

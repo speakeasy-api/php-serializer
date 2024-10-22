@@ -2,17 +2,17 @@
 
 declare(strict_types=1);
 
-namespace JMS\Serializer\Tests\Fixtures;
+namespace Speakeasy\Serializer\Tests\Fixtures;
 
-use JMS\Serializer\Annotation as Serializer;
+use Speakeasy\Serializer\Annotation as Serializer;
 
 class AuthorsInline
 {
     /**
-     * @Serializer\Type("array<JMS\Serializer\Tests\Fixtures\Author>")
+     * @Serializer\Type("array<Speakeasy\Serializer\Tests\Fixtures\Author>")
      * @Serializer\Inline()
      */
-    #[Serializer\Type(name: 'array<JMS\Serializer\Tests\Fixtures\Author>')]
+    #[Serializer\Type(name: 'array<Speakeasy\Serializer\Tests\Fixtures\Author>')]
     #[Serializer\Inline]
     private $collection;
 

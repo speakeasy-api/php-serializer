@@ -15,10 +15,10 @@ By default, a brand new instance of target class is created during deserializati
 
     namespace Acme\ObjectConstructor;
 
-    use JMS\Serializer\Construction\ObjectConstructorInterface;
-    use JMS\Serializer\DeserializationContext;
-    use JMS\Serializer\Metadata\ClassMetadata;
-    use JMS\Serializer\Visitor\DeserializationVisitorInterface;
+    use Speakeasy\Serializer\Construction\ObjectConstructorInterface;
+    use Speakeasy\Serializer\DeserializationContext;
+    use Speakeasy\Serializer\Metadata\ClassMetadata;
+    use Speakeasy\Serializer\Visitor\DeserializationVisitorInterface;
 
     class ExistingObjectConstructor implements ObjectConstructorInterface
     {

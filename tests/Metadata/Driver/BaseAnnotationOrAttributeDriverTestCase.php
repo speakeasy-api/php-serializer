@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace JMS\Serializer\Tests\Metadata\Driver;
+namespace Speakeasy\Serializer\Tests\Metadata\Driver;
 
-use JMS\Serializer\Tests\Fixtures\AllExcludedObject;
-use JMS\Serializer\Tests\Fixtures\MissingAttributeObject;
+use Speakeasy\Serializer\Tests\Fixtures\AllExcludedObject;
+use Speakeasy\Serializer\Tests\Fixtures\MissingAttributeObject;
 use ReflectionClass;
 
 use const PHP_VERSION_ID;

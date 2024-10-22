@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace JMS\Serializer\Construction;
+namespace Speakeasy\Serializer\Construction;
 
-use JMS\Serializer\DeserializationContext;
-use JMS\Serializer\Metadata\ClassMetadata;
-use JMS\Serializer\Visitor\DeserializationVisitorInterface;
+use Speakeasy\Serializer\DeserializationContext;
+use Speakeasy\Serializer\Metadata\ClassMetadata;
+use Speakeasy\Serializer\Visitor\DeserializationVisitorInterface;
 
 /**
  * Implementations of this interface construct new objects during deserialization.

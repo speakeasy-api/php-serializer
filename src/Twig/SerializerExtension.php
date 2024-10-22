@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace JMS\Serializer\Twig;
+namespace Speakeasy\Serializer\Twig;
 
-use JMS\Serializer\SerializationContext;
-use JMS\Serializer\SerializerInterface;
+use Speakeasy\Serializer\SerializationContext;
+use Speakeasy\Serializer\SerializerInterface;
 use Twig\TwigFilter;
 use Twig\TwigFunction;
 
@@ -48,7 +48,7 @@ class SerializerExtension extends SerializerBaseExtension
     public function getFunctions()
     {
         return [
-            new TwigFunction($this->serializationFunctionsPrefix . 'serialization_context', '\JMS\Serializer\SerializationContext::create'),
+            new TwigFunction($this->serializationFunctionsPrefix . 'serialization_context', '\Speakeasy\Serializer\SerializationContext::create'),
         ];
     }
 

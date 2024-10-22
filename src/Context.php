@@ -2,17 +2,17 @@
 
 declare(strict_types=1);
 
-namespace JMS\Serializer;
+namespace Speakeasy\Serializer;
 
-use JMS\Serializer\Exception\LogicException;
-use JMS\Serializer\Exception\RuntimeException;
-use JMS\Serializer\Exclusion\DepthExclusionStrategy;
-use JMS\Serializer\Exclusion\DisjunctExclusionStrategy;
-use JMS\Serializer\Exclusion\ExclusionStrategyInterface;
-use JMS\Serializer\Exclusion\GroupsExclusionStrategy;
-use JMS\Serializer\Exclusion\VersionExclusionStrategy;
-use JMS\Serializer\Metadata\ClassMetadata;
-use JMS\Serializer\Metadata\PropertyMetadata;
+use Speakeasy\Serializer\Exception\LogicException;
+use Speakeasy\Serializer\Exception\RuntimeException;
+use Speakeasy\Serializer\Exclusion\DepthExclusionStrategy;
+use Speakeasy\Serializer\Exclusion\DisjunctExclusionStrategy;
+use Speakeasy\Serializer\Exclusion\ExclusionStrategyInterface;
+use Speakeasy\Serializer\Exclusion\GroupsExclusionStrategy;
+use Speakeasy\Serializer\Exclusion\VersionExclusionStrategy;
+use Speakeasy\Serializer\Metadata\ClassMetadata;
+use Speakeasy\Serializer\Metadata\PropertyMetadata;
 use Metadata\MetadataFactoryInterface;
 
 abstract class Context

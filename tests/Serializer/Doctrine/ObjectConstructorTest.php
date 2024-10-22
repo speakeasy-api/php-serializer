@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace JMS\Serializer\Tests\Serializer\Doctrine;
+namespace Speakeasy\Serializer\Tests\Serializer\Doctrine;
 
 use Doctrine\Common\Annotations\AnnotationReader;
 use Doctrine\Common\Annotations\Reader;
@@ -24,32 +24,32 @@ use Doctrine\Persistence\Mapping\ClassMetadata as DoctrineClassMetadata;
 use Doctrine\Persistence\Mapping\ClassMetadataFactory;
 use Doctrine\Persistence\ObjectManager;
 use Doctrine\Persistence\Proxy;
-use JMS\Serializer\Builder\CallbackDriverFactory;
-use JMS\Serializer\Builder\DefaultDriverFactory;
-use JMS\Serializer\Construction\DoctrineObjectConstructor;
-use JMS\Serializer\Construction\ObjectConstructorInterface;
-use JMS\Serializer\Construction\UnserializeObjectConstructor;
-use JMS\Serializer\DeserializationContext;
-use JMS\Serializer\Exception\InvalidArgumentException;
-use JMS\Serializer\Exception\ObjectConstructionException;
-use JMS\Serializer\GraphNavigatorInterface;
-use JMS\Serializer\Handler\ArrayCollectionHandler;
-use JMS\Serializer\Handler\HandlerRegistryInterface;
-use JMS\Serializer\Metadata\ClassMetadata;
-use JMS\Serializer\Metadata\Driver\DoctrineTypeDriver;
-use JMS\Serializer\Metadata\PropertyMetadata;
-use JMS\Serializer\Naming\IdenticalPropertyNamingStrategy;
-use JMS\Serializer\Serializer;
-use JMS\Serializer\SerializerBuilder;
-use JMS\Serializer\SerializerInterface;
-use JMS\Serializer\Tests\Fixtures\Doctrine\Embeddable\BlogPostSeo;
-use JMS\Serializer\Tests\Fixtures\Doctrine\Entity\Author;
-use JMS\Serializer\Tests\Fixtures\Doctrine\Entity\AuthorExcludedId;
-use JMS\Serializer\Tests\Fixtures\Doctrine\IdentityFields\Server;
-use JMS\Serializer\Tests\Fixtures\Doctrine\PersistendCollection\App;
-use JMS\Serializer\Tests\Fixtures\Doctrine\PersistendCollection\SmartPhone;
-use JMS\Serializer\Tests\Fixtures\DoctrinePHPCR\Author as DoctrinePHPCRAuthor;
-use JMS\Serializer\Visitor\DeserializationVisitorInterface;
+use Speakeasy\Serializer\Builder\CallbackDriverFactory;
+use Speakeasy\Serializer\Builder\DefaultDriverFactory;
+use Speakeasy\Serializer\Construction\DoctrineObjectConstructor;
+use Speakeasy\Serializer\Construction\ObjectConstructorInterface;
+use Speakeasy\Serializer\Construction\UnserializeObjectConstructor;
+use Speakeasy\Serializer\DeserializationContext;
+use Speakeasy\Serializer\Exception\InvalidArgumentException;
+use Speakeasy\Serializer\Exception\ObjectConstructionException;
+use Speakeasy\Serializer\GraphNavigatorInterface;
+use Speakeasy\Serializer\Handler\ArrayCollectionHandler;
+use Speakeasy\Serializer\Handler\HandlerRegistryInterface;
+use Speakeasy\Serializer\Metadata\ClassMetadata;
+use Speakeasy\Serializer\Metadata\Driver\DoctrineTypeDriver;
+use Speakeasy\Serializer\Metadata\PropertyMetadata;
+use Speakeasy\Serializer\Naming\IdenticalPropertyNamingStrategy;
+use Speakeasy\Serializer\Serializer;
+use Speakeasy\Serializer\SerializerBuilder;
+use Speakeasy\Serializer\SerializerInterface;
+use Speakeasy\Serializer\Tests\Fixtures\Doctrine\Embeddable\BlogPostSeo;
+use Speakeasy\Serializer\Tests\Fixtures\Doctrine\Entity\Author;
+use Speakeasy\Serializer\Tests\Fixtures\Doctrine\Entity\AuthorExcludedId;
+use Speakeasy\Serializer\Tests\Fixtures\Doctrine\IdentityFields\Server;
+use Speakeasy\Serializer\Tests\Fixtures\Doctrine\PersistendCollection\App;
+use Speakeasy\Serializer\Tests\Fixtures\Doctrine\PersistendCollection\SmartPhone;
+use Speakeasy\Serializer\Tests\Fixtures\DoctrinePHPCR\Author as DoctrinePHPCRAuthor;
+use Speakeasy\Serializer\Visitor\DeserializationVisitorInterface;
 use Metadata\Driver\AdvancedDriverInterface;
 use Metadata\MetadataFactoryInterface;
 use PHPUnit\Framework\Attributes\DataProvider;
@@ -544,7 +544,7 @@ class ObjectConstructorTest extends TestCase
         }
 
         $cfg->setAutoGenerateProxyClasses(true);
-        $cfg->setProxyNamespace('JMS\Serializer\DoctrineProxy');
+        $cfg->setProxyNamespace('Speakeasy\Serializer\DoctrineProxy');
         $cfg->setProxyDir(sys_get_temp_dir() . '/serializer-test-proxies');
 
         return new EntityManager($con, $cfg);

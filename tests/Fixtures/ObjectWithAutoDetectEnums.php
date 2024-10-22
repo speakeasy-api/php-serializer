@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace JMS\Serializer\Tests\Fixtures;
+namespace Speakeasy\Serializer\Tests\Fixtures;
 
-use JMS\Serializer\Tests\Fixtures\Enum\BackedSuit;
-use JMS\Serializer\Tests\Fixtures\Enum\Suit;
+use Speakeasy\Serializer\Tests\Fixtures\Enum\BackedSuit;
+use Speakeasy\Serializer\Tests\Fixtures\Enum\Suit;
 
 class ObjectWithAutoDetectEnums
 {

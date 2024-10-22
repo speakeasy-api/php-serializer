@@ -1,4 +1,4 @@
-JMS\Serializer\Tests\Fixtures\AuthorReadOnly:
+Speakeasy\Serializer\Tests\Fixtures\AuthorReadOnly:
     xml_root_name: author
     properties:
         id:

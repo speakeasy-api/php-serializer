@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace JMS\Serializer\Tests\Fixtures\DocBlockType\Phpstan;
+namespace Speakeasy\Serializer\Tests\Fixtures\DocBlockType\Phpstan;
 
-use JMS\Serializer\Tests\Fixtures\DocBlockType\Phpstan\Sub\PhpstanArrayShapeToImport;
+use Speakeasy\Serializer\Tests\Fixtures\DocBlockType\Phpstan\Sub\PhpstanArrayShapeToImport;
 
 /**
  * @phpstan-import-type Settings from PhpstanArrayShapeToImport

@@ -2,19 +2,19 @@
 
 declare(strict_types=1);
 
-namespace JMS\Serializer\Metadata\Driver;
+namespace Speakeasy\Serializer\Metadata\Driver;
 
-use JMS\Serializer\Annotation\ExclusionPolicy;
-use JMS\Serializer\Exception\InvalidMetadataException;
-use JMS\Serializer\Exception\XmlErrorException;
-use JMS\Serializer\Expression\CompilableExpressionEvaluatorInterface;
-use JMS\Serializer\Metadata\ClassMetadata;
-use JMS\Serializer\Metadata\ExpressionPropertyMetadata;
-use JMS\Serializer\Metadata\PropertyMetadata;
-use JMS\Serializer\Metadata\VirtualPropertyMetadata;
-use JMS\Serializer\Naming\PropertyNamingStrategyInterface;
-use JMS\Serializer\Type\Parser;
-use JMS\Serializer\Type\ParserInterface;
+use Speakeasy\Serializer\Annotation\ExclusionPolicy;
+use Speakeasy\Serializer\Exception\InvalidMetadataException;
+use Speakeasy\Serializer\Exception\XmlErrorException;
+use Speakeasy\Serializer\Expression\CompilableExpressionEvaluatorInterface;
+use Speakeasy\Serializer\Metadata\ClassMetadata;
+use Speakeasy\Serializer\Metadata\ExpressionPropertyMetadata;
+use Speakeasy\Serializer\Metadata\PropertyMetadata;
+use Speakeasy\Serializer\Metadata\VirtualPropertyMetadata;
+use Speakeasy\Serializer\Naming\PropertyNamingStrategyInterface;
+use Speakeasy\Serializer\Type\Parser;
+use Speakeasy\Serializer\Type\ParserInterface;
 use Metadata\ClassMetadata as BaseClassMetadata;
 use Metadata\Driver\AbstractFileDriver;
 use Metadata\Driver\FileLocatorInterface;

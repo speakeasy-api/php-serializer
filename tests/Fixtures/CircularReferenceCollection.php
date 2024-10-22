@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace JMS\Serializer\Tests\Fixtures;
+namespace Speakeasy\Serializer\Tests\Fixtures;
 
-use JMS\Serializer\Annotation\Type;
+use Speakeasy\Serializer\Annotation\Type;
 
 class CircularReferenceCollection
 {
@@ -12,7 +12,7 @@ class CircularReferenceCollection
     #[Type(name: 'string')]
     public $name = 'foo';
 
-    /** @Type("array<JMS\Serializer\Tests\Fixtures\CircularReferenceCollection>") */
-    #[Type(name: 'array<JMS\Serializer\Tests\Fixtures\CircularReferenceCollection>')]
+    /** @Type("array<Speakeasy\Serializer\Tests\Fixtures\CircularReferenceCollection>") */
+    #[Type(name: 'array<Speakeasy\Serializer\Tests\Fixtures\CircularReferenceCollection>')]
     public $collection = [];
 }

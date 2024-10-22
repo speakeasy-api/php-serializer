@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace JMS\Serializer\Tests\Fixtures;
+namespace Speakeasy\Serializer\Tests\Fixtures;
 
 use Doctrine\Common\Collections\ArrayCollection;
-use JMS\Serializer\Annotation\Type;
-use JMS\Serializer\Annotation\XmlList;
-use JMS\Serializer\Annotation\XmlRoot;
+use Speakeasy\Serializer\Annotation\Type;
+use Speakeasy\Serializer\Annotation\XmlList;
+use Speakeasy\Serializer\Annotation\XmlRoot;
 
 /**
  * @XmlRoot("person_collection")
@@ -16,10 +16,10 @@ use JMS\Serializer\Annotation\XmlRoot;
 class PersonCollection
 {
     /**
-     * @Type("ArrayCollection<JMS\Serializer\Tests\Fixtures\Person>")
+     * @Type("ArrayCollection<Speakeasy\Serializer\Tests\Fixtures\Person>")
      * @XmlList(entry = "person", inline = true)
      */
-    #[Type(name: 'ArrayCollection<JMS\Serializer\Tests\Fixtures\Person>')]
+    #[Type(name: 'ArrayCollection<Speakeasy\Serializer\Tests\Fixtures\Person>')]
     #[XmlList(entry: 'person', inline: true)]
     public $persons;
 

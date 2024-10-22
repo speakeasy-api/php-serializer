@@ -2,16 +2,16 @@
 
 declare(strict_types=1);
 
-namespace JMS\Serializer\Tests\Fixtures\DiscriminatorGroup;
+namespace Speakeasy\Serializer\Tests\Fixtures\DiscriminatorGroup;
 
-use JMS\Serializer\Annotation as Serializer;
+use Speakeasy\Serializer\Annotation as Serializer;
 
 /**
  * @Serializer\Discriminator(field = "type", groups={"foo"}, map = {
- *    "car": "JMS\Serializer\Tests\Fixtures\DiscriminatorGroup\Car"
+ *    "car": "Speakeasy\Serializer\Tests\Fixtures\DiscriminatorGroup\Car"
  * })
  */
-#[Serializer\Discriminator(field: 'type', groups: ['foo'], map: ['car' => 'JMS\Serializer\Tests\Fixtures\DiscriminatorGroup\Car'])]
+#[Serializer\Discriminator(field: 'type', groups: ['foo'], map: ['car' => 'Speakeasy\Serializer\Tests\Fixtures\DiscriminatorGroup\Car'])]
 abstract class Vehicle
 {
     /**

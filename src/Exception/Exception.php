@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace JMS\Serializer\Exception;
+namespace Speakeasy\Serializer\Exception;
 
 /**
  * Base exception for the Serializer.

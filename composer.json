@@ -64,12 +64,12 @@
     },
     "autoload": {
         "psr-4": {
-            "JMS\\Serializer\\": "src/"
+            "Speakeasy\\Serializer\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "JMS\\Serializer\\Tests\\": "tests/"
+            "Speakeasy\\Serializer\\Tests\\": "tests/"
         }
     },
     "config": {

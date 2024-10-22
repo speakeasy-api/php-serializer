@@ -2,18 +2,18 @@
 
 declare(strict_types=1);
 
-namespace JMS\Serializer\Construction;
+namespace Speakeasy\Serializer\Construction;
 
 use Doctrine\ODM\PHPCR\DocumentManagerInterface;
 use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\Persistence\ManagerRegistry;
-use JMS\Serializer\DeserializationContext;
-use JMS\Serializer\Exception\InvalidArgumentException;
-use JMS\Serializer\Exception\ObjectConstructionException;
-use JMS\Serializer\Exclusion\ExpressionLanguageExclusionStrategy;
-use JMS\Serializer\Metadata\ClassMetadata;
-use JMS\Serializer\Metadata\PropertyMetadata;
-use JMS\Serializer\Visitor\DeserializationVisitorInterface;
+use Speakeasy\Serializer\DeserializationContext;
+use Speakeasy\Serializer\Exception\InvalidArgumentException;
+use Speakeasy\Serializer\Exception\ObjectConstructionException;
+use Speakeasy\Serializer\Exclusion\ExpressionLanguageExclusionStrategy;
+use Speakeasy\Serializer\Metadata\ClassMetadata;
+use Speakeasy\Serializer\Metadata\PropertyMetadata;
+use Speakeasy\Serializer\Visitor\DeserializationVisitorInterface;
 
 use function is_array;
 

@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace JMS\Serializer\Tests\Fixtures;
+namespace Speakeasy\Serializer\Tests\Fixtures;
 
-use JMS\Serializer\Annotation\Type;
-use JMS\Serializer\Annotation\XmlElement;
-use JMS\Serializer\Annotation\XmlNamespace;
-use JMS\Serializer\Annotation\XmlRoot;
+use Speakeasy\Serializer\Annotation\Type;
+use Speakeasy\Serializer\Annotation\XmlElement;
+use Speakeasy\Serializer\Annotation\XmlNamespace;
+use Speakeasy\Serializer\Annotation\XmlRoot;
 
 /**
  * @XmlRoot("property:test-object", namespace="http://example.com/namespace-property")
@@ -26,10 +26,10 @@ class ObjectWithXmlNamespacesAndObjectProperty
     private $title;
 
     /**
-     * @Type("JMS\Serializer\Tests\Fixtures\ObjectWithXmlNamespacesAndObjectPropertyAuthor")
+     * @Type("Speakeasy\Serializer\Tests\Fixtures\ObjectWithXmlNamespacesAndObjectPropertyAuthor")
      * @XmlElement(namespace="http://example.com/namespace-property")
      */
-    #[Type(name: 'JMS\Serializer\Tests\Fixtures\ObjectWithXmlNamespacesAndObjectPropertyAuthor')]
+    #[Type(name: 'Speakeasy\Serializer\Tests\Fixtures\ObjectWithXmlNamespacesAndObjectPropertyAuthor')]
     #[XmlElement(namespace: 'http://example.com/namespace-property')]
     private $author;
 

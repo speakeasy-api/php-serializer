@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace JMS\Serializer\Tests\Fixtures\DoctrinePHPCR;
+namespace Speakeasy\Serializer\Tests\Fixtures\DoctrinePHPCR;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ODM\PHPCR\Mapping\Annotations as PHPCRODM;
@@ -11,12 +11,12 @@ use Doctrine\ODM\PHPCR\Mapping\Attributes\Field;
 use Doctrine\ODM\PHPCR\Mapping\Attributes\Id;
 use Doctrine\ODM\PHPCR\Mapping\Attributes\ReferenceMany;
 use Doctrine\ODM\PHPCR\Mapping\Attributes\ReferenceOne;
-use JMS\Serializer\Annotation\Groups;
-use JMS\Serializer\Annotation\SerializedName;
-use JMS\Serializer\Annotation\Type;
-use JMS\Serializer\Annotation\XmlAttribute;
-use JMS\Serializer\Annotation\XmlList;
-use JMS\Serializer\Annotation\XmlRoot;
+use Speakeasy\Serializer\Annotation\Groups;
+use Speakeasy\Serializer\Annotation\SerializedName;
+use Speakeasy\Serializer\Annotation\Type;
+use Speakeasy\Serializer\Annotation\XmlAttribute;
+use Speakeasy\Serializer\Annotation\XmlList;
+use Speakeasy\Serializer\Annotation\XmlRoot;
 
 /**
  * @PHPCRODM\Document

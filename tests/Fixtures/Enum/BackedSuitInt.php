@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace JMS\Serializer\Tests\Fixtures\Enum;
+namespace Speakeasy\Serializer\Tests\Fixtures\Enum;
 
 enum BackedSuitInt: int
 {

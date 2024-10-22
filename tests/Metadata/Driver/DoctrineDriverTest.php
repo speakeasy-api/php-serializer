@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace JMS\Serializer\Tests\Metadata\Driver;
+namespace Speakeasy\Serializer\Tests\Metadata\Driver;
 
 use Doctrine\Common\Annotations\AnnotationReader;
 use Doctrine\DBAL\DriverManager;
@@ -11,17 +11,17 @@ use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\Mapping\Driver\AnnotationDriver as DoctrineAnnotationDriver;
 use Doctrine\ORM\Mapping\Driver\AttributeDriver as DoctrineAttributeDriver;
 use Doctrine\Persistence\ManagerRegistry;
-use JMS\Serializer\Metadata\Driver\AnnotationDriver;
-use JMS\Serializer\Metadata\Driver\AnnotationOrAttributeDriver;
-use JMS\Serializer\Metadata\Driver\DoctrineTypeDriver;
-use JMS\Serializer\Metadata\Driver\NullDriver;
-use JMS\Serializer\Naming\IdenticalPropertyNamingStrategy;
-use JMS\Serializer\Tests\Fixtures\BlogPost;
-use JMS\Serializer\Tests\Fixtures\Doctrine\Embeddable\BlogPostWithEmbedded;
-use JMS\Serializer\Tests\Fixtures\Doctrine\Entity\Author;
-use JMS\Serializer\Tests\Fixtures\Doctrine\Entity\BlogPost as DoctrineBlogPost;
-use JMS\Serializer\Tests\Fixtures\Doctrine\Entity\Comment;
-use JMS\Serializer\Tests\Fixtures\ExcludePublicAccessor;
+use Speakeasy\Serializer\Metadata\Driver\AnnotationDriver;
+use Speakeasy\Serializer\Metadata\Driver\AnnotationOrAttributeDriver;
+use Speakeasy\Serializer\Metadata\Driver\DoctrineTypeDriver;
+use Speakeasy\Serializer\Metadata\Driver\NullDriver;
+use Speakeasy\Serializer\Naming\IdenticalPropertyNamingStrategy;
+use Speakeasy\Serializer\Tests\Fixtures\BlogPost;
+use Speakeasy\Serializer\Tests\Fixtures\Doctrine\Embeddable\BlogPostWithEmbedded;
+use Speakeasy\Serializer\Tests\Fixtures\Doctrine\Entity\Author;
+use Speakeasy\Serializer\Tests\Fixtures\Doctrine\Entity\BlogPost as DoctrineBlogPost;
+use Speakeasy\Serializer\Tests\Fixtures\Doctrine\Entity\Comment;
+use Speakeasy\Serializer\Tests\Fixtures\ExcludePublicAccessor;
 use Metadata\Driver\DriverChain;
 use PHPUnit\Framework\TestCase;
 

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace JMS\Serializer\Builder;
+namespace Speakeasy\Serializer\Builder;
 
 use Doctrine\Common\Annotations\Reader;
 use Metadata\Driver\DriverInterface;

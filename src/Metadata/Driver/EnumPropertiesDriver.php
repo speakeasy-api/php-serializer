@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace JMS\Serializer\Metadata\Driver;
+namespace Speakeasy\Serializer\Metadata\Driver;
 
-use JMS\Serializer\Metadata\ClassMetadata as SerializerClassMetadata;
-use JMS\Serializer\Metadata\ExpressionPropertyMetadata;
-use JMS\Serializer\Metadata\PropertyMetadata;
-use JMS\Serializer\Metadata\StaticPropertyMetadata;
-use JMS\Serializer\Metadata\VirtualPropertyMetadata;
+use Speakeasy\Serializer\Metadata\ClassMetadata as SerializerClassMetadata;
+use Speakeasy\Serializer\Metadata\ExpressionPropertyMetadata;
+use Speakeasy\Serializer\Metadata\PropertyMetadata;
+use Speakeasy\Serializer\Metadata\StaticPropertyMetadata;
+use Speakeasy\Serializer\Metadata\VirtualPropertyMetadata;
 use Metadata\ClassMetadata;
 use Metadata\Driver\DriverInterface;
 use ReflectionClass;

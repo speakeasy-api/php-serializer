@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace JMS\Serializer\Tests\Fixtures\Doctrine\IdentityFields;
+namespace Speakeasy\Serializer\Tests\Fixtures\Doctrine\IdentityFields;
 
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
-use JMS\Serializer\Annotation as Serializer;
+use Speakeasy\Serializer\Annotation as Serializer;
 
 /** @ORM\Entity */
 #[ORM\Entity]

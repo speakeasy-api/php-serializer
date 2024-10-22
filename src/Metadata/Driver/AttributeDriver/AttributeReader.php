@@ -2,16 +2,16 @@
 
 declare(strict_types=1);
 
-namespace JMS\Serializer\Metadata\Driver\AttributeDriver;
+namespace Speakeasy\Serializer\Metadata\Driver\AttributeDriver;
 
 use Doctrine\Common\Annotations\Reader;
-use JMS\Serializer\Annotation\SerializerAttribute;
+use Speakeasy\Serializer\Annotation\SerializerAttribute;
 use ReflectionClass;
 use ReflectionMethod;
 use ReflectionProperty;
 
 /**
- * @deprecated use {@see \JMS\Serializer\Metadata\Driver\AttributeDriver} instead
+ * @deprecated use {@see \Speakeasy\Serializer\Metadata\Driver\AttributeDriver} instead
  */
 class AttributeReader implements Reader
 {

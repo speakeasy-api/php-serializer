@@ -2,16 +2,16 @@
 
 declare(strict_types=1);
 
-namespace JMS\Serializer\EventDispatcher\Subscriber;
+namespace Speakeasy\Serializer\EventDispatcher\Subscriber;
 
 use Doctrine\Common\Persistence\Proxy as LegacyProxy;
 use Doctrine\ODM\MongoDB\PersistentCollection as MongoDBPersistentCollection;
 use Doctrine\ODM\PHPCR\PersistentCollection as PHPCRPersistentCollection;
 use Doctrine\ORM\PersistentCollection;
 use Doctrine\Persistence\Proxy;
-use JMS\Serializer\EventDispatcher\EventDispatcherInterface;
-use JMS\Serializer\EventDispatcher\EventSubscriberInterface;
-use JMS\Serializer\EventDispatcher\PreSerializeEvent;
+use Speakeasy\Serializer\EventDispatcher\EventDispatcherInterface;
+use Speakeasy\Serializer\EventDispatcher\EventSubscriberInterface;
+use Speakeasy\Serializer\EventDispatcher\PreSerializeEvent;
 use ProxyManager\Proxy\LazyLoadingInterface;
 
 final class DoctrineProxySubscriber implements EventSubscriberInterface

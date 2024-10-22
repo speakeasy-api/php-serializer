@@ -2,21 +2,21 @@
 
 declare(strict_types=1);
 
-namespace JMS\Serializer\Tests\Fixtures;
+namespace Speakeasy\Serializer\Tests\Fixtures;
 
 use Doctrine\Common\Collections\ArrayCollection;
-use JMS\Serializer\Annotation\PostDeserialize;
-use JMS\Serializer\Annotation\Type;
+use Speakeasy\Serializer\Annotation\PostDeserialize;
+use Speakeasy\Serializer\Annotation\Type;
 
 /** No annotation */
 class CircularReferenceParent
 {
-    /** @Type("array<JMS\Serializer\Tests\Fixtures\CircularReferenceChild>") */
-    #[Type(name: 'array<JMS\Serializer\Tests\Fixtures\CircularReferenceChild>')]
+    /** @Type("array<Speakeasy\Serializer\Tests\Fixtures\CircularReferenceChild>") */
+    #[Type(name: 'array<Speakeasy\Serializer\Tests\Fixtures\CircularReferenceChild>')]
     protected $collection = [];
 
-    /** @Type("ArrayCollection<JMS\Serializer\Tests\Fixtures\CircularReferenceChild>") */
-    #[Type(name: 'ArrayCollection<JMS\Serializer\Tests\Fixtures\CircularReferenceChild>')]
+    /** @Type("ArrayCollection<Speakeasy\Serializer\Tests\Fixtures\CircularReferenceChild>") */
+    #[Type(name: 'ArrayCollection<Speakeasy\Serializer\Tests\Fixtures\CircularReferenceChild>')]
     private $anotherCollection;
 
     public function __construct()

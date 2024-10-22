@@ -2,37 +2,37 @@
 
 declare(strict_types=1);
 
-namespace JMS\Serializer\Tests\Metadata\Driver;
+namespace Speakeasy\Serializer\Tests\Metadata\Driver;
 
-use JMS\Serializer\Annotation\UnionDiscriminator;
-use JMS\Serializer\Exception\InvalidMetadataException;
-use JMS\Serializer\Expression\ExpressionEvaluator;
-use JMS\Serializer\Metadata\ClassMetadata;
-use JMS\Serializer\Metadata\Driver\AttributeDriver;
-use JMS\Serializer\Metadata\ExpressionPropertyMetadata;
-use JMS\Serializer\Metadata\PropertyMetadata;
-use JMS\Serializer\Metadata\VirtualPropertyMetadata;
-use JMS\Serializer\Tests\Fixtures\Discriminator\ObjectWithXmlAttributeDiscriminatorChild;
-use JMS\Serializer\Tests\Fixtures\Discriminator\ObjectWithXmlAttributeDiscriminatorParent;
-use JMS\Serializer\Tests\Fixtures\Discriminator\ObjectWithXmlNamespaceAttributeDiscriminatorChild;
-use JMS\Serializer\Tests\Fixtures\Discriminator\ObjectWithXmlNamespaceAttributeDiscriminatorParent;
-use JMS\Serializer\Tests\Fixtures\Discriminator\ObjectWithXmlNamespaceDiscriminatorChild;
-use JMS\Serializer\Tests\Fixtures\Discriminator\ObjectWithXmlNamespaceDiscriminatorParent;
-use JMS\Serializer\Tests\Fixtures\FirstClassListCollection;
-use JMS\Serializer\Tests\Fixtures\FirstClassMapCollection;
-use JMS\Serializer\Tests\Fixtures\InlineChild;
-use JMS\Serializer\Tests\Fixtures\ObjectWithExpressionVirtualPropertiesAndExcludeAll;
-use JMS\Serializer\Tests\Fixtures\ObjectWithInvalidExpression;
-use JMS\Serializer\Tests\Fixtures\ObjectWithOnlyLifecycleCallbacks;
-use JMS\Serializer\Tests\Fixtures\ObjectWithTypeAsNonStringableObject;
-use JMS\Serializer\Tests\Fixtures\ObjectWithTypeAsStringableObject;
-use JMS\Serializer\Tests\Fixtures\ObjectWithVirtualPropertiesAndDuplicatePropName;
-use JMS\Serializer\Tests\Fixtures\ObjectWithVirtualPropertiesAndDuplicatePropNameExcludeAll;
-use JMS\Serializer\Tests\Fixtures\ObjectWithVirtualPropertiesAndExcludeAll;
-use JMS\Serializer\Tests\Fixtures\ParentSkipWithEmptyChild;
-use JMS\Serializer\Tests\Fixtures\ParentSkipWithNullChild;
-use JMS\Serializer\Tests\Fixtures\Person;
-use JMS\Serializer\Tests\Fixtures\TypedProperties\ComplexDiscriminatedUnion;
+use Speakeasy\Serializer\Annotation\UnionDiscriminator;
+use Speakeasy\Serializer\Exception\InvalidMetadataException;
+use Speakeasy\Serializer\Expression\ExpressionEvaluator;
+use Speakeasy\Serializer\Metadata\ClassMetadata;
+use Speakeasy\Serializer\Metadata\Driver\AttributeDriver;
+use Speakeasy\Serializer\Metadata\ExpressionPropertyMetadata;
+use Speakeasy\Serializer\Metadata\PropertyMetadata;
+use Speakeasy\Serializer\Metadata\VirtualPropertyMetadata;
+use Speakeasy\Serializer\Tests\Fixtures\Discriminator\ObjectWithXmlAttributeDiscriminatorChild;
+use Speakeasy\Serializer\Tests\Fixtures\Discriminator\ObjectWithXmlAttributeDiscriminatorParent;
+use Speakeasy\Serializer\Tests\Fixtures\Discriminator\ObjectWithXmlNamespaceAttributeDiscriminatorChild;
+use Speakeasy\Serializer\Tests\Fixtures\Discriminator\ObjectWithXmlNamespaceAttributeDiscriminatorParent;
+use Speakeasy\Serializer\Tests\Fixtures\Discriminator\ObjectWithXmlNamespaceDiscriminatorChild;
+use Speakeasy\Serializer\Tests\Fixtures\Discriminator\ObjectWithXmlNamespaceDiscriminatorParent;
+use Speakeasy\Serializer\Tests\Fixtures\FirstClassListCollection;
+use Speakeasy\Serializer\Tests\Fixtures\FirstClassMapCollection;
+use Speakeasy\Serializer\Tests\Fixtures\InlineChild;
+use Speakeasy\Serializer\Tests\Fixtures\ObjectWithExpressionVirtualPropertiesAndExcludeAll;
+use Speakeasy\Serializer\Tests\Fixtures\ObjectWithInvalidExpression;
+use Speakeasy\Serializer\Tests\Fixtures\ObjectWithOnlyLifecycleCallbacks;
+use Speakeasy\Serializer\Tests\Fixtures\ObjectWithTypeAsNonStringableObject;
+use Speakeasy\Serializer\Tests\Fixtures\ObjectWithTypeAsStringableObject;
+use Speakeasy\Serializer\Tests\Fixtures\ObjectWithVirtualPropertiesAndDuplicatePropName;
+use Speakeasy\Serializer\Tests\Fixtures\ObjectWithVirtualPropertiesAndDuplicatePropNameExcludeAll;
+use Speakeasy\Serializer\Tests\Fixtures\ObjectWithVirtualPropertiesAndExcludeAll;
+use Speakeasy\Serializer\Tests\Fixtures\ParentSkipWithEmptyChild;
+use Speakeasy\Serializer\Tests\Fixtures\ParentSkipWithNullChild;
+use Speakeasy\Serializer\Tests\Fixtures\Person;
+use Speakeasy\Serializer\Tests\Fixtures\TypedProperties\ComplexDiscriminatedUnion;
 use Metadata\Driver\DriverInterface;
 use Metadata\MethodMetadata;
 use PHPUnit\Framework\TestCase;
@@ -43,7 +43,7 @@ abstract class BaseDriverTestCase extends TestCase
 {
     public function testLoadBlogPostMetadata()
     {
-        $m = $this->getDriver()->loadMetadataForClass(new \ReflectionClass('JMS\Serializer\Tests\Fixtures\BlogPost'));
+        $m = $this->getDriver()->loadMetadataForClass(new \ReflectionClass('Speakeasy\Serializer\Tests\Fixtures\BlogPost'));
         \assert($m instanceof ClassMetadata);
 
         self::assertNotNull($m);
@@ -99,7 +99,7 @@ abstract class BaseDriverTestCase extends TestCase
 
         $p = new PropertyMetadata($m->name, 'comments');
         $p->serializedName = 'comments';
-        $p->type = ['name' => 'ArrayCollection', 'params' => [['name' => 'JMS\Serializer\Tests\Fixtures\Comment', 'params' => []]]];
+        $p->type = ['name' => 'ArrayCollection', 'params' => [['name' => 'Speakeasy\Serializer\Tests\Fixtures\Comment', 'params' => []]]];
         $p->xmlCollection = true;
         $p->xmlCollectionInline = true;
         $p->xmlEntryName = 'comment';
@@ -108,12 +108,12 @@ abstract class BaseDriverTestCase extends TestCase
 
         $p = new PropertyMetadata($m->name, 'author');
         $p->serializedName = 'author';
-        $p->type = ['name' => 'JMS\Serializer\Tests\Fixtures\Author', 'params' => []];
+        $p->type = ['name' => 'Speakeasy\Serializer\Tests\Fixtures\Author', 'params' => []];
         $p->groups = ['post'];
         $p->xmlNamespace = 'http://www.w3.org/2005/Atom';
         self::assertEquals($p, $m->propertyMetadata['author']);
 
-        $m = $this->getDriver()->loadMetadataForClass(new \ReflectionClass('JMS\Serializer\Tests\Fixtures\Price'));
+        $m = $this->getDriver()->loadMetadataForClass(new \ReflectionClass('Speakeasy\Serializer\Tests\Fixtures\Price'));
         self::assertNotNull($m);
 
         $p = new PropertyMetadata($m->name, 'price');
@@ -125,7 +125,7 @@ abstract class BaseDriverTestCase extends TestCase
 
     public function testXMLListAbsentNode()
     {
-        $m = $this->getDriver()->loadMetadataForClass(new \ReflectionClass('JMS\Serializer\Tests\Fixtures\ObjectWithAbsentXmlListNode'));
+        $m = $this->getDriver()->loadMetadataForClass(new \ReflectionClass('Speakeasy\Serializer\Tests\Fixtures\ObjectWithAbsentXmlListNode'));
         \assert($m instanceof ClassMetadata);
 
         self::assertArrayHasKey('absent', $m->propertyMetadata);
@@ -151,12 +151,12 @@ abstract class BaseDriverTestCase extends TestCase
         $p = $m->propertyMetadata['data'];
         assert($p instanceof PropertyMetadata);
         self::assertEquals('objectType', $p->type['params'][1]);
-        self::assertEquals(['author' => 'JMS\Serializer\Tests\Fixtures\DiscriminatedAuthor', 'comment' => 'JMS\Serializer\Tests\Fixtures\DiscriminatedComment'], $p->type['params'][2]);
+        self::assertEquals(['author' => 'Speakeasy\Serializer\Tests\Fixtures\DiscriminatedAuthor', 'comment' => 'Speakeasy\Serializer\Tests\Fixtures\DiscriminatedComment'], $p->type['params'][2]);
     }
 
     public function testVirtualProperty()
     {
-        $m = $this->getDriver()->loadMetadataForClass(new \ReflectionClass('JMS\Serializer\Tests\Fixtures\ObjectWithVirtualProperties'));
+        $m = $this->getDriver()->loadMetadataForClass(new \ReflectionClass('Speakeasy\Serializer\Tests\Fixtures\ObjectWithVirtualProperties'));
         \assert($m instanceof ClassMetadata);
 
         self::assertArrayHasKey('existField', $m->propertyMetadata);
@@ -191,7 +191,7 @@ abstract class BaseDriverTestCase extends TestCase
 
     public function testXmlKeyValuePairs()
     {
-        $m = $this->getDriver()->loadMetadataForClass(new \ReflectionClass('JMS\Serializer\Tests\Fixtures\ObjectWithXmlKeyValuePairs'));
+        $m = $this->getDriver()->loadMetadataForClass(new \ReflectionClass('Speakeasy\Serializer\Tests\Fixtures\ObjectWithXmlKeyValuePairs'));
         \assert($m instanceof ClassMetadata);
 
         self::assertArrayHasKey('array', $m->propertyMetadata);
@@ -234,14 +234,14 @@ abstract class BaseDriverTestCase extends TestCase
 
     public function testReadOnlyDefinedBeforeGetterAndSetter()
     {
-        $m = $this->getDriver()->loadMetadataForClass(new \ReflectionClass('JMS\Serializer\Tests\Fixtures\AuthorReadOnly'));
+        $m = $this->getDriver()->loadMetadataForClass(new \ReflectionClass('Speakeasy\Serializer\Tests\Fixtures\AuthorReadOnly'));
 
         self::assertNotNull($m);
     }
 
     public function testExpressionVirtualProperty()
     {
-        $m = $this->getDriver()->loadMetadataForClass(new \ReflectionClass('JMS\Serializer\Tests\Fixtures\AuthorExpressionAccess'));
+        $m = $this->getDriver()->loadMetadataForClass(new \ReflectionClass('Speakeasy\Serializer\Tests\Fixtures\AuthorExpressionAccess'));
         \assert($m instanceof ClassMetadata);
 
         $keys = array_keys($m->propertyMetadata);
@@ -250,7 +250,7 @@ abstract class BaseDriverTestCase extends TestCase
 
     public function testLoadDiscriminator()
     {
-        $m = $this->getDriver()->loadMetadataForClass(new \ReflectionClass('JMS\Serializer\Tests\Fixtures\Discriminator\Vehicle'));
+        $m = $this->getDriver()->loadMetadataForClass(new \ReflectionClass('Speakeasy\Serializer\Tests\Fixtures\Discriminator\Vehicle'));
         \assert($m instanceof ClassMetadata);
 
         self::assertNotNull($m);
@@ -258,8 +258,8 @@ abstract class BaseDriverTestCase extends TestCase
         self::assertEquals($m->name, $m->discriminatorBaseClass);
         self::assertEquals(
             [
-                'car' => 'JMS\Serializer\Tests\Fixtures\Discriminator\Car',
-                'moped' => 'JMS\Serializer\Tests\Fixtures\Discriminator\Moped',
+                'car' => 'Speakeasy\Serializer\Tests\Fixtures\Discriminator\Car',
+                'moped' => 'Speakeasy\Serializer\Tests\Fixtures\Discriminator\Moped',
             ],
             $m->discriminatorMap,
         );
@@ -267,7 +267,7 @@ abstract class BaseDriverTestCase extends TestCase
 
     public function testLoadDiscriminatorWhenParentIsInDiscriminatorMap()
     {
-        $m = $this->getDriver()->loadMetadataForClass(new \ReflectionClass('JMS\Serializer\Tests\Fixtures\Discriminator\Post'));
+        $m = $this->getDriver()->loadMetadataForClass(new \ReflectionClass('Speakeasy\Serializer\Tests\Fixtures\Discriminator\Post'));
         \assert($m instanceof ClassMetadata);
 
         self::assertNotNull($m);
@@ -275,8 +275,8 @@ abstract class BaseDriverTestCase extends TestCase
         self::assertEquals($m->name, $m->discriminatorBaseClass);
         self::assertEquals(
             [
-                'post' => 'JMS\Serializer\Tests\Fixtures\Discriminator\Post',
-                'image_post' => 'JMS\Serializer\Tests\Fixtures\Discriminator\ImagePost',
+                'post' => 'Speakeasy\Serializer\Tests\Fixtures\Discriminator\Post',
+                'image_post' => 'Speakeasy\Serializer\Tests\Fixtures\Discriminator\ImagePost',
             ],
             $m->discriminatorMap,
         );
@@ -349,7 +349,7 @@ abstract class BaseDriverTestCase extends TestCase
 
     public function testLoadDiscriminatorWithGroup()
     {
-        $m = $this->getDriver()->loadMetadataForClass(new \ReflectionClass('JMS\Serializer\Tests\Fixtures\DiscriminatorGroup\Vehicle'));
+        $m = $this->getDriver()->loadMetadataForClass(new \ReflectionClass('Speakeasy\Serializer\Tests\Fixtures\DiscriminatorGroup\Vehicle'));
         \assert($m instanceof ClassMetadata);
 
         self::assertNotNull($m);
@@ -357,7 +357,7 @@ abstract class BaseDriverTestCase extends TestCase
         self::assertEquals(['foo'], $m->discriminatorGroups);
         self::assertEquals($m->name, $m->discriminatorBaseClass);
         self::assertEquals(
-            ['car' => 'JMS\Serializer\Tests\Fixtures\DiscriminatorGroup\Car'],
+            ['car' => 'Speakeasy\Serializer\Tests\Fixtures\DiscriminatorGroup\Car'],
             $m->discriminatorMap,
         );
     }
@@ -394,7 +394,7 @@ abstract class BaseDriverTestCase extends TestCase
 
     public function testLoadDiscriminatorSubClass()
     {
-        $m = $this->getDriver()->loadMetadataForClass(new \ReflectionClass('JMS\Serializer\Tests\Fixtures\Discriminator\Car'));
+        $m = $this->getDriver()->loadMetadataForClass(new \ReflectionClass('Speakeasy\Serializer\Tests\Fixtures\Discriminator\Car'));
         \assert($m instanceof ClassMetadata);
 
         self::assertNotNull($m);
@@ -406,7 +406,7 @@ abstract class BaseDriverTestCase extends TestCase
 
     public function testLoadDiscriminatorSubClassWhenParentIsInDiscriminatorMap()
     {
-        $m = $this->getDriver()->loadMetadataForClass(new \ReflectionClass('JMS\Serializer\Tests\Fixtures\Discriminator\ImagePost'));
+        $m = $this->getDriver()->loadMetadataForClass(new \ReflectionClass('Speakeasy\Serializer\Tests\Fixtures\Discriminator\ImagePost'));
         \assert($m instanceof ClassMetadata);
 
         self::assertNotNull($m);
@@ -418,7 +418,7 @@ abstract class BaseDriverTestCase extends TestCase
 
     public function testLoadXmlObjectWithNamespacesMetadata()
     {
-        $m = $this->getDriver()->loadMetadataForClass(new \ReflectionClass('JMS\Serializer\Tests\Fixtures\ObjectWithXmlNamespaces'));
+        $m = $this->getDriver()->loadMetadataForClass(new \ReflectionClass('Speakeasy\Serializer\Tests\Fixtures\ObjectWithXmlNamespaces'));
         \assert($m instanceof ClassMetadata);
         self::assertNotNull($m);
         self::assertEquals('test-object', $m->xmlRootName);
@@ -468,7 +468,7 @@ abstract class BaseDriverTestCase extends TestCase
 
     public function testMaxDepth()
     {
-        $m = $this->getDriver()->loadMetadataForClass(new \ReflectionClass('JMS\Serializer\Tests\Fixtures\Node'));
+        $m = $this->getDriver()->loadMetadataForClass(new \ReflectionClass('Speakeasy\Serializer\Tests\Fixtures\Node'));
         \assert($m instanceof ClassMetadata);
 
         self::assertEquals(2, $m->propertyMetadata['children']->maxDepth);
@@ -476,7 +476,7 @@ abstract class BaseDriverTestCase extends TestCase
 
     public function testPersonCData()
     {
-        $m = $this->getDriver()->loadMetadataForClass(new \ReflectionClass('JMS\Serializer\Tests\Fixtures\Person'));
+        $m = $this->getDriver()->loadMetadataForClass(new \ReflectionClass('Speakeasy\Serializer\Tests\Fixtures\Person'));
         \assert($m instanceof ClassMetadata);
 
         self::assertNotNull($m);
@@ -485,7 +485,7 @@ abstract class BaseDriverTestCase extends TestCase
 
     public function testXmlNamespaceInheritanceMetadata()
     {
-        $m = $this->getDriver()->loadMetadataForClass(new \ReflectionClass('JMS\Serializer\Tests\Fixtures\SimpleClassObject'));
+        $m = $this->getDriver()->loadMetadataForClass(new \ReflectionClass('Speakeasy\Serializer\Tests\Fixtures\SimpleClassObject'));
         \assert($m instanceof ClassMetadata);
         self::assertNotNull($m);
         self::assertCount(3, $m->xmlNamespaces);
@@ -516,7 +516,7 @@ abstract class BaseDriverTestCase extends TestCase
         $p->xmlNamespace = 'http://new.foo.example.org';
         self::assertEquals($p, $m->propertyMetadata['moo']);
 
-        $subm = $this->getDriver()->loadMetadataForClass(new \ReflectionClass('JMS\Serializer\Tests\Fixtures\SimpleSubClassObject'));
+        $subm = $this->getDriver()->loadMetadataForClass(new \ReflectionClass('Speakeasy\Serializer\Tests\Fixtures\SimpleSubClassObject'));
         \assert($subm instanceof ClassMetadata);
         self::assertNotNull($subm);
         self::assertCount(2, $subm->xmlNamespaces);
@@ -560,14 +560,14 @@ abstract class BaseDriverTestCase extends TestCase
         $p->type = ['name' => 'string', 'params' => []];
         $p->xmlNamespace = 'http://old.foo.example.org';
         $p->xmlAttribute = true;
-        $p->class = 'JMS\Serializer\Tests\Fixtures\SimpleClassObject';
+        $p->class = 'Speakeasy\Serializer\Tests\Fixtures\SimpleClassObject';
         $this->assetMetadataEquals($p, $m->propertyMetadata['foo']);
 
         $p = new PropertyMetadata($m->name, 'bar');
         $p->serializedName = 'bar';
         $p->type = ['name' => 'string', 'params' => []];
         $p->xmlNamespace = 'http://foo.example.org';
-        $p->class = 'JMS\Serializer\Tests\Fixtures\SimpleClassObject';
+        $p->class = 'Speakeasy\Serializer\Tests\Fixtures\SimpleClassObject';
         $this->assetMetadataEquals($p, $m->propertyMetadata['bar']);
 
         $p = new PropertyMetadata($m->name, 'moo');
@@ -599,7 +599,7 @@ abstract class BaseDriverTestCase extends TestCase
 
     public function testExclusionIf()
     {
-        $class = 'JMS\Serializer\Tests\Fixtures\PersonSecret';
+        $class = 'Speakeasy\Serializer\Tests\Fixtures\PersonSecret';
         $m = $this->getDriver()->loadMetadataForClass(new \ReflectionClass($class));
 
         $p = new PropertyMetadata($class, 'name');
@@ -638,7 +638,7 @@ abstract class BaseDriverTestCase extends TestCase
 
     public function testExclusionIfOnClass()
     {
-        $class = 'JMS\Serializer\Tests\Fixtures\PersonAccount';
+        $class = 'Speakeasy\Serializer\Tests\Fixtures\PersonAccount';
         $m = $this->getDriver()->loadMetadataForClass(new \ReflectionClass($class));
         \assert($m instanceof ClassMetadata);
 
@@ -687,7 +687,7 @@ abstract class BaseDriverTestCase extends TestCase
 
     public function testExcludePropertyNoPublicAccessorException()
     {
-        $first = $this->getDriver()->loadMetadataForClass(new \ReflectionClass('JMS\Serializer\Tests\Fixtures\ExcludePublicAccessor'));
+        $first = $this->getDriver()->loadMetadataForClass(new \ReflectionClass('Speakeasy\Serializer\Tests\Fixtures\ExcludePublicAccessor'));
 
         self::assertArrayHasKey('id', $first->propertyMetadata);
         self::assertArrayNotHasKey('iShallNotBeAccessed', $first->propertyMetadata);

@@ -2,17 +2,17 @@
 
 declare(strict_types=1);
 
-namespace JMS\Serializer\Tests\Fixtures;
+namespace Speakeasy\Serializer\Tests\Fixtures;
 
-use JMS\Serializer\Annotation\SerializedName;
-use JMS\Serializer\Annotation\Type;
+use Speakeasy\Serializer\Annotation\SerializedName;
+use Speakeasy\Serializer\Annotation\Type;
 
 class DiscriminatedComment
 {
     /**
-     * @Type("JMS\Serializer\Tests\Fixtures\Author")
+     * @Type("Speakeasy\Serializer\Tests\Fixtures\Author")
      */
-    #[Type(name: 'JMS\Serializer\Tests\Fixtures\Author')]
+    #[Type(name: 'Speakeasy\Serializer\Tests\Fixtures\Author')]
     private $author;
 
     /**

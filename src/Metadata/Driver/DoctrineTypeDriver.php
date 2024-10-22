@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace JMS\Serializer\Metadata\Driver;
+namespace Speakeasy\Serializer\Metadata\Driver;
 
 use Doctrine\ODM\PHPCR\Mapping\ClassMetadata as ORMClassMetadata;
 use Doctrine\ORM\Mapping\ClassMetadata as ODMClassMetadata;
 use Doctrine\Persistence\Mapping\ClassMetadata as DoctrineClassMetadata;
-use JMS\Serializer\Metadata\ClassMetadata;
-use JMS\Serializer\Metadata\PropertyMetadata;
+use Speakeasy\Serializer\Metadata\ClassMetadata;
+use Speakeasy\Serializer\Metadata\PropertyMetadata;
 
 /**
  * This class decorates any other driver. If the inner driver does not provide a

@@ -2,17 +2,17 @@
 
 declare(strict_types=1);
 
-namespace JMS\Serializer\Tests\Serializer\EventDispatcher;
+namespace Speakeasy\Serializer\Tests\Serializer\EventDispatcher;
 
 use Doctrine\Persistence\Proxy;
-use JMS\Serializer\Context;
-use JMS\Serializer\EventDispatcher\Event;
-use JMS\Serializer\EventDispatcher\EventDispatcher;
-use JMS\Serializer\EventDispatcher\EventDispatcherInterface;
-use JMS\Serializer\EventDispatcher\EventSubscriberInterface;
-use JMS\Serializer\EventDispatcher\ObjectEvent;
-use JMS\Serializer\Tests\Fixtures\SimpleObject;
-use JMS\Serializer\Tests\Fixtures\SimpleObjectProxy;
+use Speakeasy\Serializer\Context;
+use Speakeasy\Serializer\EventDispatcher\Event;
+use Speakeasy\Serializer\EventDispatcher\EventDispatcher;
+use Speakeasy\Serializer\EventDispatcher\EventDispatcherInterface;
+use Speakeasy\Serializer\EventDispatcher\EventSubscriberInterface;
+use Speakeasy\Serializer\EventDispatcher\ObjectEvent;
+use Speakeasy\Serializer\Tests\Fixtures\SimpleObject;
+use Speakeasy\Serializer\Tests\Fixtures\SimpleObjectProxy;
 use PHPUnit\Framework\Assert;
 use PHPUnit\Framework\TestCase;
 

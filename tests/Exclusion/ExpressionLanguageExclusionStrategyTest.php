@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace JMS\Serializer\Tests\Exclusion;
+namespace Speakeasy\Serializer\Tests\Exclusion;
 
-use JMS\Serializer\Exclusion\ExpressionLanguageExclusionStrategy;
-use JMS\Serializer\Expression\ExpressionEvaluator;
-use JMS\Serializer\Metadata\StaticPropertyMetadata;
-use JMS\Serializer\SerializationContext;
+use Speakeasy\Serializer\Exclusion\ExpressionLanguageExclusionStrategy;
+use Speakeasy\Serializer\Expression\ExpressionEvaluator;
+use Speakeasy\Serializer\Metadata\StaticPropertyMetadata;
+use Speakeasy\Serializer\SerializationContext;
 use PHPUnit\Framework\TestCase;
 
 /**

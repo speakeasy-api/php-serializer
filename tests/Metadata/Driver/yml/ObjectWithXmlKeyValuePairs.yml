@@ -1,4 +1,4 @@
-JMS\Serializer\Tests\Fixtures\ObjectWithXmlKeyValuePairs:
+Speakeasy\Serializer\Tests\Fixtures\ObjectWithXmlKeyValuePairs:
     properties:
         array:
             type: array

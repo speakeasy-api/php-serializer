@@ -2,15 +2,15 @@
 
 declare(strict_types=1);
 
-namespace JMS\Serializer\Tests\Serializer;
+namespace Speakeasy\Serializer\Tests\Serializer;
 
-use JMS\Serializer\Exception\RuntimeException;
-use JMS\Serializer\SerializerBuilder;
-use JMS\Serializer\Tests\Fixtures\Author;
-use JMS\Serializer\Tests\Fixtures\AuthorList;
-use JMS\Serializer\Tests\Fixtures\Order;
-use JMS\Serializer\Tests\Fixtures\Price;
-use JMS\Serializer\Tests\Fixtures\TypedProperties\ConstructorPromotion\DefaultValuesAndAccessors;
+use Speakeasy\Serializer\Exception\RuntimeException;
+use Speakeasy\Serializer\SerializerBuilder;
+use Speakeasy\Serializer\Tests\Fixtures\Author;
+use Speakeasy\Serializer\Tests\Fixtures\AuthorList;
+use Speakeasy\Serializer\Tests\Fixtures\Order;
+use Speakeasy\Serializer\Tests\Fixtures\Price;
+use Speakeasy\Serializer\Tests\Fixtures\TypedProperties\ConstructorPromotion\DefaultValuesAndAccessors;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
 

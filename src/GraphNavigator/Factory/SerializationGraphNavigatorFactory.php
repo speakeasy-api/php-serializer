@@ -2,16 +2,16 @@
 
 declare(strict_types=1);
 
-namespace JMS\Serializer\GraphNavigator\Factory;
+namespace Speakeasy\Serializer\GraphNavigator\Factory;
 
-use JMS\Serializer\Accessor\AccessorStrategyInterface;
-use JMS\Serializer\Accessor\DefaultAccessorStrategy;
-use JMS\Serializer\EventDispatcher\EventDispatcher;
-use JMS\Serializer\EventDispatcher\EventDispatcherInterface;
-use JMS\Serializer\Expression\ExpressionEvaluatorInterface;
-use JMS\Serializer\GraphNavigator\SerializationGraphNavigator;
-use JMS\Serializer\GraphNavigatorInterface;
-use JMS\Serializer\Handler\HandlerRegistryInterface;
+use Speakeasy\Serializer\Accessor\AccessorStrategyInterface;
+use Speakeasy\Serializer\Accessor\DefaultAccessorStrategy;
+use Speakeasy\Serializer\EventDispatcher\EventDispatcher;
+use Speakeasy\Serializer\EventDispatcher\EventDispatcherInterface;
+use Speakeasy\Serializer\Expression\ExpressionEvaluatorInterface;
+use Speakeasy\Serializer\GraphNavigator\SerializationGraphNavigator;
+use Speakeasy\Serializer\GraphNavigatorInterface;
+use Speakeasy\Serializer\Handler\HandlerRegistryInterface;
 use Metadata\MetadataFactoryInterface;
 
 final class SerializationGraphNavigatorFactory implements GraphNavigatorFactoryInterface

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace JMS\Serializer\Tests\Fixtures\DocBlockType\Phpstan\Sub;
+namespace Speakeasy\Serializer\Tests\Fixtures\DocBlockType\Phpstan\Sub;
 
 /**
  * @phpstan-type Settings array{

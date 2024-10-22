@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace JMS\Serializer\Visitor\Factory;
+namespace Speakeasy\Serializer\Visitor\Factory;
 
-use JMS\Serializer\JsonSerializationVisitor;
-use JMS\Serializer\Visitor\SerializationVisitorInterface;
+use Speakeasy\Serializer\JsonSerializationVisitor;
+use Speakeasy\Serializer\Visitor\SerializationVisitorInterface;
 
 /**
  * @author Asmir Mustafic <goetas@gmail.com>

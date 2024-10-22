@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace JMS\Serializer\Tests\Benchmark\Memory;
+namespace Speakeasy\Serializer\Tests\Benchmark\Memory;
 
 class XmlMutlipleRunBench extends XmlSingleRunBench
 {

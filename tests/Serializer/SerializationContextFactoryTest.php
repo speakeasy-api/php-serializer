@@ -2,21 +2,21 @@
 
 declare(strict_types=1);
 
-namespace JMS\Serializer\Tests\Serializer;
+namespace Speakeasy\Serializer\Tests\Serializer;
 
 use Doctrine\Common\Annotations\AnnotationReader;
-use JMS\Serializer\Construction\UnserializeObjectConstructor;
-use JMS\Serializer\ContextFactory\DeserializationContextFactoryInterface;
-use JMS\Serializer\ContextFactory\SerializationContextFactoryInterface;
-use JMS\Serializer\DeserializationContext;
-use JMS\Serializer\Handler\HandlerRegistry;
-use JMS\Serializer\Metadata\Driver\AnnotationDriver;
-use JMS\Serializer\Naming\CamelCaseNamingStrategy;
-use JMS\Serializer\Naming\SerializedNameAnnotationStrategy;
-use JMS\Serializer\SerializationContext;
-use JMS\Serializer\SerializerBuilder;
-use JMS\Serializer\Visitor\Factory\JsonDeserializationVisitorFactory;
-use JMS\Serializer\Visitor\Factory\JsonSerializationVisitorFactory;
+use Speakeasy\Serializer\Construction\UnserializeObjectConstructor;
+use Speakeasy\Serializer\ContextFactory\DeserializationContextFactoryInterface;
+use Speakeasy\Serializer\ContextFactory\SerializationContextFactoryInterface;
+use Speakeasy\Serializer\DeserializationContext;
+use Speakeasy\Serializer\Handler\HandlerRegistry;
+use Speakeasy\Serializer\Metadata\Driver\AnnotationDriver;
+use Speakeasy\Serializer\Naming\CamelCaseNamingStrategy;
+use Speakeasy\Serializer\Naming\SerializedNameAnnotationStrategy;
+use Speakeasy\Serializer\SerializationContext;
+use Speakeasy\Serializer\SerializerBuilder;
+use Speakeasy\Serializer\Visitor\Factory\JsonDeserializationVisitorFactory;
+use Speakeasy\Serializer\Visitor\Factory\JsonSerializationVisitorFactory;
 use Metadata\MetadataFactory;
 use PHPUnit\Framework\TestCase;
 

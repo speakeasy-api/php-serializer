@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace JMS\Serializer\Naming;
+namespace Speakeasy\Serializer\Naming;
 
-use JMS\Serializer\Metadata\PropertyMetadata;
+use Speakeasy\Serializer\Metadata\PropertyMetadata;
 
 /**
  * Naming strategy which uses an annotation to translate the property name.

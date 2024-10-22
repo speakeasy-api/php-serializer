@@ -1,4 +1,4 @@
-JMS\Serializer\Tests\Fixtures\FirstClassMapCollection:
+Speakeasy\Serializer\Tests\Fixtures\FirstClassMapCollection:
     properties:
         items:
             inline: true

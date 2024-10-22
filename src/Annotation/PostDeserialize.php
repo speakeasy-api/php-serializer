@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace JMS\Serializer\Annotation;
+namespace Speakeasy\Serializer\Annotation;
 
 /**
  * This annotation can be defined on methods which are called after the

@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace JMS\Serializer\Tests\Fixtures;
+namespace Speakeasy\Serializer\Tests\Fixtures;
 
-use JMS\Serializer\Annotation as Serializer;
-use JMS\Serializer\Context;
-use JMS\Serializer\Metadata\PropertyMetadata;
+use Speakeasy\Serializer\Annotation as Serializer;
+use Speakeasy\Serializer\Context;
+use Speakeasy\Serializer\Metadata\PropertyMetadata;
 
 class PersonSecretWithVariables
 {

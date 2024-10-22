@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace JMS\Serializer\Tests\Fixtures\DoctrinePHPCR;
+namespace Speakeasy\Serializer\Tests\Fixtures\DoctrinePHPCR;
 
 use Doctrine\ODM\PHPCR\Mapping\Annotations as PHPCRODM;
 use Doctrine\ODM\PHPCR\Mapping\Attributes\Document;
 use Doctrine\ODM\PHPCR\Mapping\Attributes\Field;
 use Doctrine\ODM\PHPCR\Mapping\Attributes\Id;
-use JMS\Serializer\Annotation\SerializedName;
+use Speakeasy\Serializer\Annotation\SerializedName;
 
 /** @PHPCRODM\Document */
 #[Document]

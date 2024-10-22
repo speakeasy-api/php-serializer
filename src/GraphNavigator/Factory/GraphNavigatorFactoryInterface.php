@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace JMS\Serializer\GraphNavigator\Factory;
+namespace Speakeasy\Serializer\GraphNavigator\Factory;
 
-use JMS\Serializer\GraphNavigatorInterface;
+use Speakeasy\Serializer\GraphNavigatorInterface;
 
 interface GraphNavigatorFactoryInterface
 {

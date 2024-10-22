@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace JMS\Serializer\Tests\Metadata;
+namespace Speakeasy\Serializer\Tests\Metadata;
 
 use PHPUnit\Framework\TestCase;
 

@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace JMS\Serializer\Tests\Fixtures\Doctrine\Entity;
+namespace Speakeasy\Serializer\Tests\Fixtures\Doctrine\Entity;
 
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
-use JMS\Serializer\Annotation\Groups;
-use JMS\Serializer\Annotation\SerializedName;
+use Speakeasy\Serializer\Annotation\Groups;
+use Speakeasy\Serializer\Annotation\SerializedName;
 
 /** @ORM\Entity */
 #[ORM\Entity]

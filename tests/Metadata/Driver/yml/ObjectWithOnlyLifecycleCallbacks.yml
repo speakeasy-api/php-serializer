@@ -1,4 +1,4 @@
-JMS\Serializer\Tests\Fixtures\ObjectWithOnlyLifecycleCallbacks:
+Speakeasy\Serializer\Tests\Fixtures\ObjectWithOnlyLifecycleCallbacks:
     callback_methods:
         pre_serialize:
             - prepareForSerialization

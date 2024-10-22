@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace JMS\Serializer\Tests\Fixtures;
+namespace Speakeasy\Serializer\Tests\Fixtures;
 
-use JMS\Serializer\Annotation\SerializedName;
-use JMS\Serializer\Annotation\Type;
-use JMS\Serializer\Annotation\XmlList;
-use JMS\Serializer\Annotation\XmlMap;
-use JMS\Serializer\Annotation\XmlRoot;
+use Speakeasy\Serializer\Annotation\SerializedName;
+use Speakeasy\Serializer\Annotation\Type;
+use Speakeasy\Serializer\Annotation\XmlList;
+use Speakeasy\Serializer\Annotation\XmlMap;
+use Speakeasy\Serializer\Annotation\XmlRoot;
 
 /** @XmlRoot("log") */
 #[XmlRoot(name: 'log')]
@@ -26,10 +26,10 @@ class Log
 
     /**
      * @XmlList(inline=true, entry = "comment")
-     * @Type("array<JMS\Serializer\Tests\Fixtures\Comment>")
+     * @Type("array<Speakeasy\Serializer\Tests\Fixtures\Comment>")
      */
     #[XmlList(entry: 'comment', inline: true)]
-    #[Type(name: 'array<JMS\Serializer\Tests\Fixtures\Comment>')]
+    #[Type(name: 'array<Speakeasy\Serializer\Tests\Fixtures\Comment>')]
     private $comments;
 
     public function __construct()

@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace JMS\Serializer\Metadata;
+namespace Speakeasy\Serializer\Metadata;
 
-use JMS\Serializer\Exception\InvalidMetadataException;
-use JMS\Serializer\Expression\Expression;
+use Speakeasy\Serializer\Exception\InvalidMetadataException;
+use Speakeasy\Serializer\Expression\Expression;
 use Metadata\PropertyMetadata as BasePropertyMetadata;
 
 class PropertyMetadata extends BasePropertyMetadata

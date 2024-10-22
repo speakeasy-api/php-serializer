@@ -2,134 +2,134 @@
 
 declare(strict_types=1);
 
-namespace JMS\Serializer\Tests\Serializer;
+namespace Speakeasy\Serializer\Tests\Serializer;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Version;
-use JMS\Serializer\Construction\UnserializeObjectConstructor;
-use JMS\Serializer\Context;
-use JMS\Serializer\DeserializationContext;
-use JMS\Serializer\EventDispatcher\EventDispatcher;
-use JMS\Serializer\EventDispatcher\Subscriber\DoctrineProxySubscriber;
-use JMS\Serializer\EventDispatcher\Subscriber\EnumSubscriber;
-use JMS\Serializer\Exception\ExpressionLanguageRequiredException;
-use JMS\Serializer\Exception\InvalidMetadataException;
-use JMS\Serializer\Exception\NotAcceptableException;
-use JMS\Serializer\Exception\RuntimeException;
-use JMS\Serializer\Exclusion\DepthExclusionStrategy;
-use JMS\Serializer\Exclusion\GroupsExclusionStrategy;
-use JMS\Serializer\Expression\ExpressionEvaluator;
-use JMS\Serializer\Functions;
-use JMS\Serializer\GraphNavigatorInterface;
-use JMS\Serializer\Handler\ArrayCollectionHandler;
-use JMS\Serializer\Handler\ConstraintViolationHandler;
-use JMS\Serializer\Handler\DateHandler;
-use JMS\Serializer\Handler\EnumHandler;
-use JMS\Serializer\Handler\FormErrorHandler;
-use JMS\Serializer\Handler\HandlerRegistry;
-use JMS\Serializer\Handler\HandlerRegistryInterface;
-use JMS\Serializer\Handler\IteratorHandler;
-use JMS\Serializer\Handler\StdClassHandler;
-use JMS\Serializer\Handler\SymfonyUidHandler;
-use JMS\Serializer\Handler\UnionHandler;
-use JMS\Serializer\Metadata\Driver\TypedPropertiesDriver;
-use JMS\Serializer\SerializationContext;
-use JMS\Serializer\Serializer;
-use JMS\Serializer\SerializerBuilder;
-use JMS\Serializer\Tests\Fixtures\AccessorOrderChild;
-use JMS\Serializer\Tests\Fixtures\AccessorOrderMethod;
-use JMS\Serializer\Tests\Fixtures\AccessorOrderParent;
-use JMS\Serializer\Tests\Fixtures\Author;
-use JMS\Serializer\Tests\Fixtures\AuthorDeprecatedReadOnly;
-use JMS\Serializer\Tests\Fixtures\AuthorDeprecatedReadOnlyPerClass;
-use JMS\Serializer\Tests\Fixtures\AuthorExpressionAccess;
-use JMS\Serializer\Tests\Fixtures\AuthorExpressionAccessContext;
-use JMS\Serializer\Tests\Fixtures\AuthorList;
-use JMS\Serializer\Tests\Fixtures\AuthorReadOnly;
-use JMS\Serializer\Tests\Fixtures\AuthorReadOnlyPerClass;
-use JMS\Serializer\Tests\Fixtures\AuthorsInline;
-use JMS\Serializer\Tests\Fixtures\BlogPost;
-use JMS\Serializer\Tests\Fixtures\CircularReferenceCollection;
-use JMS\Serializer\Tests\Fixtures\CircularReferenceParent;
-use JMS\Serializer\Tests\Fixtures\Comment;
-use JMS\Serializer\Tests\Fixtures\CurrencyAwareOrder;
-use JMS\Serializer\Tests\Fixtures\CurrencyAwarePrice;
-use JMS\Serializer\Tests\Fixtures\CustomDeserializationObject;
-use JMS\Serializer\Tests\Fixtures\DateTimeArraysObject;
-use JMS\Serializer\Tests\Fixtures\DateTimeContainer;
-use JMS\Serializer\Tests\Fixtures\DateTimeCustomObject;
-use JMS\Serializer\Tests\Fixtures\Discriminator\Car;
-use JMS\Serializer\Tests\Fixtures\Discriminator\ImagePost;
-use JMS\Serializer\Tests\Fixtures\Discriminator\Moped;
-use JMS\Serializer\Tests\Fixtures\Discriminator\Post;
-use JMS\Serializer\Tests\Fixtures\Discriminator\Serialization\ExtendedUser;
-use JMS\Serializer\Tests\Fixtures\Discriminator\Serialization\User;
-use JMS\Serializer\Tests\Fixtures\Discriminator\Vehicle;
-use JMS\Serializer\Tests\Fixtures\DiscriminatorGroup\Car as DiscriminatorGroupCar;
-use JMS\Serializer\Tests\Fixtures\DocBlockType\UnionTypedDocBlockProperty;
-use JMS\Serializer\Tests\Fixtures\ExclusionStrategy\AlwaysExcludeExclusionStrategy;
-use JMS\Serializer\Tests\Fixtures\FirstClassListCollection;
-use JMS\Serializer\Tests\Fixtures\Garage;
-use JMS\Serializer\Tests\Fixtures\GetSetObject;
-use JMS\Serializer\Tests\Fixtures\GroupsObject;
-use JMS\Serializer\Tests\Fixtures\GroupsUser;
-use JMS\Serializer\Tests\Fixtures\IndexedCommentsBlogPost;
-use JMS\Serializer\Tests\Fixtures\InitializedBlogPostConstructor;
-use JMS\Serializer\Tests\Fixtures\InitializedObjectConstructor;
-use JMS\Serializer\Tests\Fixtures\InlineChild;
-use JMS\Serializer\Tests\Fixtures\InlineChildEmpty;
-use JMS\Serializer\Tests\Fixtures\InlineChildWithGroups;
-use JMS\Serializer\Tests\Fixtures\InlineParent;
-use JMS\Serializer\Tests\Fixtures\InlineParentWithEmptyChild;
-use JMS\Serializer\Tests\Fixtures\Input;
-use JMS\Serializer\Tests\Fixtures\InvalidGroupsObject;
-use JMS\Serializer\Tests\Fixtures\Log;
-use JMS\Serializer\Tests\Fixtures\MaxDepth\Gh1382Baz;
-use JMS\Serializer\Tests\Fixtures\MaxDepth\Gh1382Foo;
-use JMS\Serializer\Tests\Fixtures\MaxDepth\Gh236Foo;
-use JMS\Serializer\Tests\Fixtures\NamedDateTimeArraysObject;
-use JMS\Serializer\Tests\Fixtures\NamedDateTimeImmutableArraysObject;
-use JMS\Serializer\Tests\Fixtures\Node;
-use JMS\Serializer\Tests\Fixtures\ObjectUsingTypeCasting;
-use JMS\Serializer\Tests\Fixtures\ObjectWithArrayIterator;
-use JMS\Serializer\Tests\Fixtures\ObjectWithAutoDetectEnums;
-use JMS\Serializer\Tests\Fixtures\ObjectWithEmptyHash;
-use JMS\Serializer\Tests\Fixtures\ObjectWithEmptyNullableAndEmptyArrays;
-use JMS\Serializer\Tests\Fixtures\ObjectWithEnums;
-use JMS\Serializer\Tests\Fixtures\ObjectWithGenerator;
-use JMS\Serializer\Tests\Fixtures\ObjectWithIntListAndIntMap;
-use JMS\Serializer\Tests\Fixtures\ObjectWithIterable;
-use JMS\Serializer\Tests\Fixtures\ObjectWithIterator;
-use JMS\Serializer\Tests\Fixtures\ObjectWithLifecycleCallbacks;
-use JMS\Serializer\Tests\Fixtures\ObjectWithNullProperty;
-use JMS\Serializer\Tests\Fixtures\ObjectWithToString;
-use JMS\Serializer\Tests\Fixtures\ObjectWithTypedArraySetter;
-use JMS\Serializer\Tests\Fixtures\ObjectWithVersionedVirtualProperties;
-use JMS\Serializer\Tests\Fixtures\ObjectWithVirtualProperties;
-use JMS\Serializer\Tests\Fixtures\Order;
-use JMS\Serializer\Tests\Fixtures\ParentDoNotSkipWithEmptyChild;
-use JMS\Serializer\Tests\Fixtures\ParentNoMetadataChildObject;
-use JMS\Serializer\Tests\Fixtures\ParentSkipWithEmptyChild;
-use JMS\Serializer\Tests\Fixtures\PersonAccount;
-use JMS\Serializer\Tests\Fixtures\PersonAccountOnParent;
-use JMS\Serializer\Tests\Fixtures\PersonAccountWithParent;
-use JMS\Serializer\Tests\Fixtures\PersonSecret;
-use JMS\Serializer\Tests\Fixtures\PersonSecretMore;
-use JMS\Serializer\Tests\Fixtures\PersonSecretMoreVirtual;
-use JMS\Serializer\Tests\Fixtures\PersonSecretVirtual;
-use JMS\Serializer\Tests\Fixtures\Price;
-use JMS\Serializer\Tests\Fixtures\Publisher;
-use JMS\Serializer\Tests\Fixtures\SimpleInternalObject;
-use JMS\Serializer\Tests\Fixtures\SimpleObject;
-use JMS\Serializer\Tests\Fixtures\SimpleObjectProxy;
-use JMS\Serializer\Tests\Fixtures\SimpleObjectWithStaticProp;
-use JMS\Serializer\Tests\Fixtures\Tag;
-use JMS\Serializer\Tests\Fixtures\Timestamp;
-use JMS\Serializer\Tests\Fixtures\Tree;
-use JMS\Serializer\Tests\Fixtures\TypedProperties;
-use JMS\Serializer\Tests\Fixtures\VehicleInterfaceGarage;
-use JMS\Serializer\Visitor\DeserializationVisitorInterface;
-use JMS\Serializer\Visitor\SerializationVisitorInterface;
+use Speakeasy\Serializer\Construction\UnserializeObjectConstructor;
+use Speakeasy\Serializer\Context;
+use Speakeasy\Serializer\DeserializationContext;
+use Speakeasy\Serializer\EventDispatcher\EventDispatcher;
+use Speakeasy\Serializer\EventDispatcher\Subscriber\DoctrineProxySubscriber;
+use Speakeasy\Serializer\EventDispatcher\Subscriber\EnumSubscriber;
+use Speakeasy\Serializer\Exception\ExpressionLanguageRequiredException;
+use Speakeasy\Serializer\Exception\InvalidMetadataException;
+use Speakeasy\Serializer\Exception\NotAcceptableException;
+use Speakeasy\Serializer\Exception\RuntimeException;
+use Speakeasy\Serializer\Exclusion\DepthExclusionStrategy;
+use Speakeasy\Serializer\Exclusion\GroupsExclusionStrategy;
+use Speakeasy\Serializer\Expression\ExpressionEvaluator;
+use Speakeasy\Serializer\Functions;
+use Speakeasy\Serializer\GraphNavigatorInterface;
+use Speakeasy\Serializer\Handler\ArrayCollectionHandler;
+use Speakeasy\Serializer\Handler\ConstraintViolationHandler;
+use Speakeasy\Serializer\Handler\DateHandler;
+use Speakeasy\Serializer\Handler\EnumHandler;
+use Speakeasy\Serializer\Handler\FormErrorHandler;
+use Speakeasy\Serializer\Handler\HandlerRegistry;
+use Speakeasy\Serializer\Handler\HandlerRegistryInterface;
+use Speakeasy\Serializer\Handler\IteratorHandler;
+use Speakeasy\Serializer\Handler\StdClassHandler;
+use Speakeasy\Serializer\Handler\SymfonyUidHandler;
+use Speakeasy\Serializer\Handler\UnionHandler;
+use Speakeasy\Serializer\Metadata\Driver\TypedPropertiesDriver;
+use Speakeasy\Serializer\SerializationContext;
+use Speakeasy\Serializer\Serializer;
+use Speakeasy\Serializer\SerializerBuilder;
+use Speakeasy\Serializer\Tests\Fixtures\AccessorOrderChild;
+use Speakeasy\Serializer\Tests\Fixtures\AccessorOrderMethod;
+use Speakeasy\Serializer\Tests\Fixtures\AccessorOrderParent;
+use Speakeasy\Serializer\Tests\Fixtures\Author;
+use Speakeasy\Serializer\Tests\Fixtures\AuthorDeprecatedReadOnly;
+use Speakeasy\Serializer\Tests\Fixtures\AuthorDeprecatedReadOnlyPerClass;
+use Speakeasy\Serializer\Tests\Fixtures\AuthorExpressionAccess;
+use Speakeasy\Serializer\Tests\Fixtures\AuthorExpressionAccessContext;
+use Speakeasy\Serializer\Tests\Fixtures\AuthorList;
+use Speakeasy\Serializer\Tests\Fixtures\AuthorReadOnly;
+use Speakeasy\Serializer\Tests\Fixtures\AuthorReadOnlyPerClass;
+use Speakeasy\Serializer\Tests\Fixtures\AuthorsInline;
+use Speakeasy\Serializer\Tests\Fixtures\BlogPost;
+use Speakeasy\Serializer\Tests\Fixtures\CircularReferenceCollection;
+use Speakeasy\Serializer\Tests\Fixtures\CircularReferenceParent;
+use Speakeasy\Serializer\Tests\Fixtures\Comment;
+use Speakeasy\Serializer\Tests\Fixtures\CurrencyAwareOrder;
+use Speakeasy\Serializer\Tests\Fixtures\CurrencyAwarePrice;
+use Speakeasy\Serializer\Tests\Fixtures\CustomDeserializationObject;
+use Speakeasy\Serializer\Tests\Fixtures\DateTimeArraysObject;
+use Speakeasy\Serializer\Tests\Fixtures\DateTimeContainer;
+use Speakeasy\Serializer\Tests\Fixtures\DateTimeCustomObject;
+use Speakeasy\Serializer\Tests\Fixtures\Discriminator\Car;
+use Speakeasy\Serializer\Tests\Fixtures\Discriminator\ImagePost;
+use Speakeasy\Serializer\Tests\Fixtures\Discriminator\Moped;
+use Speakeasy\Serializer\Tests\Fixtures\Discriminator\Post;
+use Speakeasy\Serializer\Tests\Fixtures\Discriminator\Serialization\ExtendedUser;
+use Speakeasy\Serializer\Tests\Fixtures\Discriminator\Serialization\User;
+use Speakeasy\Serializer\Tests\Fixtures\Discriminator\Vehicle;
+use Speakeasy\Serializer\Tests\Fixtures\DiscriminatorGroup\Car as DiscriminatorGroupCar;
+use Speakeasy\Serializer\Tests\Fixtures\DocBlockType\UnionTypedDocBlockProperty;
+use Speakeasy\Serializer\Tests\Fixtures\ExclusionStrategy\AlwaysExcludeExclusionStrategy;
+use Speakeasy\Serializer\Tests\Fixtures\FirstClassListCollection;
+use Speakeasy\Serializer\Tests\Fixtures\Garage;
+use Speakeasy\Serializer\Tests\Fixtures\GetSetObject;
+use Speakeasy\Serializer\Tests\Fixtures\GroupsObject;
+use Speakeasy\Serializer\Tests\Fixtures\GroupsUser;
+use Speakeasy\Serializer\Tests\Fixtures\IndexedCommentsBlogPost;
+use Speakeasy\Serializer\Tests\Fixtures\InitializedBlogPostConstructor;
+use Speakeasy\Serializer\Tests\Fixtures\InitializedObjectConstructor;
+use Speakeasy\Serializer\Tests\Fixtures\InlineChild;
+use Speakeasy\Serializer\Tests\Fixtures\InlineChildEmpty;
+use Speakeasy\Serializer\Tests\Fixtures\InlineChildWithGroups;
+use Speakeasy\Serializer\Tests\Fixtures\InlineParent;
+use Speakeasy\Serializer\Tests\Fixtures\InlineParentWithEmptyChild;
+use Speakeasy\Serializer\Tests\Fixtures\Input;
+use Speakeasy\Serializer\Tests\Fixtures\InvalidGroupsObject;
+use Speakeasy\Serializer\Tests\Fixtures\Log;
+use Speakeasy\Serializer\Tests\Fixtures\MaxDepth\Gh1382Baz;
+use Speakeasy\Serializer\Tests\Fixtures\MaxDepth\Gh1382Foo;
+use Speakeasy\Serializer\Tests\Fixtures\MaxDepth\Gh236Foo;
+use Speakeasy\Serializer\Tests\Fixtures\NamedDateTimeArraysObject;
+use Speakeasy\Serializer\Tests\Fixtures\NamedDateTimeImmutableArraysObject;
+use Speakeasy\Serializer\Tests\Fixtures\Node;
+use Speakeasy\Serializer\Tests\Fixtures\ObjectUsingTypeCasting;
+use Speakeasy\Serializer\Tests\Fixtures\ObjectWithArrayIterator;
+use Speakeasy\Serializer\Tests\Fixtures\ObjectWithAutoDetectEnums;
+use Speakeasy\Serializer\Tests\Fixtures\ObjectWithEmptyHash;
+use Speakeasy\Serializer\Tests\Fixtures\ObjectWithEmptyNullableAndEmptyArrays;
+use Speakeasy\Serializer\Tests\Fixtures\ObjectWithEnums;
+use Speakeasy\Serializer\Tests\Fixtures\ObjectWithGenerator;
+use Speakeasy\Serializer\Tests\Fixtures\ObjectWithIntListAndIntMap;
+use Speakeasy\Serializer\Tests\Fixtures\ObjectWithIterable;
+use Speakeasy\Serializer\Tests\Fixtures\ObjectWithIterator;
+use Speakeasy\Serializer\Tests\Fixtures\ObjectWithLifecycleCallbacks;
+use Speakeasy\Serializer\Tests\Fixtures\ObjectWithNullProperty;
+use Speakeasy\Serializer\Tests\Fixtures\ObjectWithToString;
+use Speakeasy\Serializer\Tests\Fixtures\ObjectWithTypedArraySetter;
+use Speakeasy\Serializer\Tests\Fixtures\ObjectWithVersionedVirtualProperties;
+use Speakeasy\Serializer\Tests\Fixtures\ObjectWithVirtualProperties;
+use Speakeasy\Serializer\Tests\Fixtures\Order;
+use Speakeasy\Serializer\Tests\Fixtures\ParentDoNotSkipWithEmptyChild;
+use Speakeasy\Serializer\Tests\Fixtures\ParentNoMetadataChildObject;
+use Speakeasy\Serializer\Tests\Fixtures\ParentSkipWithEmptyChild;
+use Speakeasy\Serializer\Tests\Fixtures\PersonAccount;
+use Speakeasy\Serializer\Tests\Fixtures\PersonAccountOnParent;
+use Speakeasy\Serializer\Tests\Fixtures\PersonAccountWithParent;
+use Speakeasy\Serializer\Tests\Fixtures\PersonSecret;
+use Speakeasy\Serializer\Tests\Fixtures\PersonSecretMore;
+use Speakeasy\Serializer\Tests\Fixtures\PersonSecretMoreVirtual;
+use Speakeasy\Serializer\Tests\Fixtures\PersonSecretVirtual;
+use Speakeasy\Serializer\Tests\Fixtures\Price;
+use Speakeasy\Serializer\Tests\Fixtures\Publisher;
+use Speakeasy\Serializer\Tests\Fixtures\SimpleInternalObject;
+use Speakeasy\Serializer\Tests\Fixtures\SimpleObject;
+use Speakeasy\Serializer\Tests\Fixtures\SimpleObjectProxy;
+use Speakeasy\Serializer\Tests\Fixtures\SimpleObjectWithStaticProp;
+use Speakeasy\Serializer\Tests\Fixtures\Tag;
+use Speakeasy\Serializer\Tests\Fixtures\Timestamp;
+use Speakeasy\Serializer\Tests\Fixtures\Tree;
+use Speakeasy\Serializer\Tests\Fixtures\TypedProperties;
+use Speakeasy\Serializer\Tests\Fixtures\VehicleInterfaceGarage;
+use Speakeasy\Serializer\Visitor\DeserializationVisitorInterface;
+use Speakeasy\Serializer\Visitor\SerializationVisitorInterface;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\Attributes\DoesNotPerformAssertions;
 use PHPUnit\Framework\Attributes\Group;
@@ -455,7 +455,7 @@ abstract class BaseSerializationTestCase extends TestCase
         $person->name = 'mike';
 
         $this->expectException(ExpressionLanguageRequiredException::class);
-        $this->expectExceptionMessage('To use conditional exclude/expose in JMS\Serializer\Tests\Fixtures\PersonSecret you must configure the expression language.');
+        $this->expectExceptionMessage('To use conditional exclude/expose in Speakeasy\Serializer\Tests\Fixtures\PersonSecret you must configure the expression language.');
 
         $this->serialize($person);
     }
@@ -620,7 +620,7 @@ abstract class BaseSerializationTestCase extends TestCase
     {
         $builder = SerializerBuilder::create($this->handlerRegistry, $this->dispatcher);
         $builder->setMetadataDirs([
-            'JMS\Serializer\Tests\Fixtures' => __DIR__ . '/metadata/SimpleInternalObject',
+            'Speakeasy\Serializer\Tests\Fixtures' => __DIR__ . '/metadata/SimpleInternalObject',
             '' => __DIR__ . '/metadata/SimpleInternalObject',
         ]);
 
@@ -713,7 +713,7 @@ abstract class BaseSerializationTestCase extends TestCase
         self::assertEquals(static::getContent('array_objects'), $this->serialize($data));
 
         if ($this->hasDeserializer()) {
-            self::assertEquals($data, $this->deserialize(static::getContent('array_objects'), 'array<JMS\Serializer\Tests\Fixtures\SimpleObject>'));
+            self::assertEquals($data, $this->deserialize(static::getContent('array_objects'), 'array<Speakeasy\Serializer\Tests\Fixtures\SimpleObject>'));
         }
     }
 
@@ -783,7 +783,7 @@ abstract class BaseSerializationTestCase extends TestCase
         self::assertEquals(static::getContent('array_datetimes_object'), $serializedObject);
 
         if ($this->hasDeserializer()) {
-            $deserializedObject = $this->deserialize(static::getContent('array_datetimes_object'), 'Jms\Serializer\Tests\Fixtures\DateTimeArraysObject');
+            $deserializedObject = $this->deserialize(static::getContent('array_datetimes_object'), 'Speakeasy\Serializer\Tests\Fixtures\DateTimeArraysObject');
             assert($deserializedObject instanceof DateTimeArraysObject);
 
             /** deserialized object has a default timezone set depending on user's timezone settings. That's why we manually set the UTC timezone on the DateTime objects. */
@@ -1037,7 +1037,7 @@ abstract class BaseSerializationTestCase extends TestCase
         $author = new AuthorExpressionAccess(123, 'Ruud', 'Kamphuis');
 
         $this->expectException(ExpressionLanguageRequiredException::class);
-        $this->expectExceptionMessage('The property firstName on JMS\Serializer\Tests\Fixtures\AuthorExpressionAccess requires the expression accessor strategy to be enabled.');
+        $this->expectExceptionMessage('The property firstName on Speakeasy\Serializer\Tests\Fixtures\AuthorExpressionAccess requires the expression accessor strategy to be enabled.');
 
         $this->serialize($author);
     }
@@ -1480,7 +1480,7 @@ abstract class BaseSerializationTestCase extends TestCase
         $groupsObject = new InvalidGroupsObject();
 
         $this->expectException(InvalidMetadataException::class);
-        $this->expectExceptionMessage('Invalid group name "foo, bar" on "JMS\Serializer\Tests\Fixtures\InvalidGroupsObject->foo", did you mean to create multiple groups?');
+        $this->expectExceptionMessage('Invalid group name "foo, bar" on "Speakeasy\Serializer\Tests\Fixtures\InvalidGroupsObject->foo", did you mean to create multiple groups?');
 
         $this->serializer->serialize($groupsObject, $this->getFormat());
     }

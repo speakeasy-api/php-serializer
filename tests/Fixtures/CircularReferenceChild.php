@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace JMS\Serializer\Tests\Fixtures;
+namespace Speakeasy\Serializer\Tests\Fixtures;
 
-use JMS\Serializer\Annotation\Type;
+use Speakeasy\Serializer\Annotation\Type;
 
 class CircularReferenceChild
 {
@@ -12,8 +12,8 @@ class CircularReferenceChild
     #[Type(name: 'string')]
     private $name;
 
-    /** @Type("JMS\Serializer\Tests\Fixtures\CircularReferenceParent") */
-    #[Type(name: 'JMS\Serializer\Tests\Fixtures\CircularReferenceParent')]
+    /** @Type("Speakeasy\Serializer\Tests\Fixtures\CircularReferenceParent") */
+    #[Type(name: 'Speakeasy\Serializer\Tests\Fixtures\CircularReferenceParent')]
     private $parent;
 
     public function __construct($name, CircularReferenceParent $parent)

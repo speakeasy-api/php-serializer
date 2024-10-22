@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace JMS\Serializer\Tests\Serializer;
+namespace Speakeasy\Serializer\Tests\Serializer;
 
-use JMS\Serializer\Handler\DateHandler;
+use Speakeasy\Serializer\Handler\DateHandler;
 use PHPUnit\Framework\TestCase;
 
 class DateIntervalFormatTest extends TestCase

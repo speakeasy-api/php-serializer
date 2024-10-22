@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace JMS\Serializer\EventDispatcher;
+namespace Speakeasy\Serializer\EventDispatcher;
 
-use JMS\Serializer\Context;
+use Speakeasy\Serializer\Context;
 
 class ObjectEvent extends Event
 {

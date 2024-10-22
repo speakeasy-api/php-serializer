@@ -2,22 +2,22 @@
 
 declare(strict_types=1);
 
-namespace JMS\Serializer\Tests;
+namespace Speakeasy\Serializer\Tests;
 
-use JMS\Serializer\ContextFactory\DeserializationContextFactoryInterface;
-use JMS\Serializer\ContextFactory\SerializationContextFactoryInterface;
-use JMS\Serializer\DeserializationContext;
-use JMS\Serializer\Exception\UnsupportedFormatException;
-use JMS\Serializer\Expression\ExpressionEvaluator;
-use JMS\Serializer\Handler\HandlerRegistry;
-use JMS\Serializer\SerializationContext;
-use JMS\Serializer\SerializerBuilder;
-use JMS\Serializer\Tests\Fixtures\DocBlockType\Collection\Details\ProductDescription;
-use JMS\Serializer\Tests\Fixtures\DocBlockType\SingleClassFromDifferentNamespaceTypeHint;
-use JMS\Serializer\Tests\Fixtures\PersonSecret;
-use JMS\Serializer\Tests\Fixtures\PersonSecretWithVariables;
-use JMS\Serializer\Type\ParserInterface;
-use JMS\Serializer\Visitor\Factory\JsonSerializationVisitorFactory;
+use Speakeasy\Serializer\ContextFactory\DeserializationContextFactoryInterface;
+use Speakeasy\Serializer\ContextFactory\SerializationContextFactoryInterface;
+use Speakeasy\Serializer\DeserializationContext;
+use Speakeasy\Serializer\Exception\UnsupportedFormatException;
+use Speakeasy\Serializer\Expression\ExpressionEvaluator;
+use Speakeasy\Serializer\Handler\HandlerRegistry;
+use Speakeasy\Serializer\SerializationContext;
+use Speakeasy\Serializer\SerializerBuilder;
+use Speakeasy\Serializer\Tests\Fixtures\DocBlockType\Collection\Details\ProductDescription;
+use Speakeasy\Serializer\Tests\Fixtures\DocBlockType\SingleClassFromDifferentNamespaceTypeHint;
+use Speakeasy\Serializer\Tests\Fixtures\PersonSecret;
+use Speakeasy\Serializer\Tests\Fixtures\PersonSecretWithVariables;
+use Speakeasy\Serializer\Type\ParserInterface;
+use Speakeasy\Serializer\Visitor\Factory\JsonSerializationVisitorFactory;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\Constraint\FileExists;
 use PHPUnit\Framework\Constraint\LogicalNot;

@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace JMS\Serializer\Tests\Handler;
+namespace Speakeasy\Serializer\Tests\Handler;
 
-use JMS\Serializer\EventDispatcher\EventDispatcher;
-use JMS\Serializer\Exception\InvalidArgumentException;
-use JMS\Serializer\Handler\HandlerRegistry;
-use JMS\Serializer\Handler\SymfonyUidHandler;
-use JMS\Serializer\SerializerBuilder;
-use JMS\Serializer\SerializerInterface;
+use Speakeasy\Serializer\EventDispatcher\EventDispatcher;
+use Speakeasy\Serializer\Exception\InvalidArgumentException;
+use Speakeasy\Serializer\Handler\HandlerRegistry;
+use Speakeasy\Serializer\Handler\SymfonyUidHandler;
+use Speakeasy\Serializer\SerializerBuilder;
+use Speakeasy\Serializer\SerializerInterface;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\Uid\AbstractUid;

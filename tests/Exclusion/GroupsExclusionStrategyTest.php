@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace JMS\Serializer\Tests\Exclusion;
+namespace Speakeasy\Serializer\Tests\Exclusion;
 
-use JMS\Serializer\Exclusion\GroupsExclusionStrategy;
-use JMS\Serializer\Metadata\StaticPropertyMetadata;
-use JMS\Serializer\SerializationContext;
+use Speakeasy\Serializer\Exclusion\GroupsExclusionStrategy;
+use Speakeasy\Serializer\Metadata\StaticPropertyMetadata;
+use Speakeasy\Serializer\SerializationContext;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
 

@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace JMS\Serializer\Tests\Serializer\EventDispatcher;
+namespace Speakeasy\Serializer\Tests\Serializer\EventDispatcher;
 
-use JMS\Serializer\EventDispatcher\LazyEventDispatcher;
+use Speakeasy\Serializer\EventDispatcher\LazyEventDispatcher;
 
 abstract class LazyEventDispatcherTestCase extends EventDispatcherTestCase
 {

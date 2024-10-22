@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace JMS\Serializer\EventDispatcher;
+namespace Speakeasy\Serializer\EventDispatcher;
 
 class PreSerializeEvent extends ObjectEvent
 {

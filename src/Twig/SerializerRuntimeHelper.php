@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace JMS\Serializer\Twig;
+namespace Speakeasy\Serializer\Twig;
 
-use JMS\Serializer\SerializationContext;
-use JMS\Serializer\SerializerInterface;
+use Speakeasy\Serializer\SerializationContext;
+use Speakeasy\Serializer\SerializerInterface;
 
 /**
  * @author Asmir Mustafic <goetas@gmail.com>

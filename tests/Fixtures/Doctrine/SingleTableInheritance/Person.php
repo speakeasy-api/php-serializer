@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace JMS\Serializer\Tests\Fixtures\Doctrine\SingleTableInheritance;
+namespace Speakeasy\Serializer\Tests\Fixtures\Doctrine\SingleTableInheritance;
 
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
@@ -12,8 +12,8 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\InheritanceType("SINGLE_TABLE")
  * @ORM\DiscriminatorColumn(name="type", type="string")
  * @ORM\DiscriminatorMap({
- *     "student" = "JMS\Serializer\Tests\Fixtures\Doctrine\SingleTableInheritance\Student",
- *     "teacher" = "JMS\Serializer\Tests\Fixtures\Doctrine\SingleTableInheritance\Teacher",
+ *     "student" = "Speakeasy\Serializer\Tests\Fixtures\Doctrine\SingleTableInheritance\Student",
+ *     "teacher" = "Speakeasy\Serializer\Tests\Fixtures\Doctrine\SingleTableInheritance\Teacher",
  * })
  */
 #[ORM\Entity]

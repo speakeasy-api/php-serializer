@@ -2,16 +2,16 @@
 
 declare(strict_types=1);
 
-namespace JMS\Serializer;
+namespace Speakeasy\Serializer;
 
-use JMS\Serializer\Exception\InvalidArgumentException;
-use JMS\Serializer\Exception\LogicException;
-use JMS\Serializer\Exception\NotAcceptableException;
-use JMS\Serializer\Exception\RuntimeException;
-use JMS\Serializer\Exception\XmlErrorException;
-use JMS\Serializer\Metadata\ClassMetadata;
-use JMS\Serializer\Metadata\PropertyMetadata;
-use JMS\Serializer\Visitor\DeserializationVisitorInterface;
+use Speakeasy\Serializer\Exception\InvalidArgumentException;
+use Speakeasy\Serializer\Exception\LogicException;
+use Speakeasy\Serializer\Exception\NotAcceptableException;
+use Speakeasy\Serializer\Exception\RuntimeException;
+use Speakeasy\Serializer\Exception\XmlErrorException;
+use Speakeasy\Serializer\Metadata\ClassMetadata;
+use Speakeasy\Serializer\Metadata\PropertyMetadata;
+use Speakeasy\Serializer\Visitor\DeserializationVisitorInterface;
 
 final class XmlDeserializationVisitor extends AbstractVisitor implements NullAwareVisitorInterface, DeserializationVisitorInterface
 {

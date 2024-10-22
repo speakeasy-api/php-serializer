@@ -2,19 +2,19 @@
 
 declare(strict_types=1);
 
-namespace JMS\Serializer\Accessor;
+namespace Speakeasy\Serializer\Accessor;
 
-use JMS\Serializer\DeserializationContext;
-use JMS\Serializer\Exception\ExpressionLanguageRequiredException;
-use JMS\Serializer\Exception\LogicException;
-use JMS\Serializer\Exception\UninitializedPropertyException;
-use JMS\Serializer\Expression\CompilableExpressionEvaluatorInterface;
-use JMS\Serializer\Expression\Expression;
-use JMS\Serializer\Expression\ExpressionEvaluatorInterface;
-use JMS\Serializer\Metadata\ExpressionPropertyMetadata;
-use JMS\Serializer\Metadata\PropertyMetadata;
-use JMS\Serializer\Metadata\StaticPropertyMetadata;
-use JMS\Serializer\SerializationContext;
+use Speakeasy\Serializer\DeserializationContext;
+use Speakeasy\Serializer\Exception\ExpressionLanguageRequiredException;
+use Speakeasy\Serializer\Exception\LogicException;
+use Speakeasy\Serializer\Exception\UninitializedPropertyException;
+use Speakeasy\Serializer\Expression\CompilableExpressionEvaluatorInterface;
+use Speakeasy\Serializer\Expression\Expression;
+use Speakeasy\Serializer\Expression\ExpressionEvaluatorInterface;
+use Speakeasy\Serializer\Metadata\ExpressionPropertyMetadata;
+use Speakeasy\Serializer\Metadata\PropertyMetadata;
+use Speakeasy\Serializer\Metadata\StaticPropertyMetadata;
+use Speakeasy\Serializer\SerializationContext;
 
 /**
  * @author Asmir Mustafic <goetas@gmail.com>

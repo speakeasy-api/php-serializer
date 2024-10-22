@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace JMS\Serializer\Tests\Fixtures\Doctrine\Entity;
+namespace Speakeasy\Serializer\Tests\Fixtures\Doctrine\Entity;
 
 use Doctrine\ORM\Mapping\Entity;
 

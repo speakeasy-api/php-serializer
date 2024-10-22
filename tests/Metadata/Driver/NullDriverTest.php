@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace JMS\Serializer\Tests\Metadata\Driver;
+namespace Speakeasy\Serializer\Tests\Metadata\Driver;
 
-use JMS\Serializer\Metadata\ClassMetadata;
-use JMS\Serializer\Metadata\Driver\NullDriver;
-use JMS\Serializer\Naming\IdenticalPropertyNamingStrategy;
+use Speakeasy\Serializer\Metadata\ClassMetadata;
+use Speakeasy\Serializer\Metadata\Driver\NullDriver;
+use Speakeasy\Serializer\Naming\IdenticalPropertyNamingStrategy;
 use PHPUnit\Framework\TestCase;
 
 class NullDriverTest extends TestCase

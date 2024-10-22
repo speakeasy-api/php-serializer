@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace JMS\Serializer\Tests\Fixtures;
+namespace Speakeasy\Serializer\Tests\Fixtures;
 
-use JMS\Serializer\Annotation as Serializer;
-use JMS\Serializer\Annotation\Type;
+use Speakeasy\Serializer\Annotation as Serializer;
+use Speakeasy\Serializer\Annotation\Type;
 
 /** @Serializer\AccessorOrder("alphabetical") */
 #[Serializer\AccessorOrder(order: 'alphabetical')]
@@ -26,10 +26,10 @@ class InlineParentWithEmptyChild
     /**
      * @Serializer\Inline
      *
-     * @Type("JMS\Serializer\Tests\Fixtures\InlineChildEmpty")
+     * @Type("Speakeasy\Serializer\Tests\Fixtures\InlineChildEmpty")
      */
     #[Serializer\Inline]
-    #[Type(name: 'JMS\Serializer\Tests\Fixtures\InlineChildEmpty')]
+    #[Type(name: 'Speakeasy\Serializer\Tests\Fixtures\InlineChildEmpty')]
     private $child;
 
     public function __construct($child = null)

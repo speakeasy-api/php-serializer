@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace JMS\Serializer\EventDispatcher\Subscriber;
+namespace Speakeasy\Serializer\EventDispatcher\Subscriber;
 
-use JMS\Serializer\EventDispatcher\EventSubscriberInterface;
-use JMS\Serializer\EventDispatcher\ObjectEvent;
-use JMS\Serializer\Exception\ValidationFailedException;
+use Speakeasy\Serializer\EventDispatcher\EventSubscriberInterface;
+use Speakeasy\Serializer\EventDispatcher\ObjectEvent;
+use Speakeasy\Serializer\Exception\ValidationFailedException;
 use Symfony\Component\Validator\Validator\ValidatorInterface;
 
 final class SymfonyValidatorValidatorSubscriber implements EventSubscriberInterface

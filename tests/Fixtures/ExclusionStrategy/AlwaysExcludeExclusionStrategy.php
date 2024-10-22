@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace JMS\Serializer\Tests\Fixtures\ExclusionStrategy;
+namespace Speakeasy\Serializer\Tests\Fixtures\ExclusionStrategy;
 
-use JMS\Serializer\Context;
-use JMS\Serializer\Exclusion\ExclusionStrategyInterface;
-use JMS\Serializer\Metadata\ClassMetadata;
-use JMS\Serializer\Metadata\PropertyMetadata;
+use Speakeasy\Serializer\Context;
+use Speakeasy\Serializer\Exclusion\ExclusionStrategyInterface;
+use Speakeasy\Serializer\Metadata\ClassMetadata;
+use Speakeasy\Serializer\Metadata\PropertyMetadata;
 
 class AlwaysExcludeExclusionStrategy implements ExclusionStrategyInterface
 {

@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace JMS\Serializer\EventDispatcher;
+namespace Speakeasy\Serializer\EventDispatcher;
 
-use JMS\Serializer\DeserializationContext;
+use Speakeasy\Serializer\DeserializationContext;
 
 class PreDeserializeEvent extends Event
 {

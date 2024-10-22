@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace JMS\Serializer\Tests\Serializer\Type;
+namespace Speakeasy\Serializer\Tests\Serializer\Type;
 
-use JMS\Serializer\Type\Exception\SyntaxError;
-use JMS\Serializer\Type\Parser;
-use JMS\Serializer\Type\ParserInterface;
+use Speakeasy\Serializer\Type\Exception\SyntaxError;
+use Speakeasy\Serializer\Type\Parser;
+use Speakeasy\Serializer\Type\ParserInterface;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
 

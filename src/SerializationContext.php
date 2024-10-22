@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace JMS\Serializer;
+namespace Speakeasy\Serializer;
 
-use JMS\Serializer\Exception\RuntimeException;
+use Speakeasy\Serializer\Exception\RuntimeException;
 use Metadata\MetadataFactoryInterface;
 
 class SerializationContext extends Context

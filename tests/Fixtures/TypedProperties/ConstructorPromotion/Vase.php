@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace JMS\Serializer\Tests\Fixtures\TypedProperties\ConstructorPromotion;
+namespace Speakeasy\Serializer\Tests\Fixtures\TypedProperties\ConstructorPromotion;
 
-use JMS\Serializer\Annotation as JMS;
+use Speakeasy\Serializer\Annotation as JMS;
 
 class Vase
 {

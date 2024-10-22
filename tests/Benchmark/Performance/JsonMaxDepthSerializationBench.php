@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace JMS\Serializer\Tests\Benchmark\Performance;
+namespace Speakeasy\Serializer\Tests\Benchmark\Performance;
 
-use JMS\Serializer\SerializationContext;
+use Speakeasy\Serializer\SerializationContext;
 
 class JsonMaxDepthSerializationBench extends JsonSerializationBench
 {

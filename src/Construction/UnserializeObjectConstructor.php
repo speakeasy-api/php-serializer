@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace JMS\Serializer\Construction;
+namespace Speakeasy\Serializer\Construction;
 
 use Doctrine\Instantiator\Instantiator;
-use JMS\Serializer\DeserializationContext;
-use JMS\Serializer\Metadata\ClassMetadata;
-use JMS\Serializer\Visitor\DeserializationVisitorInterface;
+use Speakeasy\Serializer\DeserializationContext;
+use Speakeasy\Serializer\Metadata\ClassMetadata;
+use Speakeasy\Serializer\Visitor\DeserializationVisitorInterface;
 
 final class UnserializeObjectConstructor implements ObjectConstructorInterface
 {

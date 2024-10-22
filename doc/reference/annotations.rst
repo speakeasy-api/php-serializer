@@ -134,10 +134,10 @@ will need to wrap your custom strategy with the ``SerializedNameattributeStrateg
 .. code-block :: php
 
     <?php
-    $serializer = \JMS\Serializer\SerializerBuilder::create()
+    $serializer = \Speakeasy\Serializer\SerializerBuilder::create()
         ->setPropertyNamingStrategy(
-            new \JMS\Serializer\Naming\SerializedNameattributeStrategy(
-                new \JMS\Serializer\Naming\IdenticalPropertyNamingStrategy()
+            new \Speakeasy\Serializer\Naming\SerializedNameattributeStrategy(
+                new \Speakeasy\Serializer\Naming\IdenticalPropertyNamingStrategy()
             )
         )
         ->build();
@@ -177,7 +177,7 @@ set the value via reflection, but you may change this to use a public method ins
 .. code-block :: php
 
     <?php
-    use JMS\Serializer\Annotation\AccessType;
+    use Speakeasy\Serializer\Annotation\AccessType;
 
     #[AccessType(type: 'public_method')]
     class User
@@ -203,7 +203,7 @@ be called to retrieve, or set the value of the given property:
 .. code-block :: php
 
     <?php
-    use JMS\Serializer\Annotation\Accessor;
+    use Speakeasy\Serializer\Annotation\Accessor;
 
     class User
     {
@@ -239,9 +239,9 @@ default the order is undefined, but you may change it to either "alphabetical", 
 
     <?php
 
-    use JMS\Serializer\Annotation\AccessorOrder;
-    use JMS\Serializer\Annotation\VirtualProperty;
-    use JMS\Serializer\Annotation\SerializedName;
+    use Speakeasy\Serializer\Annotation\AccessorOrder;
+    use Speakeasy\Serializer\Annotation\VirtualProperty;
+    use Speakeasy\Serializer\Annotation\SerializedName;
 
     #[AccessorOrder('alphabetical')]
     class User
@@ -590,7 +590,7 @@ Examples:
 
     namespace MyNamespace;
 
-    use JMS\Serializer\Annotation\Type;
+    use Speakeasy\Serializer\Annotation\Type;
 
     class BlogPost
     {
@@ -640,7 +640,7 @@ Examples:
 
         namespace MyNamespace;
 
-        use JMS\Serializer\Annotation\Type;
+        use Speakeasy\Serializer\Annotation\Type;
 
         class BlogPost
         {
@@ -668,7 +668,7 @@ This allows you to specify the name of the top-level element.
 
     <?php
 
-    use JMS\Serializer\Annotation\XmlRoot;
+    use Speakeasy\Serializer\Annotation\XmlRoot;
 
     #[XmlRoot('user')]
     class User
@@ -699,7 +699,7 @@ and not as child elements.
 
     <?php
 
-    use JMS\Serializer\Annotation\XmlAttribute;
+    use Speakeasy\Serializer\Annotation\XmlAttribute;
 
     class User
     {
@@ -740,8 +740,8 @@ Example for "attribute":
 
     <?php
 
-    use JMS\Serializer\Annotation\Discriminator;
-    use JMS\Serializer\Annotation\XmlDiscriminator;
+    use Speakeasy\Serializer\Annotation\Discriminator;
+    use Speakeasy\Serializer\Annotation\XmlDiscriminator;
 
     #[Discriminator(field: 'type', map: ['car' => 'Car', 'moped' => 'Moped'], groups: ['foo', 'bar'])]
     #[XmlDiscriminator(attribute: true)]
@@ -761,8 +761,8 @@ Example for "cdata":
 
     <?php
 
-    use JMS\Serializer\Annotation\Discriminator;
-    use JMS\Serializer\Annotation\XmlDiscriminator;
+    use Speakeasy\Serializer\Annotation\Discriminator;
+    use Speakeasy\Serializer\Annotation\XmlDiscriminator;
 
     #[Discriminator(field: 'type', map: ['car' => 'Car', 'moped' => 'Moped'], groups: ['foo', 'bar'])]
     #[XmlDiscriminator]
@@ -788,9 +788,9 @@ XMLElement.
 
     <?php
 
-    use JMS\Serializer\Annotation\XmlAttribute;
-    use JMS\Serializer\Annotation\XmlValue;
-    use JMS\Serializer\Annotation\XmlRoot;
+    use Speakeasy\Serializer\Annotation\XmlAttribute;
+    use Speakeasy\Serializer\Annotation\XmlValue;
+    use Speakeasy\Serializer\Annotation\XmlRoot;
 
     #[XmlRoot('price')]
     class Price
@@ -819,8 +819,8 @@ keys of the array are not important.
 
     <?php
 
-    use JMS\Serializer\Annotation\XmlList;
-    use JMS\Serializer\Annotation\XmlRoot;
+    use Speakeasy\Serializer\Annotation\XmlList;
+    use Speakeasy\Serializer\Annotation\XmlRoot;
 
     #[XmlRoot('post')]
     class Post
@@ -876,7 +876,7 @@ This is similar to the #[XmlKeyValuePairs], but instead of creating child elemen
 
     <?php
 
-    use JMS\Serializer\Annotation\XmlAttributeMap;
+    use Speakeasy\Serializer\Annotation\XmlAttributeMap;
 
     class Input
     {
@@ -899,8 +899,8 @@ This attribute can be defined on a property to add additional xml serialization/
 
     <?php
 
-    use JMS\Serializer\Annotation\XmlElement;
-    use JMS\Serializer\Annotation\XmlNamespace;
+    use Speakeasy\Serializer\Annotation\XmlElement;
+    use Speakeasy\Serializer\Annotation\XmlNamespace;
 
     #[XmlNamespace(uri: 'http://www.w3.org/2005/Atom', prefix: 'atom')]
     class User
@@ -923,17 +923,17 @@ This attribute allows you to specify Xml namespace/s and prefix used.
 
     <?php
 
-    use JMS\Serializer\Annotation\Groups;
-    use JMS\Serializer\Annotation\SerializedName;
-    use JMS\Serializer\Annotation\Type;
-    use JMS\Serializer\Annotation\XmlElement;
-    use JMS\Serializer\Annotation\XmlNamespace;
+    use Speakeasy\Serializer\Annotation\Groups;
+    use Speakeasy\Serializer\Annotation\SerializedName;
+    use Speakeasy\Serializer\Annotation\Type;
+    use Speakeasy\Serializer\Annotation\XmlElement;
+    use Speakeasy\Serializer\Annotation\XmlNamespace;
 
     #[XmlNamespace(uri: 'http://example.com/namespace')]
     #[XmlNamespace(uri: 'http://www.w3.org/2005/Atom', prefix: 'atom')]
     class BlogPost
     {
-        #[Type(\JMS\Serializer\Tests\Fixtures\Author::class)]
+        #[Type(\Speakeasy\Serializer\Tests\Fixtures\Author::class)]
         #[Groups(['post'])]
         #[XmlElement(namespace: 'http://www.w3.org/2005/Atom')]
         private $author;

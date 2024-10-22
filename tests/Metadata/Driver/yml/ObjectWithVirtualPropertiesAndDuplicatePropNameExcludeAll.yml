@@ -1,4 +1,4 @@
-JMS\Serializer\Tests\Fixtures\ObjectWithVirtualPropertiesAndDuplicatePropNameExcludeAll:
+Speakeasy\Serializer\Tests\Fixtures\ObjectWithVirtualPropertiesAndDuplicatePropNameExcludeAll:
   exclusion_policy:   all
   virtual_properties:
     getName:

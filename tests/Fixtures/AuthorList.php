@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace JMS\Serializer\Tests\Fixtures;
+namespace Speakeasy\Serializer\Tests\Fixtures;
 
-use JMS\Serializer\Annotation as Serializer;
+use Speakeasy\Serializer\Annotation as Serializer;
 
 /**
  * An array-acting object that holds many author instances.
@@ -12,11 +12,11 @@ use JMS\Serializer\Annotation as Serializer;
 class AuthorList implements \IteratorAggregate, \Countable, \ArrayAccess
 {
     /**
-     * @Serializer\Type("array<JMS\Serializer\Tests\Fixtures\Author>")
+     * @Serializer\Type("array<Speakeasy\Serializer\Tests\Fixtures\Author>")
      *
      * @var array
      */
-    #[Serializer\Type(name: 'array<JMS\Serializer\Tests\Fixtures\Author>')]
+    #[Serializer\Type(name: 'array<Speakeasy\Serializer\Tests\Fixtures\Author>')]
     protected $authors = [];
 
     public function add(Author $author)

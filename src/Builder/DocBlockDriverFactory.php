@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace JMS\Serializer\Builder;
+namespace Speakeasy\Serializer\Builder;
 
 use Doctrine\Common\Annotations\Reader;
-use JMS\Serializer\Metadata\Driver\DocBlockDriver;
-use JMS\Serializer\Type\ParserInterface;
+use Speakeasy\Serializer\Metadata\Driver\DocBlockDriver;
+use Speakeasy\Serializer\Type\ParserInterface;
 use Metadata\Driver\DriverInterface;
 
 class DocBlockDriverFactory implements DriverFactoryInterface

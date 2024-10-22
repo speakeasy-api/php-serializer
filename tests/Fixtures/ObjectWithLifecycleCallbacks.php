@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace JMS\Serializer\Tests\Fixtures;
+namespace Speakeasy\Serializer\Tests\Fixtures;
 
-use JMS\Serializer\Annotation\Exclude;
-use JMS\Serializer\Annotation\PostDeserialize;
-use JMS\Serializer\Annotation\PostSerialize;
-use JMS\Serializer\Annotation\PreSerialize;
-use JMS\Serializer\Annotation\Type;
+use Speakeasy\Serializer\Annotation\Exclude;
+use Speakeasy\Serializer\Annotation\PostDeserialize;
+use Speakeasy\Serializer\Annotation\PostSerialize;
+use Speakeasy\Serializer\Annotation\PreSerialize;
+use Speakeasy\Serializer\Annotation\Type;
 
 class ObjectWithLifecycleCallbacks
 {

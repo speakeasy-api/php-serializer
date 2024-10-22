@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace JMS\Serializer\Tests\Metadata\Driver;
+namespace Speakeasy\Serializer\Tests\Metadata\Driver;
 
-use JMS\Serializer\Exception\InvalidMetadataException;
-use JMS\Serializer\Metadata\Driver\YamlDriver;
-use JMS\Serializer\Metadata\PropertyMetadata;
-use JMS\Serializer\Naming\IdenticalPropertyNamingStrategy;
-use JMS\Serializer\Tests\Fixtures\BlogPost;
-use JMS\Serializer\Tests\Fixtures\Person;
+use Speakeasy\Serializer\Exception\InvalidMetadataException;
+use Speakeasy\Serializer\Metadata\Driver\YamlDriver;
+use Speakeasy\Serializer\Metadata\PropertyMetadata;
+use Speakeasy\Serializer\Naming\IdenticalPropertyNamingStrategy;
+use Speakeasy\Serializer\Tests\Fixtures\BlogPost;
+use Speakeasy\Serializer\Tests\Fixtures\Person;
 use Metadata\Driver\DriverInterface;
 use Metadata\Driver\FileLocator;
 
@@ -118,7 +118,7 @@ class YamlDriverTest extends BaseDriverTestCase
     protected function getDriver(?string $subDir = null, bool $addUnderscoreDir = true): DriverInterface
     {
         $dirs = [
-            'JMS\Serializer\Tests\Fixtures' => __DIR__ . '/yml' . ($subDir ? '/' . $subDir : ''),
+            'Speakeasy\Serializer\Tests\Fixtures' => __DIR__ . '/yml' . ($subDir ? '/' . $subDir : ''),
         ];
 
         if ($addUnderscoreDir) {

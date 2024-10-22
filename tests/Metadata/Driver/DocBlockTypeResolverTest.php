@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace JMS\Serializer\Tests\Metadata\Driver;
+namespace Speakeasy\Serializer\Tests\Metadata\Driver;
 
-use JMS\Serializer\Metadata\Driver\DocBlockDriver\DocBlockTypeResolver;
-use JMS\Serializer\Tests\Fixtures\ObjectWithPhpDocProperty;
+use Speakeasy\Serializer\Metadata\Driver\DocBlockDriver\DocBlockTypeResolver;
+use Speakeasy\Serializer\Tests\Fixtures\ObjectWithPhpDocProperty;
 use PHPUnit\Framework\TestCase;
 use ReflectionProperty;
 

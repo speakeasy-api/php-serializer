@@ -2,17 +2,17 @@
 
 declare(strict_types=1);
 
-namespace JMS\Serializer\Metadata\Driver;
+namespace Speakeasy\Serializer\Metadata\Driver;
 
 use Doctrine\Persistence\ManagerRegistry;
 use Doctrine\Persistence\Mapping\ClassMetadata as DoctrineClassMetadata;
-use JMS\Serializer\Metadata\ClassMetadata;
-use JMS\Serializer\Metadata\ExpressionPropertyMetadata;
-use JMS\Serializer\Metadata\PropertyMetadata;
-use JMS\Serializer\Metadata\StaticPropertyMetadata;
-use JMS\Serializer\Metadata\VirtualPropertyMetadata;
-use JMS\Serializer\Type\Parser;
-use JMS\Serializer\Type\ParserInterface;
+use Speakeasy\Serializer\Metadata\ClassMetadata;
+use Speakeasy\Serializer\Metadata\ExpressionPropertyMetadata;
+use Speakeasy\Serializer\Metadata\PropertyMetadata;
+use Speakeasy\Serializer\Metadata\StaticPropertyMetadata;
+use Speakeasy\Serializer\Metadata\VirtualPropertyMetadata;
+use Speakeasy\Serializer\Type\Parser;
+use Speakeasy\Serializer\Type\ParserInterface;
 use Metadata\ClassMetadata as BaseClassMetadata;
 use Metadata\Driver\DriverInterface;
 
@@ -23,7 +23,7 @@ use Metadata\Driver\DriverInterface;
 abstract class AbstractDoctrineTypeDriver implements DriverInterface
 {
     /**
-     * Map of doctrine 2 field types to JMS\Serializer types
+     * Map of doctrine 2 field types to Speakeasy\Serializer types
      *
      * @var array
      */

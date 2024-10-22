@@ -2,15 +2,15 @@
 
 declare(strict_types=1);
 
-namespace JMS\Serializer\Tests\Benchmark;
+namespace Speakeasy\Serializer\Tests\Benchmark;
 
-use JMS\Serializer\SerializationContext;
-use JMS\Serializer\Serializer;
-use JMS\Serializer\SerializerBuilder;
-use JMS\Serializer\Tests\Fixtures\Author;
-use JMS\Serializer\Tests\Fixtures\BlogPost;
-use JMS\Serializer\Tests\Fixtures\Comment;
-use JMS\Serializer\Tests\Fixtures\Publisher;
+use Speakeasy\Serializer\SerializationContext;
+use Speakeasy\Serializer\Serializer;
+use Speakeasy\Serializer\SerializerBuilder;
+use Speakeasy\Serializer\Tests\Fixtures\Author;
+use Speakeasy\Serializer\Tests\Fixtures\BlogPost;
+use Speakeasy\Serializer\Tests\Fixtures\Comment;
+use Speakeasy\Serializer\Tests\Fixtures\Publisher;
 
 abstract class AbstractSerializationBench
 {

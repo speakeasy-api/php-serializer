@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace JMS\Serializer\Tests\Fixtures;
+namespace Speakeasy\Serializer\Tests\Fixtures;
 
-use JMS\Serializer\Annotation\Groups;
-use JMS\Serializer\Annotation\SerializedName;
-use JMS\Serializer\Annotation\Since;
-use JMS\Serializer\Annotation\Until;
-use JMS\Serializer\Annotation\VirtualProperty;
+use Speakeasy\Serializer\Annotation\Groups;
+use Speakeasy\Serializer\Annotation\SerializedName;
+use Speakeasy\Serializer\Annotation\Since;
+use Speakeasy\Serializer\Annotation\Until;
+use Speakeasy\Serializer\Annotation\VirtualProperty;
 
 /**
  * dummy comment

@@ -1,4 +1,4 @@
-JMS\Serializer\Tests\Fixtures\SimpleInternalObject:
+Speakeasy\Serializer\Tests\Fixtures\SimpleInternalObject:
     properties:
         bar:
             type: string

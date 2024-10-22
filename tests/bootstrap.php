@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-use JMS\Serializer\Tests\Util\DeprecationLogger;
+use Speakeasy\Serializer\Tests\Util\DeprecationLogger;
 
 (static function () {
     if (!is_file($autoloadFile = __DIR__ . '/../vendor/autoload.php')) {

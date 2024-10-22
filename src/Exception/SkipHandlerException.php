@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace JMS\Serializer\Exception;
+namespace Speakeasy\Serializer\Exception;
 
 /**
  * Throw this exception from you custom (de)serialization handler

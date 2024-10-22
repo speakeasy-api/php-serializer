@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace JMS\Serializer\Tests\Fixtures\DocBlockType;
+namespace Speakeasy\Serializer\Tests\Fixtures\DocBlockType;
 
 class AlternativePHPDocsNames
 {

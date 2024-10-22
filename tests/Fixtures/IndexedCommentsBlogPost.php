@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace JMS\Serializer\Tests\Fixtures;
+namespace Speakeasy\Serializer\Tests\Fixtures;
 
-use JMS\Serializer\Annotation\Accessor;
-use JMS\Serializer\Annotation\XmlAttribute;
-use JMS\Serializer\Annotation\XmlList;
-use JMS\Serializer\Annotation\XmlMap;
-use JMS\Serializer\Annotation\XmlRoot;
+use Speakeasy\Serializer\Annotation\Accessor;
+use Speakeasy\Serializer\Annotation\XmlAttribute;
+use Speakeasy\Serializer\Annotation\XmlList;
+use Speakeasy\Serializer\Annotation\XmlMap;
+use Speakeasy\Serializer\Annotation\XmlRoot;
 
 /** @XmlRoot("post") */
 #[XmlRoot(name: 'post')]

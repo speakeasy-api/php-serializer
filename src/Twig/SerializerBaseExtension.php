@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace JMS\Serializer\Twig;
+namespace Speakeasy\Serializer\Twig;
 
 use Twig\Extension\AbstractExtension;
 

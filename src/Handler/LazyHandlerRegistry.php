@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace JMS\Serializer\Handler;
+namespace Speakeasy\Serializer\Handler;
 
-use JMS\Serializer\Exception\InvalidArgumentException;
+use Speakeasy\Serializer\Exception\InvalidArgumentException;
 use Psr\Container\ContainerInterface as PsrContainerInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 

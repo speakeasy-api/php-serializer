@@ -2,18 +2,18 @@
 
 declare(strict_types=1);
 
-namespace JMS\Serializer\Tests\Fixtures;
+namespace Speakeasy\Serializer\Tests\Fixtures;
 
 use Doctrine\Common\Collections\ArrayCollection;
-use JMS\Serializer\Annotation\Groups;
-use JMS\Serializer\Annotation\SerializedName;
-use JMS\Serializer\Annotation\Type;
-use JMS\Serializer\Annotation\XmlAttribute;
-use JMS\Serializer\Annotation\XmlElement;
-use JMS\Serializer\Annotation\XmlList;
-use JMS\Serializer\Annotation\XmlMap;
-use JMS\Serializer\Annotation\XmlNamespace;
-use JMS\Serializer\Annotation\XmlRoot;
+use Speakeasy\Serializer\Annotation\Groups;
+use Speakeasy\Serializer\Annotation\SerializedName;
+use Speakeasy\Serializer\Annotation\Type;
+use Speakeasy\Serializer\Annotation\XmlAttribute;
+use Speakeasy\Serializer\Annotation\XmlElement;
+use Speakeasy\Serializer\Annotation\XmlList;
+use Speakeasy\Serializer\Annotation\XmlMap;
+use Speakeasy\Serializer\Annotation\XmlNamespace;
+use Speakeasy\Serializer\Annotation\XmlRoot;
 
 /**
  * @XmlRoot("blog-post")
@@ -92,21 +92,21 @@ class BlogPost
     private $etag;
 
     /**
-     * @Type("ArrayCollection<JMS\Serializer\Tests\Fixtures\Comment>")
+     * @Type("ArrayCollection<Speakeasy\Serializer\Tests\Fixtures\Comment>")
      * @XmlList(inline=true, entry="comment")
      * @Groups({"comments"})
      */
-    #[Type(name: 'ArrayCollection<JMS\Serializer\Tests\Fixtures\Comment>')]
+    #[Type(name: 'ArrayCollection<Speakeasy\Serializer\Tests\Fixtures\Comment>')]
     #[XmlList(entry: 'comment', inline: true)]
     #[Groups(groups: ['comments'])]
     private $comments;
 
     /**
-     * @Type("array<JMS\Serializer\Tests\Fixtures\Comment>")
+     * @Type("array<Speakeasy\Serializer\Tests\Fixtures\Comment>")
      * @XmlList(inline=true, entry="comment2")
      * @Groups({"comments"})
      */
-    #[Type(name: 'array<JMS\Serializer\Tests\Fixtures\Comment>')]
+    #[Type(name: 'array<Speakeasy\Serializer\Tests\Fixtures\Comment>')]
     #[XmlList(entry: 'comment2', inline: true)]
     #[Groups(groups: ['comments'])]
     private $comments2;
@@ -120,26 +120,26 @@ class BlogPost
     private $metadata;
 
     /**
-     * @Type("JMS\Serializer\Tests\Fixtures\Author")
+     * @Type("Speakeasy\Serializer\Tests\Fixtures\Author")
      * @Groups({"post"})
      * @XmlElement(namespace="http://www.w3.org/2005/Atom")
      */
-    #[Type(name: 'JMS\Serializer\Tests\Fixtures\Author')]
+    #[Type(name: 'Speakeasy\Serializer\Tests\Fixtures\Author')]
     #[Groups(groups: ['post'])]
     #[XmlElement(namespace: 'http://www.w3.org/2005/Atom')]
     private $author;
 
     /**
-     * @Type("JMS\Serializer\Tests\Fixtures\Publisher")
+     * @Type("Speakeasy\Serializer\Tests\Fixtures\Publisher")
      */
-    #[Type(name: 'JMS\Serializer\Tests\Fixtures\Publisher')]
+    #[Type(name: 'Speakeasy\Serializer\Tests\Fixtures\Publisher')]
     private $publisher;
 
     /**
-     * @Type("array<JMS\Serializer\Tests\Fixtures\Tag>")
+     * @Type("array<Speakeasy\Serializer\Tests\Fixtures\Tag>")
      * @XmlList(inline=true, entry="tag", namespace="http://purl.org/dc/elements/1.1/");
      */
-    #[Type(name: 'array<JMS\Serializer\Tests\Fixtures\Tag>')]
+    #[Type(name: 'array<Speakeasy\Serializer\Tests\Fixtures\Tag>')]
     #[XmlList(entry: 'tag', inline: true, namespace: 'http://purl.org/dc/elements/1.1/')]
     private $tag;
 

@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace JMS\Serializer\Metadata\Driver;
+namespace Speakeasy\Serializer\Metadata\Driver;
 
 use Doctrine\Common\Annotations\Reader;
-use JMS\Serializer\Expression\CompilableExpressionEvaluatorInterface;
-use JMS\Serializer\Naming\PropertyNamingStrategyInterface;
-use JMS\Serializer\Type\ParserInterface;
+use Speakeasy\Serializer\Expression\CompilableExpressionEvaluatorInterface;
+use Speakeasy\Serializer\Naming\PropertyNamingStrategyInterface;
+use Speakeasy\Serializer\Type\ParserInterface;
 
 /**
  * @deprecated

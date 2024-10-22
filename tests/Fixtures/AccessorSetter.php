@@ -2,19 +2,19 @@
 
 declare(strict_types=1);
 
-namespace JMS\Serializer\Tests\Fixtures;
+namespace Speakeasy\Serializer\Tests\Fixtures;
 
-use JMS\Serializer\Annotation as Serializer;
+use Speakeasy\Serializer\Annotation as Serializer;
 
 class AccessorSetter
 {
     /**
-     * @Serializer\Type("JMS\Serializer\Tests\Fixtures\AccessorSetterElement")
+     * @Serializer\Type("Speakeasy\Serializer\Tests\Fixtures\AccessorSetterElement")
      * @Serializer\Accessor(setter="setElementDifferent")
      *
      * @var \stdClass
      */
-    #[Serializer\Type(name: 'JMS\Serializer\Tests\Fixtures\AccessorSetterElement')]
+    #[Serializer\Type(name: 'Speakeasy\Serializer\Tests\Fixtures\AccessorSetterElement')]
     #[Serializer\Accessor(setter: 'setElementDifferent')]
     protected $element;
 

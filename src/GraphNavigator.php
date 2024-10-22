@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace JMS\Serializer;
+namespace Speakeasy\Serializer;
 
-use JMS\Serializer\Exclusion\ExclusionStrategyInterface;
+use Speakeasy\Serializer\Exclusion\ExclusionStrategyInterface;
 
 /**
  * Handles traversal along the object graph.

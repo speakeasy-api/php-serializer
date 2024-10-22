@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace JMS\Serializer\Builder;
+namespace Speakeasy\Serializer\Builder;
 
 use Doctrine\Common\Annotations\Reader;
-use JMS\Serializer\Exception\LogicException;
+use Speakeasy\Serializer\Exception\LogicException;
 use Metadata\Driver\DriverInterface;
 
 final class CallbackDriverFactory implements DriverFactoryInterface

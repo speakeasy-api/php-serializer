@@ -2,29 +2,29 @@
 
 declare(strict_types=1);
 
-namespace JMS\Serializer\GraphNavigator;
+namespace Speakeasy\Serializer\GraphNavigator;
 
-use JMS\Serializer\Accessor\AccessorStrategyInterface;
-use JMS\Serializer\Construction\ObjectConstructorInterface;
-use JMS\Serializer\DeserializationContext;
-use JMS\Serializer\EventDispatcher\EventDispatcher;
-use JMS\Serializer\EventDispatcher\EventDispatcherInterface;
-use JMS\Serializer\EventDispatcher\ObjectEvent;
-use JMS\Serializer\EventDispatcher\PreDeserializeEvent;
-use JMS\Serializer\Exception\ExpressionLanguageRequiredException;
-use JMS\Serializer\Exception\LogicException;
-use JMS\Serializer\Exception\NotAcceptableException;
-use JMS\Serializer\Exception\PropertyMissingException;
-use JMS\Serializer\Exception\RuntimeException;
-use JMS\Serializer\Exception\SkipHandlerException;
-use JMS\Serializer\Exclusion\ExpressionLanguageExclusionStrategy;
-use JMS\Serializer\Expression\ExpressionEvaluatorInterface;
-use JMS\Serializer\GraphNavigator;
-use JMS\Serializer\GraphNavigatorInterface;
-use JMS\Serializer\Handler\HandlerRegistryInterface;
-use JMS\Serializer\Metadata\ClassMetadata;
-use JMS\Serializer\NullAwareVisitorInterface;
-use JMS\Serializer\Visitor\DeserializationVisitorInterface;
+use Speakeasy\Serializer\Accessor\AccessorStrategyInterface;
+use Speakeasy\Serializer\Construction\ObjectConstructorInterface;
+use Speakeasy\Serializer\DeserializationContext;
+use Speakeasy\Serializer\EventDispatcher\EventDispatcher;
+use Speakeasy\Serializer\EventDispatcher\EventDispatcherInterface;
+use Speakeasy\Serializer\EventDispatcher\ObjectEvent;
+use Speakeasy\Serializer\EventDispatcher\PreDeserializeEvent;
+use Speakeasy\Serializer\Exception\ExpressionLanguageRequiredException;
+use Speakeasy\Serializer\Exception\LogicException;
+use Speakeasy\Serializer\Exception\NotAcceptableException;
+use Speakeasy\Serializer\Exception\PropertyMissingException;
+use Speakeasy\Serializer\Exception\RuntimeException;
+use Speakeasy\Serializer\Exception\SkipHandlerException;
+use Speakeasy\Serializer\Exclusion\ExpressionLanguageExclusionStrategy;
+use Speakeasy\Serializer\Expression\ExpressionEvaluatorInterface;
+use Speakeasy\Serializer\GraphNavigator;
+use Speakeasy\Serializer\GraphNavigatorInterface;
+use Speakeasy\Serializer\Handler\HandlerRegistryInterface;
+use Speakeasy\Serializer\Metadata\ClassMetadata;
+use Speakeasy\Serializer\NullAwareVisitorInterface;
+use Speakeasy\Serializer\Visitor\DeserializationVisitorInterface;
 use Metadata\MetadataFactoryInterface;
 
 /**

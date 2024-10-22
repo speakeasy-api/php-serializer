@@ -2,22 +2,22 @@
 
 declare(strict_types=1);
 
-namespace JMS\Serializer\Tests\Serializer;
+namespace Speakeasy\Serializer\Tests\Serializer;
 
-use JMS\Serializer\Exception\LogicException;
-use JMS\Serializer\Exclusion\ExclusionStrategyInterface;
-use JMS\Serializer\GraphNavigator;
-use JMS\Serializer\Metadata\ClassMetadata;
-use JMS\Serializer\Metadata\PropertyMetadata;
-use JMS\Serializer\SerializationContext;
-use JMS\Serializer\SerializerBuilder;
-use JMS\Serializer\Tests\Fixtures\Author;
-use JMS\Serializer\Tests\Fixtures\BlogPost;
-use JMS\Serializer\Tests\Fixtures\InlineChild;
-use JMS\Serializer\Tests\Fixtures\Node;
-use JMS\Serializer\Tests\Fixtures\Publisher;
-use JMS\Serializer\Tests\Fixtures\VersionedObject;
-use JMS\Serializer\VisitorInterface;
+use Speakeasy\Serializer\Exception\LogicException;
+use Speakeasy\Serializer\Exclusion\ExclusionStrategyInterface;
+use Speakeasy\Serializer\GraphNavigator;
+use Speakeasy\Serializer\Metadata\ClassMetadata;
+use Speakeasy\Serializer\Metadata\PropertyMetadata;
+use Speakeasy\Serializer\SerializationContext;
+use Speakeasy\Serializer\SerializerBuilder;
+use Speakeasy\Serializer\Tests\Fixtures\Author;
+use Speakeasy\Serializer\Tests\Fixtures\BlogPost;
+use Speakeasy\Serializer\Tests\Fixtures\InlineChild;
+use Speakeasy\Serializer\Tests\Fixtures\Node;
+use Speakeasy\Serializer\Tests\Fixtures\Publisher;
+use Speakeasy\Serializer\Tests\Fixtures\VersionedObject;
+use Speakeasy\Serializer\VisitorInterface;
 use Metadata\MetadataFactoryInterface;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
@@ -45,13 +45,13 @@ class ContextTest extends TestCase
                     $expectedPath = Node::class;
                 } elseif ($context->getObject() === $objects[1]) {
                     $expectedDepth = 2;
-                    $expectedPath = 'JMS\Serializer\Tests\Fixtures\Node -> JMS\Serializer\Tests\Fixtures\Node';
+                    $expectedPath = 'Speakeasy\Serializer\Tests\Fixtures\Node -> Speakeasy\Serializer\Tests\Fixtures\Node';
                 } elseif ($context->getObject() === $objects[2]) {
                     $expectedDepth = 2;
-                    $expectedPath = 'JMS\Serializer\Tests\Fixtures\Node -> JMS\Serializer\Tests\Fixtures\Node';
+                    $expectedPath = 'Speakeasy\Serializer\Tests\Fixtures\Node -> Speakeasy\Serializer\Tests\Fixtures\Node';
                 } elseif ($context->getObject() === $objects[3]) {
                     $expectedDepth = 3;
-                    $expectedPath = 'JMS\Serializer\Tests\Fixtures\Node -> JMS\Serializer\Tests\Fixtures\Node -> JMS\Serializer\Tests\Fixtures\Node';
+                    $expectedPath = 'Speakeasy\Serializer\Tests\Fixtures\Node -> Speakeasy\Serializer\Tests\Fixtures\Node -> Speakeasy\Serializer\Tests\Fixtures\Node';
                 }
 
                 $self->assertEquals($expectedDepth, $context->getDepth(), 'shouldSkipClass depth');
@@ -71,13 +71,13 @@ class ContextTest extends TestCase
                     $expectedPath = Node::class;
                 } elseif ($context->getObject() === $objects[1]) {
                     $expectedDepth = 2;
-                    $expectedPath = 'JMS\Serializer\Tests\Fixtures\Node -> JMS\Serializer\Tests\Fixtures\Node';
+                    $expectedPath = 'Speakeasy\Serializer\Tests\Fixtures\Node -> Speakeasy\Serializer\Tests\Fixtures\Node';
                 } elseif ($context->getObject() === $objects[2]) {
                     $expectedDepth = 2;
-                    $expectedPath = 'JMS\Serializer\Tests\Fixtures\Node -> JMS\Serializer\Tests\Fixtures\Node';
+                    $expectedPath = 'Speakeasy\Serializer\Tests\Fixtures\Node -> Speakeasy\Serializer\Tests\Fixtures\Node';
                 } elseif ($context->getObject() === $objects[3]) {
                     $expectedDepth = 3;
-                    $expectedPath = 'JMS\Serializer\Tests\Fixtures\Node -> JMS\Serializer\Tests\Fixtures\Node -> JMS\Serializer\Tests\Fixtures\Node';
+                    $expectedPath = 'Speakeasy\Serializer\Tests\Fixtures\Node -> Speakeasy\Serializer\Tests\Fixtures\Node -> Speakeasy\Serializer\Tests\Fixtures\Node';
                 }
 
                 $self->assertEquals($expectedDepth, $context->getDepth(), 'shouldSkipProperty depth');
@@ -123,12 +123,12 @@ class ContextTest extends TestCase
             ->willReturnCallback(static function (PropertyMetadata $propertyMetadata, SerializationContext $context) use ($self) {
                 $stack = $context->getMetadataStack();
 
-                if ('JMS\Serializer\Tests\Fixtures\Node' === $propertyMetadata->class && 'children' === $propertyMetadata->name) {
+                if ('Speakeasy\Serializer\Tests\Fixtures\Node' === $propertyMetadata->class && 'children' === $propertyMetadata->name) {
                     $self->assertEquals(1, $stack->count());
                     $self->assertEquals(Node::class, $stack[0]->name);
                 }
 
-                if ('JMS\Serializer\Tests\Fixtures\InlineChild' === $propertyMetadata->class) {
+                if ('Speakeasy\Serializer\Tests\Fixtures\InlineChild' === $propertyMetadata->class) {
                     $self->assertEquals(3, $stack->count());
                     $self->assertEquals(Node::class, $stack[2]->name);
                     $self->assertEquals('children', $stack[1]->name);

@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace JMS\Serializer\Metadata;
+namespace Speakeasy\Serializer\Metadata;
 
-use JMS\Serializer\Exception\InvalidMetadataException;
-use JMS\Serializer\Expression\Expression;
-use JMS\Serializer\Ordering\AlphabeticalPropertyOrderingStrategy;
-use JMS\Serializer\Ordering\CustomPropertyOrderingStrategy;
-use JMS\Serializer\Ordering\IdenticalPropertyOrderingStrategy;
+use Speakeasy\Serializer\Exception\InvalidMetadataException;
+use Speakeasy\Serializer\Expression\Expression;
+use Speakeasy\Serializer\Ordering\AlphabeticalPropertyOrderingStrategy;
+use Speakeasy\Serializer\Ordering\CustomPropertyOrderingStrategy;
+use Speakeasy\Serializer\Ordering\IdenticalPropertyOrderingStrategy;
 use Metadata\MergeableClassMetadata;
 use Metadata\MergeableInterface;
 use Metadata\MethodMetadata;

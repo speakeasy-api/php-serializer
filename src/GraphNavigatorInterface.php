@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace JMS\Serializer;
+namespace Speakeasy\Serializer;
 
-use JMS\Serializer\Exception\NotAcceptableException;
+use Speakeasy\Serializer\Exception\NotAcceptableException;
 
 interface GraphNavigatorInterface
 {

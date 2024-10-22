@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace JMS\Serializer\Tests\Metadata\Driver;
+namespace Speakeasy\Serializer\Tests\Metadata\Driver;
 
 use Doctrine\Common\Annotations\AnnotationReader;
-use JMS\Serializer\Builder\DefaultDriverFactory;
-use JMS\Serializer\Metadata\ClassMetadata;
-use JMS\Serializer\Naming\IdenticalPropertyNamingStrategy;
-use JMS\Serializer\Tests\Fixtures\TypedProperties\User;
+use Speakeasy\Serializer\Builder\DefaultDriverFactory;
+use Speakeasy\Serializer\Metadata\ClassMetadata;
+use Speakeasy\Serializer\Naming\IdenticalPropertyNamingStrategy;
+use Speakeasy\Serializer\Tests\Fixtures\TypedProperties\User;
 use PHPUnit\Framework\TestCase;
 
 class DefaultDriverFactoryTest extends TestCase
@@ -25,7 +25,7 @@ class DefaultDriverFactoryTest extends TestCase
 
         $expectedPropertyTypes = [
             'id' => 'int',
-            'role' => 'JMS\Serializer\Tests\Fixtures\TypedProperties\Role',
+            'role' => 'Speakeasy\Serializer\Tests\Fixtures\TypedProperties\Role',
             'created' => 'DateTime',
             'tags' => 'iterable',
         ];

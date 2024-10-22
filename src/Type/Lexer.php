@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace JMS\Serializer\Type;
+namespace Speakeasy\Serializer\Type;
 
 use Doctrine\Common\Lexer\AbstractLexer;
-use JMS\Serializer\Type\Exception\SyntaxError;
+use Speakeasy\Serializer\Type\Exception\SyntaxError;
 
 /**
  * @internal

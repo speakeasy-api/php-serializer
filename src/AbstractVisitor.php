@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace JMS\Serializer;
+namespace Speakeasy\Serializer;
 
-use JMS\Serializer\Exception\NonFloatCastableTypeException;
-use JMS\Serializer\Exception\NonIntCastableTypeException;
-use JMS\Serializer\Exception\NonStringCastableTypeException;
+use Speakeasy\Serializer\Exception\NonFloatCastableTypeException;
+use Speakeasy\Serializer\Exception\NonIntCastableTypeException;
+use Speakeasy\Serializer\Exception\NonStringCastableTypeException;
 
 /**
  * @internal

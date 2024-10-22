@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace JMS\Serializer\Twig;
+namespace Speakeasy\Serializer\Twig;
 
 use Twig\TwigFilter;
 use Twig\TwigFunction;
@@ -32,7 +32,7 @@ final class SerializerRuntimeExtension extends SerializerBaseExtension
     public function getFunctions()
     {
         return [
-            new TwigFunction($this->serializationFunctionsPrefix . 'serialization_context', '\JMS\Serializer\SerializationContext::create'),
+            new TwigFunction($this->serializationFunctionsPrefix . 'serialization_context', '\Speakeasy\Serializer\SerializationContext::create'),
         ];
     }
 }

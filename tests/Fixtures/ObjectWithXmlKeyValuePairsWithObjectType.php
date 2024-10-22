@@ -2,19 +2,19 @@
 
 declare(strict_types=1);
 
-namespace JMS\Serializer\Tests\Fixtures;
+namespace Speakeasy\Serializer\Tests\Fixtures;
 
-use JMS\Serializer\Annotation\Type;
-use JMS\Serializer\Annotation\XmlKeyValuePairs;
+use Speakeasy\Serializer\Annotation\Type;
+use Speakeasy\Serializer\Annotation\XmlKeyValuePairs;
 
 class ObjectWithXmlKeyValuePairsWithObjectType
 {
     /**
      * @var array
-     * @Type("array<string,JMS\Serializer\Tests\Fixtures\ObjectWithXmlKeyValuePairsWithType>")
+     * @Type("array<string,Speakeasy\Serializer\Tests\Fixtures\ObjectWithXmlKeyValuePairsWithType>")
      * @XmlKeyValuePairs
      */
-    #[Type(name: 'array<string,JMS\Serializer\Tests\Fixtures\ObjectWithXmlKeyValuePairsWithType>')]
+    #[Type(name: 'array<string,Speakeasy\Serializer\Tests\Fixtures\ObjectWithXmlKeyValuePairsWithType>')]
     #[XmlKeyValuePairs]
     private $list;
 

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace JMS\Serializer\Expression;
+namespace Speakeasy\Serializer\Expression;
 
 use Symfony\Component\ExpressionLanguage\ParsedExpression as BaseExpression;
 use Symfony\Component\ExpressionLanguage\SerializedParsedExpression;

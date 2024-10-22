@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace JMS\Serializer\Tests\Fixtures\Doctrine\SingleTableInheritance;
+namespace Speakeasy\Serializer\Tests\Fixtures\Doctrine\SingleTableInheritance;
 
 use Doctrine\ORM\Mapping as ORM;
 

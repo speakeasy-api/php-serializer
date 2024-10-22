@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace JMS\Serializer\Tests\Util;
+namespace Speakeasy\Serializer\Tests\Util;
 
 class DeprecationLogger
 {

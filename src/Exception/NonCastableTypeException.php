@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace JMS\Serializer\Exception;
+namespace Speakeasy\Serializer\Exception;
 
 abstract class NonCastableTypeException extends RuntimeException
 {

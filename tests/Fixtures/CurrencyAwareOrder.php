@@ -2,17 +2,17 @@
 
 declare(strict_types=1);
 
-namespace JMS\Serializer\Tests\Fixtures;
+namespace Speakeasy\Serializer\Tests\Fixtures;
 
-use JMS\Serializer\Annotation\Type;
-use JMS\Serializer\Annotation\XmlRoot;
+use Speakeasy\Serializer\Annotation\Type;
+use Speakeasy\Serializer\Annotation\XmlRoot;
 
 /** @XmlRoot("order") */
 #[XmlRoot(name: 'order')]
 class CurrencyAwareOrder
 {
-    /** @Type("JMS\Serializer\Tests\Fixtures\CurrencyAwarePrice") */
-    #[Type(name: 'JMS\Serializer\Tests\Fixtures\CurrencyAwarePrice')]
+    /** @Type("Speakeasy\Serializer\Tests\Fixtures\CurrencyAwarePrice") */
+    #[Type(name: 'Speakeasy\Serializer\Tests\Fixtures\CurrencyAwarePrice')]
     private $cost;
 
     public function __construct(?CurrencyAwarePrice $price = null)

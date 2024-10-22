@@ -2,15 +2,15 @@
 
 declare(strict_types=1);
 
-namespace JMS\Serializer\Exclusion;
+namespace Speakeasy\Serializer\Exclusion;
 
-use JMS\Serializer\Context;
-use JMS\Serializer\Expression\CompilableExpressionEvaluatorInterface;
-use JMS\Serializer\Expression\Expression;
-use JMS\Serializer\Expression\ExpressionEvaluatorInterface;
-use JMS\Serializer\Metadata\ClassMetadata;
-use JMS\Serializer\Metadata\PropertyMetadata;
-use JMS\Serializer\SerializationContext;
+use Speakeasy\Serializer\Context;
+use Speakeasy\Serializer\Expression\CompilableExpressionEvaluatorInterface;
+use Speakeasy\Serializer\Expression\Expression;
+use Speakeasy\Serializer\Expression\ExpressionEvaluatorInterface;
+use Speakeasy\Serializer\Metadata\ClassMetadata;
+use Speakeasy\Serializer\Metadata\PropertyMetadata;
+use Speakeasy\Serializer\SerializationContext;
 
 /**
  * Exposes an exclusion strategy based on the Symfony's expression language.

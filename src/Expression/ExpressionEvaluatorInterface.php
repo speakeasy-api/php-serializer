@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace JMS\Serializer\Expression;
+namespace Speakeasy\Serializer\Expression;
 
 /**
  * @author Asmir Mustafic <goetas@gmail.com>

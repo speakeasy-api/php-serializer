@@ -2,20 +2,20 @@
 
 declare(strict_types=1);
 
-namespace JMS\Serializer;
+namespace Speakeasy\Serializer;
 
-use JMS\Serializer\ContextFactory\DefaultDeserializationContextFactory;
-use JMS\Serializer\ContextFactory\DefaultSerializationContextFactory;
-use JMS\Serializer\ContextFactory\DeserializationContextFactoryInterface;
-use JMS\Serializer\ContextFactory\SerializationContextFactoryInterface;
-use JMS\Serializer\Exception\InvalidArgumentException;
-use JMS\Serializer\Exception\RuntimeException;
-use JMS\Serializer\Exception\UnsupportedFormatException;
-use JMS\Serializer\GraphNavigator\Factory\GraphNavigatorFactoryInterface;
-use JMS\Serializer\Type\Parser;
-use JMS\Serializer\Type\ParserInterface;
-use JMS\Serializer\Visitor\Factory\DeserializationVisitorFactory;
-use JMS\Serializer\Visitor\Factory\SerializationVisitorFactory;
+use Speakeasy\Serializer\ContextFactory\DefaultDeserializationContextFactory;
+use Speakeasy\Serializer\ContextFactory\DefaultSerializationContextFactory;
+use Speakeasy\Serializer\ContextFactory\DeserializationContextFactoryInterface;
+use Speakeasy\Serializer\ContextFactory\SerializationContextFactoryInterface;
+use Speakeasy\Serializer\Exception\InvalidArgumentException;
+use Speakeasy\Serializer\Exception\RuntimeException;
+use Speakeasy\Serializer\Exception\UnsupportedFormatException;
+use Speakeasy\Serializer\GraphNavigator\Factory\GraphNavigatorFactoryInterface;
+use Speakeasy\Serializer\Type\Parser;
+use Speakeasy\Serializer\Type\ParserInterface;
+use Speakeasy\Serializer\Visitor\Factory\DeserializationVisitorFactory;
+use Speakeasy\Serializer\Visitor\Factory\SerializationVisitorFactory;
 use Metadata\MetadataFactoryInterface;
 
 /**

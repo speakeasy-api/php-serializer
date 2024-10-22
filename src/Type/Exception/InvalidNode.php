@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace JMS\Serializer\Type\Exception;
+namespace Speakeasy\Serializer\Type\Exception;
 
 final class InvalidNode extends \LogicException implements Exception
 {

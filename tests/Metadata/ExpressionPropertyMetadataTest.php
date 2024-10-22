@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace JMS\Serializer\Tests\Metadata;
+namespace Speakeasy\Serializer\Tests\Metadata;
 
-use JMS\Serializer\Metadata\ExpressionPropertyMetadata;
+use Speakeasy\Serializer\Metadata\ExpressionPropertyMetadata;
 
 class ExpressionPropertyMetadataTest extends AbstractPropertyMetadataTestCase
 {

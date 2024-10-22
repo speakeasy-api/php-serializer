@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace JMS\Serializer\Tests\Ordering;
+namespace Speakeasy\Serializer\Tests\Ordering;
 
-use JMS\Serializer\Metadata\PropertyMetadata;
-use JMS\Serializer\Ordering\CustomPropertyOrderingStrategy;
+use Speakeasy\Serializer\Metadata\PropertyMetadata;
+use Speakeasy\Serializer\Ordering\CustomPropertyOrderingStrategy;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
 

@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace JMS\Serializer\Ordering;
+namespace Speakeasy\Serializer\Ordering;
 
-use JMS\Serializer\Metadata\PropertyMetadata;
+use Speakeasy\Serializer\Metadata\PropertyMetadata;
 
 final class AlphabeticalPropertyOrderingStrategy implements PropertyOrderingInterface
 {

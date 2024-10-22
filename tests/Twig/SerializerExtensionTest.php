@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace JMS\Serializer\Tests\Twig;
+namespace Speakeasy\Serializer\Tests\Twig;
 
-use JMS\Serializer\Twig\SerializerExtension;
-use JMS\Serializer\Twig\SerializerRuntimeExtension;
-use JMS\Serializer\Twig\SerializerRuntimeHelper;
+use Speakeasy\Serializer\Twig\SerializerExtension;
+use Speakeasy\Serializer\Twig\SerializerRuntimeExtension;
+use Speakeasy\Serializer\Twig\SerializerRuntimeHelper;
 use PHPUnit\Framework\TestCase;
 use Twig\TwigFilter;
 use Twig\TwigFunction;
@@ -15,7 +15,7 @@ class SerializerExtensionTest extends TestCase
 {
     public function testSerialize()
     {
-        $mockSerializer = $this->getMockBuilder('JMS\Serializer\SerializerInterface')->getMock();
+        $mockSerializer = $this->getMockBuilder('Speakeasy\Serializer\SerializerInterface')->getMock();
         $obj = new \stdClass();
         $mockSerializer
             ->expects($this->once())
@@ -31,14 +31,14 @@ class SerializerExtensionTest extends TestCase
         self::assertSame('serialize', $filters[0]->getName());
 
         self::assertEquals(
-            [new TwigFunction('serialization_context', '\JMS\Serializer\SerializationContext::create')],
+            [new TwigFunction('serialization_context', '\Speakeasy\Serializer\SerializationContext::create')],
             $serializerExtension->getFunctions(),
         );
     }
 
     public function testSerializeWithPrefix()
     {
-        $mockSerializer = $this->getMockBuilder('JMS\Serializer\SerializerInterface')->getMock();
+        $mockSerializer = $this->getMockBuilder('Speakeasy\Serializer\SerializerInterface')->getMock();
         $obj = new \stdClass();
         $mockSerializer
             ->expects($this->once())
@@ -54,7 +54,7 @@ class SerializerExtensionTest extends TestCase
         self::assertSame('foo_serialize', $filters[0]->getName());
 
         self::assertEquals(
-            [new TwigFunction('foo_serialization_context', '\JMS\Serializer\SerializationContext::create')],
+            [new TwigFunction('foo_serialization_context', '\Speakeasy\Serializer\SerializationContext::create')],
             $serializerExtension->getFunctions(),
         );
     }
@@ -63,7 +63,7 @@ class SerializerExtensionTest extends TestCase
     {
         $obj = new \stdClass();
 
-        $mockSerializer = $this->getMockBuilder('JMS\Serializer\SerializerInterface')->getMock();
+        $mockSerializer = $this->getMockBuilder('Speakeasy\Serializer\SerializerInterface')->getMock();
         $mockSerializer
             ->expects($this->once())
             ->method('serialize')
@@ -83,7 +83,7 @@ class SerializerExtensionTest extends TestCase
             $serializerExtension->getFilters(),
         );
         self::assertEquals(
-            [new TwigFunction('serialization_context', '\JMS\Serializer\SerializationContext::create')],
+            [new TwigFunction('serialization_context', '\Speakeasy\Serializer\SerializationContext::create')],
             $serializerExtension->getFunctions(),
         );
     }

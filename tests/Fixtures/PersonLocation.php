@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace JMS\Serializer\Tests\Fixtures;
+namespace Speakeasy\Serializer\Tests\Fixtures;
 
-use JMS\Serializer\Annotation\Type;
-use JMS\Serializer\Annotation\XmlRoot;
+use Speakeasy\Serializer\Annotation\Type;
+use Speakeasy\Serializer\Annotation\XmlRoot;
 
 /**
  * @XmlRoot("person_location")
@@ -14,9 +14,9 @@ use JMS\Serializer\Annotation\XmlRoot;
 class PersonLocation
 {
     /**
-     * @Type("JMS\Serializer\Tests\Fixtures\Person")
+     * @Type("Speakeasy\Serializer\Tests\Fixtures\Person")
      */
-    #[Type(name: 'JMS\Serializer\Tests\Fixtures\Person')]
+    #[Type(name: 'Speakeasy\Serializer\Tests\Fixtures\Person')]
     public $person;
 
     /**

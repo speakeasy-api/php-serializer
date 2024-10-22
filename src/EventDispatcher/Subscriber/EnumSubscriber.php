@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace JMS\Serializer\EventDispatcher\Subscriber;
+namespace Speakeasy\Serializer\EventDispatcher\Subscriber;
 
-use JMS\Serializer\EventDispatcher\EventSubscriberInterface;
-use JMS\Serializer\EventDispatcher\PreSerializeEvent;
+use Speakeasy\Serializer\EventDispatcher\EventSubscriberInterface;
+use Speakeasy\Serializer\EventDispatcher\PreSerializeEvent;
 
 final class EnumSubscriber implements EventSubscriberInterface
 {

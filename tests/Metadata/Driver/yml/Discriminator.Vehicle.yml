@@ -1,9 +1,9 @@
-JMS\Serializer\Tests\Fixtures\Discriminator\Vehicle:
+Speakeasy\Serializer\Tests\Fixtures\Discriminator\Vehicle:
     discriminator:
         field_name: type
         map:
-            car: JMS\Serializer\Tests\Fixtures\Discriminator\Car
-            moped: JMS\Serializer\Tests\Fixtures\Discriminator\Moped
+            car: Speakeasy\Serializer\Tests\Fixtures\Discriminator\Car
+            moped: Speakeasy\Serializer\Tests\Fixtures\Discriminator\Moped
 
     properties:
         km:

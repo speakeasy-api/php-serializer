@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace JMS\Serializer\Tests\Fixtures;
+namespace Speakeasy\Serializer\Tests\Fixtures;
 
-use JMS\Serializer\Annotation\ExclusionPolicy;
-use JMS\Serializer\Annotation\Expose;
+use Speakeasy\Serializer\Annotation\ExclusionPolicy;
+use Speakeasy\Serializer\Annotation\Expose;
 
 /**
  * @author Johannes M. Schmitt <schmittjoh@gmail.com>

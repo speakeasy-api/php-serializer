@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace JMS\Serializer\EventDispatcher;
+namespace Speakeasy\Serializer\EventDispatcher;
 
-use JMS\Serializer\Exception\InvalidArgumentException;
+use Speakeasy\Serializer\Exception\InvalidArgumentException;
 
 /**
  * Light-weight event dispatcher.

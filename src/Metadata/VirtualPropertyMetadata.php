@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace JMS\Serializer\Metadata;
+namespace Speakeasy\Serializer\Metadata;
 
 class VirtualPropertyMetadata extends PropertyMetadata
 {

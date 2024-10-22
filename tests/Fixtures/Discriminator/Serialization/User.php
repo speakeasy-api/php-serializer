@@ -2,19 +2,19 @@
 
 declare(strict_types=1);
 
-namespace JMS\Serializer\Tests\Fixtures\Discriminator\Serialization;
+namespace Speakeasy\Serializer\Tests\Fixtures\Discriminator\Serialization;
 
-use JMS\Serializer\Annotation as JMS;
+use Speakeasy\Serializer\Annotation as JMS;
 
 /**
  * @JMS\Discriminator(field = "entityName",
  *     groups={"entity.identification"},
  *     map = {
- *     "User": "JMS\Serializer\Tests\Fixtures\Discriminator\Serialization\User",
- *     "ExtendedUser": "JMS\Serializer\Tests\Fixtures\Discriminator\Serialization\ExtendedUser"
+ *     "User": "Speakeasy\Serializer\Tests\Fixtures\Discriminator\Serialization\User",
+ *     "ExtendedUser": "Speakeasy\Serializer\Tests\Fixtures\Discriminator\Serialization\ExtendedUser"
  * })
  */
-#[JMS\Discriminator(field: 'entityName', groups: ['entity.identification'], map: ['User' => 'JMS\Serializer\Tests\Fixtures\Discriminator\Serialization\User', 'ExtendedUser' => 'JMS\Serializer\Tests\Fixtures\Discriminator\Serialization\ExtendedUser'])]
+#[JMS\Discriminator(field: 'entityName', groups: ['entity.identification'], map: ['User' => 'Speakeasy\Serializer\Tests\Fixtures\Discriminator\Serialization\User', 'ExtendedUser' => 'Speakeasy\Serializer\Tests\Fixtures\Discriminator\Serialization\ExtendedUser'])]
 class User extends Entity
 {
     /**

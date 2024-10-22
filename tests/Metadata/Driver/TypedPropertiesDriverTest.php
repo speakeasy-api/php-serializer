@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace JMS\Serializer\Tests\Metadata\Driver;
+namespace Speakeasy\Serializer\Tests\Metadata\Driver;
 
 use Doctrine\Common\Annotations\AnnotationReader;
-use JMS\Serializer\Metadata\ClassMetadata;
-use JMS\Serializer\Metadata\Driver\AnnotationDriver;
-use JMS\Serializer\Metadata\Driver\TypedPropertiesDriver;
-use JMS\Serializer\Naming\IdenticalPropertyNamingStrategy;
-use JMS\Serializer\Tests\Fixtures\TypedProperties\User;
+use Speakeasy\Serializer\Metadata\ClassMetadata;
+use Speakeasy\Serializer\Metadata\Driver\AnnotationDriver;
+use Speakeasy\Serializer\Metadata\Driver\TypedPropertiesDriver;
+use Speakeasy\Serializer\Naming\IdenticalPropertyNamingStrategy;
+use Speakeasy\Serializer\Tests\Fixtures\TypedProperties\User;
 use PHPUnit\Framework\TestCase;
 use ReflectionClass;
 
@@ -21,11 +21,11 @@ class TypedPropertiesDriverTest extends TestCase
 
         $expectedPropertyTypes = [
             'id' => 'int',
-            'role' => 'JMS\Serializer\Tests\Fixtures\TypedProperties\Role',
-            'vehicle' => 'JMS\Serializer\Tests\Fixtures\TypedProperties\Vehicle',
+            'role' => 'Speakeasy\Serializer\Tests\Fixtures\TypedProperties\Role',
+            'vehicle' => 'Speakeasy\Serializer\Tests\Fixtures\TypedProperties\Vehicle',
             'created' => 'DateTime',
             'tags' => 'iterable',
-            'virtualRole' => 'JMS\Serializer\Tests\Fixtures\TypedProperties\Role',
+            'virtualRole' => 'Speakeasy\Serializer\Tests\Fixtures\TypedProperties\Role',
         ];
 
         foreach ($expectedPropertyTypes as $property => $type) {

@@ -1,4 +1,4 @@
-JMS\Serializer\Tests\Fixtures\ObjectWithExpressionVirtualPropertiesAndExcludeAll:
+Speakeasy\Serializer\Tests\Fixtures\ObjectWithExpressionVirtualPropertiesAndExcludeAll:
     exclusion_policy: all
     virtual_properties:
         virtualValue:

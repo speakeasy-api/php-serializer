@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace JMS\Serializer\Handler;
+namespace Speakeasy\Serializer\Handler;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
@@ -10,12 +10,12 @@ use Doctrine\ODM\MongoDB\PersistentCollection as MongoPersistentCollection;
 use Doctrine\ODM\PHPCR\PersistentCollection as PhpcrPersistentCollection;
 use Doctrine\ORM\PersistentCollection as OrmPersistentCollection;
 use Doctrine\Persistence\ManagerRegistry;
-use JMS\Serializer\DeserializationContext;
-use JMS\Serializer\GraphNavigatorInterface;
-use JMS\Serializer\Metadata\PropertyMetadata;
-use JMS\Serializer\SerializationContext;
-use JMS\Serializer\Visitor\DeserializationVisitorInterface;
-use JMS\Serializer\Visitor\SerializationVisitorInterface;
+use Speakeasy\Serializer\DeserializationContext;
+use Speakeasy\Serializer\GraphNavigatorInterface;
+use Speakeasy\Serializer\Metadata\PropertyMetadata;
+use Speakeasy\Serializer\SerializationContext;
+use Speakeasy\Serializer\Visitor\DeserializationVisitorInterface;
+use Speakeasy\Serializer\Visitor\SerializationVisitorInterface;
 
 final class ArrayCollectionHandler implements SubscribingHandlerInterface
 {

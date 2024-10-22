@@ -2,17 +2,17 @@
 
 declare(strict_types=1);
 
-namespace JMS\Serializer\Tests\Serializer\EventDispatcher\Subscriber;
+namespace Speakeasy\Serializer\Tests\Serializer\EventDispatcher\Subscriber;
 
-use JMS\Serializer\Context;
-use JMS\Serializer\EventDispatcher\EventDispatcher;
-use JMS\Serializer\EventDispatcher\PreSerializeEvent;
-use JMS\Serializer\EventDispatcher\Subscriber\DoctrineProxySubscriber;
-use JMS\Serializer\Metadata\ClassMetadata;
-use JMS\Serializer\Tests\Fixtures\ExclusionStrategy\AlwaysExcludeExclusionStrategy;
-use JMS\Serializer\Tests\Fixtures\SimpleObject;
-use JMS\Serializer\Tests\Fixtures\SimpleObjectLazyLoading;
-use JMS\Serializer\Tests\Fixtures\SimpleObjectProxy;
+use Speakeasy\Serializer\Context;
+use Speakeasy\Serializer\EventDispatcher\EventDispatcher;
+use Speakeasy\Serializer\EventDispatcher\PreSerializeEvent;
+use Speakeasy\Serializer\EventDispatcher\Subscriber\DoctrineProxySubscriber;
+use Speakeasy\Serializer\Metadata\ClassMetadata;
+use Speakeasy\Serializer\Tests\Fixtures\ExclusionStrategy\AlwaysExcludeExclusionStrategy;
+use Speakeasy\Serializer\Tests\Fixtures\SimpleObject;
+use Speakeasy\Serializer\Tests\Fixtures\SimpleObjectLazyLoading;
+use Speakeasy\Serializer\Tests\Fixtures\SimpleObjectProxy;
 use Metadata\MetadataFactoryInterface;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;

@@ -2,16 +2,16 @@
 
 declare(strict_types=1);
 
-namespace JMS\Serializer\Tests\Fixtures;
+namespace Speakeasy\Serializer\Tests\Fixtures;
 
-use JMS\Serializer\Annotation\Type;
+use Speakeasy\Serializer\Annotation\Type;
 
 class VehicleInterfaceGarage
 {
     /**
-     * @Type("array<JMS\Serializer\Tests\Fixtures\Discriminator\VehicleInterface>")
+     * @Type("array<Speakeasy\Serializer\Tests\Fixtures\Discriminator\VehicleInterface>")
      */
-    #[Type(name: 'array<JMS\Serializer\Tests\Fixtures\Discriminator\VehicleInterface>')]
+    #[Type(name: 'array<Speakeasy\Serializer\Tests\Fixtures\Discriminator\VehicleInterface>')]
     public $vehicles;
 
     public function __construct($vehicles)

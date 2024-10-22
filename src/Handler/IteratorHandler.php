@@ -2,17 +2,17 @@
 
 declare(strict_types=1);
 
-namespace JMS\Serializer\Handler;
+namespace Speakeasy\Serializer\Handler;
 
 use ArrayIterator;
 use Generator;
 use Iterator;
-use JMS\Serializer\DeserializationContext;
-use JMS\Serializer\Functions;
-use JMS\Serializer\GraphNavigatorInterface;
-use JMS\Serializer\SerializationContext;
-use JMS\Serializer\Visitor\DeserializationVisitorInterface;
-use JMS\Serializer\Visitor\SerializationVisitorInterface;
+use Speakeasy\Serializer\DeserializationContext;
+use Speakeasy\Serializer\Functions;
+use Speakeasy\Serializer\GraphNavigatorInterface;
+use Speakeasy\Serializer\SerializationContext;
+use Speakeasy\Serializer\Visitor\DeserializationVisitorInterface;
+use Speakeasy\Serializer\Visitor\SerializationVisitorInterface;
 
 final class IteratorHandler implements SubscribingHandlerInterface
 {

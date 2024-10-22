@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace JMS\Serializer\Tests\Fixtures;
+namespace Speakeasy\Serializer\Tests\Fixtures;
 
-use JMS\Serializer\Annotation as Serializer;
-use JMS\Serializer\Annotation\Type;
+use Speakeasy\Serializer\Annotation as Serializer;
+use Speakeasy\Serializer\Annotation\Type;
 
 class InlineChildWithGroups
 {

@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace JMS\Serializer\Handler;
+namespace Speakeasy\Serializer\Handler;
 
-use JMS\Serializer\GraphNavigatorInterface;
-use JMS\Serializer\Visitor\SerializationVisitorInterface;
-use JMS\Serializer\XmlSerializationVisitor;
+use Speakeasy\Serializer\GraphNavigatorInterface;
+use Speakeasy\Serializer\Visitor\SerializationVisitorInterface;
+use Speakeasy\Serializer\XmlSerializationVisitor;
 use Symfony\Component\Form\Form;
 use Symfony\Component\Form\FormError;
 use Symfony\Component\Form\FormInterface;

@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace JMS\Serializer\Tests\Metadata\Driver;
+namespace Speakeasy\Serializer\Tests\Metadata\Driver;
 
 use Doctrine\Common\Annotations\AnnotationReader;
-use JMS\Serializer\Metadata\Driver\AnnotationDriver;
-use JMS\Serializer\Metadata\Driver\NullDriver;
-use JMS\Serializer\Naming\IdenticalPropertyNamingStrategy;
+use Speakeasy\Serializer\Metadata\Driver\AnnotationDriver;
+use Speakeasy\Serializer\Metadata\Driver\NullDriver;
+use Speakeasy\Serializer\Naming\IdenticalPropertyNamingStrategy;
 use Metadata\Driver\DriverChain;
 use Metadata\Driver\DriverInterface;
 

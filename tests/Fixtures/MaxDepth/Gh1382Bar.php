@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace JMS\Serializer\Tests\Fixtures\MaxDepth;
+namespace Speakeasy\Serializer\Tests\Fixtures\MaxDepth;
 
 class Gh1382Bar
 {

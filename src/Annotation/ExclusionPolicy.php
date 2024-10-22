@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace JMS\Serializer\Annotation;
+namespace Speakeasy\Serializer\Annotation;
 
-use JMS\Serializer\Exception\RuntimeException;
+use Speakeasy\Serializer\Exception\RuntimeException;
 
 /**
  * @Annotation

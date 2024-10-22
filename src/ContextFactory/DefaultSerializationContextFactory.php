@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace JMS\Serializer\ContextFactory;
+namespace Speakeasy\Serializer\ContextFactory;
 
-use JMS\Serializer\SerializationContext;
+use Speakeasy\Serializer\SerializationContext;
 
 /**
  * Default Serialization Context Factory.

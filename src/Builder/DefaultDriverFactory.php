@@ -2,21 +2,21 @@
 
 declare(strict_types=1);
 
-namespace JMS\Serializer\Builder;
+namespace Speakeasy\Serializer\Builder;
 
 use Doctrine\Common\Annotations\Reader;
-use JMS\Serializer\Exception\RuntimeException;
-use JMS\Serializer\Expression\CompilableExpressionEvaluatorInterface;
-use JMS\Serializer\Metadata\Driver\AnnotationOrAttributeDriver;
-use JMS\Serializer\Metadata\Driver\DefaultValuePropertyDriver;
-use JMS\Serializer\Metadata\Driver\EnumPropertiesDriver;
-use JMS\Serializer\Metadata\Driver\NullDriver;
-use JMS\Serializer\Metadata\Driver\TypedPropertiesDriver;
-use JMS\Serializer\Metadata\Driver\XmlDriver;
-use JMS\Serializer\Metadata\Driver\YamlDriver;
-use JMS\Serializer\Naming\PropertyNamingStrategyInterface;
-use JMS\Serializer\Type\Parser;
-use JMS\Serializer\Type\ParserInterface;
+use Speakeasy\Serializer\Exception\RuntimeException;
+use Speakeasy\Serializer\Expression\CompilableExpressionEvaluatorInterface;
+use Speakeasy\Serializer\Metadata\Driver\AnnotationOrAttributeDriver;
+use Speakeasy\Serializer\Metadata\Driver\DefaultValuePropertyDriver;
+use Speakeasy\Serializer\Metadata\Driver\EnumPropertiesDriver;
+use Speakeasy\Serializer\Metadata\Driver\NullDriver;
+use Speakeasy\Serializer\Metadata\Driver\TypedPropertiesDriver;
+use Speakeasy\Serializer\Metadata\Driver\XmlDriver;
+use Speakeasy\Serializer\Metadata\Driver\YamlDriver;
+use Speakeasy\Serializer\Naming\PropertyNamingStrategyInterface;
+use Speakeasy\Serializer\Type\Parser;
+use Speakeasy\Serializer\Type\ParserInterface;
 use Metadata\Driver\DriverChain;
 use Metadata\Driver\DriverInterface;
 use Metadata\Driver\FileLocator;

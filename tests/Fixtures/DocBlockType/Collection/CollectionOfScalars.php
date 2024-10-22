@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace JMS\Serializer\Tests\Fixtures\DocBlockType\Collection;
+namespace Speakeasy\Serializer\Tests\Fixtures\DocBlockType\Collection;
 
 class CollectionOfScalars
 {

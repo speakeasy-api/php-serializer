@@ -2,17 +2,17 @@
 
 declare(strict_types=1);
 
-namespace JMS\Serializer\Tests\Fixtures\Discriminator;
+namespace Speakeasy\Serializer\Tests\Fixtures\Discriminator;
 
-use JMS\Serializer\Annotation as Serializer;
+use Speakeasy\Serializer\Annotation as Serializer;
 
 /**
  * @Serializer\Discriminator(field = "type", map = {
- *    "post": "JMS\Serializer\Tests\Fixtures\Discriminator\Post",
- *    "image_post": "JMS\Serializer\Tests\Fixtures\Discriminator\ImagePost",
+ *    "post": "Speakeasy\Serializer\Tests\Fixtures\Discriminator\Post",
+ *    "image_post": "Speakeasy\Serializer\Tests\Fixtures\Discriminator\ImagePost",
  * })
  */
-#[Serializer\Discriminator(field: 'type', map: ['post' => 'JMS\Serializer\Tests\Fixtures\Discriminator\Post', 'image_post' => 'JMS\Serializer\Tests\Fixtures\Discriminator\ImagePost'])]
+#[Serializer\Discriminator(field: 'type', map: ['post' => 'Speakeasy\Serializer\Tests\Fixtures\Discriminator\Post', 'image_post' => 'Speakeasy\Serializer\Tests\Fixtures\Discriminator\ImagePost'])]
 class Post
 {
     /** @Serializer\Type("string") */
